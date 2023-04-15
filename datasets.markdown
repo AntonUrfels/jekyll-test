@@ -18,9 +18,9 @@ Links to invdividual datasets:
 
 - [**Ajay et al. (2022).** Large-scale data of crop production practices applied by farmers on their largest rice plot during 2018 in eight Indian states.](https://hdl.handle.net/11529/10548656)
 - [**Paudel et al. (2021).** Data on identifying sustainable wheat productivity drivers in Nepal’s Terai.](https://hdl.handle.net/11529/10548615)
-- [Data on farmers’ rice production practices during 2017 monsoon season from eastern states of India. **Ajay et al.**](https://hdl.handle.net/11529/10548605)
-- [Landscape diagnostic survey data of wheat production practices and yield of 2018 from eastern India. **Ajay et al.**](https://hdl.handle.net/11529/10548507)
-- [Lentil production practices survey during wet-winter year in western Nepal. **Paudel et al.**](https://hdl.handle.net/11529/10548086)
-- [Nepal Rice Crop Cut and Survey Data 2016. **Paudel et al.**](https://hdl.handle.net/11529/10968)
+- [**Ajay et al. (2021).** Data on farmers’ rice production practices during 2017 monsoon season from eastern states of India. ](https://hdl.handle.net/11529/10548605)
+- [**Ajay et al. (2020).** Landscape diagnostic survey data of wheat production practices and yield of 2018 from eastern India.](https://hdl.handle.net/11529/10548507)
+- [**Paudel et al. (2018).** Lentil production practices survey during wet-winter year in western Nepal.](https://hdl.handle.net/11529/10548086)
+- [**Paudel et al. (2017).** Nepal Rice Crop Cut and Survey Data 2016.](https://hdl.handle.net/11529/10968)
 
 
