@@ -6,12 +6,14 @@ permalink: /publications/
 
 ![](photo.jpg)
 
-Multiple publications have been produced about LCAS and based on LCAS data. A list of key publications can be found below.
 
-## Documentation
+
+Multiple publications have been produced about LCAS and based on LCAS data. A list of key publications can be found below.
 
 
 ## Peer-reviewed data papers
+
+Large survey dataset of rice production practices applied by farmers on their largest farm plot during 2018 in India. **Data in Brief. Ajay et al. (2022).** [Download](pubs/ajay2022.pdf)
 
 
 ## Peer-reviewed analysis papers
