@@ -4,6 +4,7 @@ title: Publications
 permalink: /publications/
 ---
 
+![](photo.jpg)
 
 Multiple publications have been produced about LCAS and based on LCAS data. A list of key publications can be found below.
 
