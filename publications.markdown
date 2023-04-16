@@ -26,7 +26,7 @@ Multiple publications have been produced about LCAS and based on LCAS data. A li
 
 - **Agricultural System. Urfels et al. (2023).** Farm size limits agriculture’s poverty reduction potential in Eastern India even with irrigation-led intensification.  [Download](pubs/urfels2023.pdf)
 
-- **Nature Food. McDonald et al. (2022).** Time management governs climate resilience and productivity in the coupled rice–wheat cropping systems of eastern India. [Download](/article).
+- **Nature Food. McDonald et al. (2022).** Time management governs climate resilience and productivity in the coupled rice–wheat cropping systems of eastern India. [Download](pubs/mcdonald2022.pdf).
 
 - **Field Crops Research. Nayak et al. (2022).** Interpretable machine learning methods to explain on-farm yield variability of high productivity wheat in Northwest India. [Download](pubs/nayak2022a.pdf). 
 
