@@ -2,6 +2,8 @@
 layout: page
 title: Datasets 
 permalink: /datasets/
+description: Here's a detailed overview of the Landscape Crop Assessment Survey (LCAS), it's modules and how it helps to collect big data that support sustainability transitions in agriculture. 
+
 ---
 
 ![](photo.jpg)
