@@ -11,14 +11,39 @@ description: Here's an overview of different tools that help you working with LC
 
 # R Scripts for data management and transformation
 
+This page provides an overview of R scripts than have been developed to work with LCAS data.
+It includes support for the following functionalities:
 
-### API script to import datasets from ODK/Kobo
+- Importing data from ODK/Kobo
+- Cleaning data and variable names
+- Generating additional features
+- Running automated simple analytics
+- Running advanced analytics
 
 
-### Renaming variables to standard one
+
+# API script to import datasets from ODK/Kobo
+
+This section provides an overview of R scripts that import datasets through API calls.
 
 
-### Data cleaning and anonymization
+````
+# setting api link 
+f <- "api-link.com"
+user <- "your_username"
+passowrd <- "your_password"
+
+#retrieve data
+df <- api_call(f,user,password)
+
+#write data to file for future use
+write.csv(df,"outputs/df.csv")
+````
+
+# Renaming variables to standard one
+
+
+# Data cleaning and anonymization
 
 #### Adding data (e.g. climate,soil) requiring specific geo-locations
 
