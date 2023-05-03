@@ -72,7 +72,8 @@ df <- rename_lcas(dict, df)
 write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
-#### Adding data (e.g. climate,soil) requiring specific geo-locations
+
+#### Adding secondary data (e.g. climate,soil) requiring specific geo-locations
 
 For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
 
@@ -88,9 +89,8 @@ df <- read.csv(f)
 df <- add_secondary_lcas.R(df)
 
 #write anonymized data to csv.
-write.csv(lcas_secondary.csv)
+write.csv(df,"lcas_secondary.csv")
 ```
-
 
 
 #### Anonymization
@@ -107,21 +107,90 @@ df <- read.csv(f)
 df <- anonymize_lcas(df)
 
 #write anonymized data to csv.
-write.csv(lcas_anonymized.csv)
+write.csv(df,"lcas_anonymized.csv")
+```
+
+# Feature generation
+
+Much of the variables collected are sub-components of another feature of interest. These features require further transformation to be available for use in models and analyses. For example, inputs and outputs tend to be normalized by area (yield, fertilizer applicated rates etc.) While there's a multitude of such features, we provide an overview and the tools to calculate the most important ones here.
+
+
+#### Local land unit (LLU) conversions
+
+Since most farmers use LLUs - the raw data is collected in these with addition to a LLU conversion factor. Since most application require ha for land units - we provide a function that converts all variables collected in LLU towards ha.
+
+The script can be found at [code/calc_llu_to_ha.R].
+
+
+```R
+#read anoymous lcas dataset
+f <- "outputs/lcas_anonymized.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+df <- calc_llu_to_ha(df)
+
+
 ```
 
 
-### Feature generation and data wrangling
-
-#### Fertilizer Rates
 
 #### Yield per ha
 
-#### Convert dates to day of year
+Most application are intested in yield outcomes. Yields are generally calculated by dividing a farms total production of a crop in that season through the area on which this crop was calculated.
 
 
+The script can be found at [code/calc_yield.R]
 
-### Basic Analytics by module
+```R
+#read anoymous lcas dataset
+f <- "outputs/lcas_anonymized.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+df <- calc_yield(df)
+
+
+```
+
+
+#### Fertilizer Rates
+
+Fertilizer application rates are calculated by summing the fertilizer inputs (basal application + top dressings) and multplying each fertilizer input with the percentage of N, P, or K contained in the fertilizer. The total nutrient inputs are then normalized by the area of the field towards a per ha basis.
+
+The script can be found at [code/calc_fert_rate.R]
+
+```R
+#read anoymous lcas dataset
+f <- "outputs/lcas_anonymized.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+df <- calc_fert_rate(df)
+
+```
+
+
+#### Convert dates to day of year and days since 1980-01-01
+
+Most application require that dates are saved in a numeric format. Although some functions and packages can handle variables formatted as dates, it is often required to use simple numeric fomats. The most straightforward way is to convert dates into days per year. However, when an anlaysis stretches across one calendar year then the re-starting of the counting at 1 can cause issues. For this purpose we provide both the day of the year and the days since 1980-01-01 - a standard practice.
+
+Most importantly, we are looking for planting and harvesting dates. 
+
+```R
+#read anoymous lcas dataset
+f <- "outputs/lcas_anonymized.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+df <- calc_dates(df)
+
+```
+
+
+#### Basic Analytics by module
+
+
 
 
 #### Descriptive stats
@@ -129,7 +198,17 @@ write.csv(lcas_anonymized.csv)
 #### Random forest for yield predictions and diagnostics
 
 
+# Outlier detections
 
-### Toolboxes for advanced
+
+# Toolboxes for advanced
+
+#### Maxwell's causal forests
+
+#### Hari's yield gap analytics
+
+#### Sonam's N recs
+
+
 
 
