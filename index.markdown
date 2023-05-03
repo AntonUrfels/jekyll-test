@@ -68,6 +68,9 @@ We thank all collaborators that contributed to the LCAS system and the Bill and 
 			<td style="border:none;">
 				<a href="https://www.iwmi.cgiar.org/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4868" style="width: 200px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/IWMI_logo_csisa_web.png" alt=""></a>
 			</td>
+			<td style="border:none;">
+				<a href="https://cornell.edu/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4868" style="width: 200px;" src="cornell.png" alt=""></a>
+			</td>
 		</tr>
 	</tbody>
 </table>
