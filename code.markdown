@@ -72,6 +72,26 @@ df <- rename_lcas(dict, df)
 write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
+#### Adding data (e.g. climate,soil) requiring specific geo-locations
+
+For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
+
+Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman's 'geodata' package in R as well as the World Bank's Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file [add_secondary_lcas.R](code/add_secondary_lcas.R).
+
+
+```R
+#load LCAS with standard variable names
+f <- "outputs/lcas_renamed.csv"
+df <- read.csv(f)
+
+#anonymize the data
+df <- add_secondary_lcas.R(df)
+
+#write anonymized data to csv.
+write.csv(lcas_secondary.csv)
+```
+
+
 
 #### Anonymization
 Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father's name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
@@ -80,7 +100,7 @@ Importantly, the variable names have to be standardized for the functions to wor
 
 ```R
 #load LCAS with standard variable names
-f <- "outputs/lcas_renamed.csv"
+f <- "outputs/lcas_secondary.csv"
 df <- read.csv(f)
 
 #anonymize the data
@@ -89,18 +109,6 @@ df <- anonymize_lcas(df)
 #write anonymized data to csv.
 write.csv(lcas_anonymized.csv)
 ```
-
-#### Adding data (e.g. climate,soil) requiring specific geo-locations
-
-Can use LSMS to get additional data from global datasets.
-Use Robert's 'geodata' package to mine variables.
-
-```
-
-
-
-```
-
 
 
 ### Feature generation and data wrangling
