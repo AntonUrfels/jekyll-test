@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Tools
-permalink: /tools/
+title: Toolbox
+permalink: /toolbox/
 description: Here's an overview of different tools that help you working with LCAS datasets. Tools are written in R. Templates and deployment are generally done with Kobo toolbox.
 
 ---
