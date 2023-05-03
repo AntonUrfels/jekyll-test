@@ -222,6 +222,7 @@ df <- combine_lcas(df1,df2,"drop")
 write.csv(df,"lcas_combined.csv")
 ```
 
+# Analytics
 
 
 #### Descriptive stats
@@ -241,6 +242,15 @@ write.csv(df,"lcas_combined.csv")
 
 
 # Outlier detections
+
+Here we provide scripts that support outlier removal by Trimming, Winsorization, Mahalanobis distance, and Isolation forests.
+
+#### Trimming
+
+#### Mahalanobis distance
+
+#### Isolation forests
+
 
 
 # Toolboxes for advanced
