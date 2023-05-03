@@ -30,5 +30,5 @@ More modules are under development and will be added soon.
 
 The figure below provides an overview of the different components that are being developed for the LCAS system. 
 
-![](LCAS-system.png)
+[![](LCAS-system.png)](../LCAS-system.png)
 
