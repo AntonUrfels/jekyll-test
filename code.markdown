@@ -119,7 +119,7 @@ Much of the variables collected are sub-components of another feature of interes
 
 Since most farmers use LLUs - the raw data is collected in these with addition to a LLU conversion factor. Since most application require ha for land units - we provide a function that converts all variables collected in LLU towards ha.
 
-The script can be found at [code/calc_llu_to_ha.R].
+The script can be found at [code/calc_llu_to_ha.R](code/calc_llu_to_ha.R)
 
 
 ```R
@@ -140,7 +140,7 @@ df <- calc_llu_to_ha(df)
 Most application are intested in yield outcomes. Yields are generally calculated by dividing a farms total production of a crop in that season through the area on which this crop was calculated.
 
 
-The script can be found at [code/calc_yield.R]
+The script can be found at [code/calc_yield.R](code/calc_yield.R)
 
 ```R
 #read anoymous lcas dataset
@@ -158,7 +158,15 @@ df <- calc_yield(df)
 
 Fertilizer application rates are calculated by summing the fertilizer inputs (basal application + top dressings) and multplying each fertilizer input with the percentage of N, P, or K contained in the fertilizer. The total nutrient inputs are then normalized by the area of the field towards a per ha basis.
 
-The script can be found at [code/calc_fert_rate.R]
+Specifically we use the following nutrient concentrations (N-P-K):
+
+- Urea: (46-0-0)
+- NPK: (12-32-16)
+- DAP: (18-46-0)
+- TSP: (0-45-0)
+
+
+The script can be found at [code/calc_fert_rate.R](code/calc_fert_rate.R)
 
 ```R
 #read anoymous lcas dataset
@@ -177,6 +185,10 @@ Most application require that dates are saved in a numeric format. Although some
 
 Most importantly, we are looking for planting and harvesting dates. 
 
+
+The script can be found at [code/calc_dates.R](code/calc_dates.R)
+
+
 ```R
 #read anoymous lcas dataset
 f <- "outputs/lcas_anonymized.csv"
@@ -188,12 +200,42 @@ df <- calc_dates(df)
 ```
 
 
+
+#### Combine different LCAS datasets
+
+
+Sometimes one may wish to combine different surveys (e.g. all rice surveys in India; all crop surveys in South Asia etc.). For this we provide the following convenience script. 
+
+The script for this can be found at [code/combine_lcas.R](code/combine_lcas.R). It provides the option to drop all non-standard variables (drop), keep the variables that exist in both surveys (keep), or keep all (all).
+
+```R
+#load both lcas datasets
+f1 <- "lcas1.csv"
+f2 <- "lcas2.csv"
+df1 <- read.csv(f1)
+df1 <- read.csv(f2)
+
+#merge both datasets
+df <- combine_lcas(df1,df2,"drop")
+
+#save to csv file
+write.csv(df,"lcas_combined.csv")
+```
+
+
+
+#### Descriptive stats
+
+
+
+
 #### Basic Analytics by module
 
 
 
 
-#### Descriptive stats
+
+
 
 #### Random forest for yield predictions and diagnostics
 
