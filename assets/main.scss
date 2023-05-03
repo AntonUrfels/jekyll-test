@@ -1,4 +1,6 @@
 
+@import "minima";
+
 /**
  * Code formatting
  */
@@ -10,27 +12,8 @@ code {
   background-color: #f6f8fa;
 }
 
-code {
-  padding: 1px 5px;
-}
 
-pre {
-  padding: 8px 12px;
-  overflow-x: auto;
-
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-
-
-
-
-
-  .highlighter-rouge & {
+.highlighter-rouge & {
     background: #f6f8fa;
   }
 
