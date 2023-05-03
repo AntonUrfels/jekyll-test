@@ -9,7 +9,7 @@ description: Here's an overview of different tools that help you working with LC
 ![](photo.jpg)
 
 
-# R Scripts for data management and transformation - NEW
+# R Scripts for data management and transformation
 
 This page provides an overview of R scripts than have been developed to work with LCAS data.
 It includes support for the following functionalities:
