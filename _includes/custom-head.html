@@ -1,2 +1,18 @@
 <!-- SEO tags -->
 {% raw %}{% seo %}{% endraw %}
+
+.highlight {
+  background: #fff;
+  @extend %vertical-rhythm;
+
+  .highlighter-rouge & {
+    background: #f6f8fa;
+  }
+}
+
+code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #f6f8fa;
+}
