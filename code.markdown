@@ -29,7 +29,7 @@ This section provides an overview of R scripts that import datasets through API 
 The R functions for this can be found in the [data_import.R](code/data_import.R) file. 
 
 
-````
+```R
 # setting api link 
 f <- "api-link.com"
 user <- "your_username"
@@ -40,7 +40,7 @@ df <- api_call(f,user,password)
 
 #write data to file for future use
 write.csv(df,"outputs/df.csv")
-````
+```
 
 # Renaming variables to standard one
 
@@ -53,29 +53,48 @@ We provide a [standard variable name dictionary](dict.csv). To add you own surve
 You can find the function for renaming survey datasets into standard LCAS variable names in the [rename_lcas.R](code/rename_lcas.R) file. 
 
 
-```
-# load dictionary
+```R
+#load dictionary
 f1 <- "dictionary.csv"
 dict <- read.csv(f1)
 
-# load survey data
-df <- read.csv(non_strandard_lcas.csv)
+#load survey data
+df <- read.csv(lcas_raw.csv)
 df <- rename_lcas(dict, df)
+
+#write the data with standard variable names
+write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
 
 # Data cleaning and anonymization
+
+Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father's name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
+
+Importantly, the variable names have to be standardized for the functions to work. The R code for anonymizing raw LCAS data can be found in [anonymize_lcas.R](code/anonomyze_lcas.R).
+
+```R
+#load LCAS with standard variable names
+f <- "outputs/lcas_renamed.csv"
+df <- read.csv(f)
+
+#anonymize the data
+df <- anonymize_lcas(df)
+
+#write anonymized data to csv.
+write.csv(lcas_anonymized.csv)
+```
 
 #### Adding data (e.g. climate,soil) requiring specific geo-locations
 
 Can use LSMS to get additional data from global datasets.
 Use Robert's 'geodata' package to mine variables.
 
-````
+```
 
 
 
-````
+```
 
 
 
