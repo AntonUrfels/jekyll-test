@@ -42,7 +42,13 @@ df <- api_call(f,user,password)
 write.csv(df,"outputs/df.csv")
 ```
 
-# Renaming variables to standard one
+
+# Data cleaning and anonymization
+
+Data cleaning and anonymization is crucial for secure data storage and effective analytics.
+
+
+#### Renaming variables to standard one
 
 To work with several datasets, it is important to rename all variable names into the same, standard variables. Ideally, standard variable names are used in the ODK tools so that the recorded data can easily be analyzed. If during data collection it was decided to change variable names - or older surveys are added - then this section provides support for renaming variable names.
 
@@ -67,8 +73,7 @@ write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
 
-# Data cleaning and anonymization
-
+#### Anonymization
 Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father's name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
 
 Importantly, the variable names have to be standardized for the functions to work. The R code for anonymizing raw LCAS data can be found in [anonymize_lcas.R](code/anonomyze_lcas.R).
