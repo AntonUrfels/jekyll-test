@@ -12,15 +12,15 @@ description: Here's an overview of different tools that help you working with LC
 # R Scripts for data management and transformation
 
 
-## API script to import datasets from ODK/Kobo
+### API script to import datasets from ODK/Kobo
 
 
-## Renaming variables to standard one
+### Renaming variables to standard one
 
 
-## Data cleaning and anonymization
+### Data cleaning and anonymization
 
-### Adding data (e.g. climate,soil) requiring specific geo-locations
+#### Adding data (e.g. climate,soil) requiring specific geo-locations
 
 Can use LSMS to get additional data from global datasets.
 Use Robert's 'geodata' package to mine variables.
@@ -31,29 +31,27 @@ Use Robert's 'geodata' package to mine variables.
 
 ````
 
-### 
-
-## Feature generation and data wrangling
-
-### Fertilizer Rates
-
-### Yield per ha
-
-### Convert dates to day of year
-
-### 
 
 
-## Basic Analytics by module
+### Feature generation and data wrangling
+
+#### Fertilizer Rates
+
+#### Yield per ha
+
+#### Convert dates to day of year
 
 
-### Descriptive stats
 
-### Random forest for yield predictions and diagnostics
-
-###
+### Basic Analytics by module
 
 
-## Toolboxes for advanced
+#### Descriptive stats
+
+#### Random forest for yield predictions and diagnostics
+
+
+
+### Toolboxes for advanced
 
 
