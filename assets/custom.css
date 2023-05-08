@@ -1,0 +1,14 @@
+
+.important {
+    background-color: #ffffcc;
+    border: 1px solid #ffcc00;
+    padding: 10px;
+  }
+  
+  .alert {
+    background-color: #fff33e;
+    border: 1px solid #ff6666;
+    padding: 10px;
+  }
+  
+
