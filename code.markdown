@@ -13,10 +13,10 @@ description: Here's an overview of different tools that help you working with LC
 
 The LCAS is designed to provide rapid insights through efficiently collected surveys. In this page, we provide an overview of key workflows and analysis pipelines. The general steps in the workflow are as follows:
 
-0. Data collection (not part of this section)
-1. Import data from the server
+0. Data collection (see [survey deployment section](deployment/))
+1. Importing data into the analysis envrionment
 2. Data cleaning
-3. Calculate key variables and add geographic variables
+3. Add calculated variables and geodata
 4. Run automated, simple analytics
 5. Run more advanced analytics requiring manual fine-tuning
 
@@ -46,7 +46,7 @@ write.csv(df,"outputs/df.csv")
 ```
 
 
-# 2. Data cleaning and anonymization
+# 2. Data cleaning
 
 Data cleaning and anonymization is crucial for secure data storage and effective analytics.
 
@@ -113,7 +113,7 @@ df <- anonymize_lcas(df)
 write.csv(df,"lcas_anonymized.csv")
 ```
 
-# 3. Feature generation
+# 3. Add calculated variables and geodata
 
 Much of the variables collected are sub-components of another feature of interest. These features require further transformation to be available for use in models and analyses. For example, inputs and outputs tend to be normalized by area (yield, fertilizer applicated rates etc.) While there's a multitude of such features, we provide an overview and the tools to calculate the most important ones here.
 
@@ -202,9 +202,30 @@ df <- calc_dates(df)
 
 ```
 
+#### 3.5 Reshape and safe final dataframes
+
+Many surveys such as LSMS and DHS store their datasets in long format and per modules. One of the advantages of the LCAS is that it is relatively simple. It normally only surveys one plot (the largest one) per household. This makes it easy to use for analyses workflow that normally require data in wide format. It is also easier to handle for researchers with less experience in handling complicated and relational databases.
+
+The standard data format for LCAS is therefore the wide format. For convenience, we provide here reshaping scripts that convert the wide format LCAS into seperate modules in long format. This might be helpful for compatibility with other surveys and if researchers seek to collect data for multiple plots per household.
+
+The code is stored in [data_shaping.R](https://github.com/AntonUrfels/lcas/blob/gh-pages/code/data_shaping.R).
 
 
-#### 3.5 Combine different LCAS datasets
+```R
+# Read in dataset with standard variable names. Sample code  -----------------
+f <- "data/india_rice_17_18.csv"
+df <- read.csv(f)
+f <- "data/dictionary_with_questions.csv"
+dict <- read.csv(f)
+
+#Run reshaping functions that automatically safe the 
+#long format modules in outputs/long_db/module_names.csv
+long_lcas(df,dict)
+
+```
+
+
+#### 3.6 Combine different LCAS datasets
 
 
 Sometimes one may wish to combine different surveys (e.g. all rice surveys in India; all crop surveys in South Asia etc.). For this we provide the following convenience script. 

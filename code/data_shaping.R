@@ -8,7 +8,15 @@
 # Be converted to real unique ID's. We are currently working on constructing these.
 
 
+# Read in dataset with standard variable names. Sample code  -----------------
+# f <- "data/india_rice_17_18.csv"
+# df <- read.csv(f)
+# f <- "data/dictionary_with_questions.csv"
+# dict <- read.csv(f)
+# 
+# long_lcas(df,dict)
 
+long_lcas <- function(df,dict) {
 # load functions ----------------------------------------------------------
 
 # function for finding columns with fertilizer and timing combo
@@ -29,11 +37,6 @@ findCols <- function(n_primkey,dress,fert) {
   return(keys)
 }
 
-
-
-# Read in dataset with standard variable names.  ------------------------
-f <- "data/india_rice_17_18.csv"
-df <- read.csv(f)
 
 # assign arbitraty HH and Plot ID -----------------------------------------
 set.seed(1)
@@ -168,12 +171,7 @@ for (dress in timings) {
 # remove NA rows ----------------------------------------------------------
 df_final <- df_final[!is.na(df_final$application_amount),]
 write.csv(df_final,paste0("outputs/long_db/","fertility_applications",".csv"))
-
-
-
-
-
-
+}
 
 
 
