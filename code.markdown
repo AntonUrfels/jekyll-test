@@ -9,15 +9,18 @@ description: Here's an overview of different tools that help you working with LC
 ![](photo.jpg)
 
 
-# R Scripts for data management and transformation
+# R Scripts for data management and analysis
 
 The LCAS is designed to provide rapid insights through efficiently collected surveys. In this page, we provide an overview of key workflows and analysis pipelines. The general steps in the workflow are as follows:
 
+0. Data collection (not part of this section)
 1. Import data from the server
-2. Clean data
+2. Data cleaning
 3. Calculate key variables and add geographic variables
 4. Run automated, simple analytics
 5. Run more advanced analytics requiring manual fine-tuning
+
+![](Workflow_analysis.png)
 
 To get started, you may clone the LCAS github repo. It contains all the scripts and samples for how to run these scripts with existing anonymized datasets that have been collected for India.
 
