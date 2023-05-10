@@ -255,6 +255,8 @@ After collecting the data, one of the powerful functions of the LCAS system is t
 
 You can look at a [sample report](outputs/reports/rice_india_17_18_report.pdf) for the India rice datasets of 2017 and 2018. After cleaning the dataset with the above procedures. You may use the following function to generate the same report for your LCAS dataset(s) of interest. 
 
+The code is stored in <a href="code/generate_lcas_report.R" target="_blank">generate_lcas_report.R</a>.
+
 
 ```R
 #read in the cleaned LCAS dataset
