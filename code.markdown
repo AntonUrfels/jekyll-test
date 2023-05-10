@@ -9,22 +9,21 @@ description: Here's an overview of different tools that help you working with LC
 ![](photo.jpg)
 
 
-# R Scripts for data management and transformation - NEW
+# R Scripts for data management and transformation
 
-This page provides an overview of R scripts than have been developed to work with LCAS data.
-It includes support for the following functionalities:
+The LCAS is designed to provide rapid insights through efficiently collected surveys. In this page, we provide an overview of key workflows and analysis pipelines. The general steps in the workflow are as follows:
 
-- Importing data from ODK/Kobo
-- Cleaning data and variable names
-- Generating additional features
-- Running automated simple analytics
-- Running advanced analytics
+1. Import data from the server
+2. Clean data
+3. Calculate key variables and add geographic variables
+4. Run automated, simple analytics
+5. Run more advanced analytics requiring manual fine-tuning
+
+To get started, you may clone the LCAS github repo. It contains all the scripts and samples for how to run these scripts with existing anonymized datasets that have been collected for India.
 
 
-
-# API script to import datasets from ODK/Kobo
-
-This section provides an overview of R scripts that import datasets through API calls.
+# 1. Importing data from the server
+This section provides an overview of R scripts that import datasets through API calls. API stands for Advanced Programming Interface (API) - that is a standardized to communicate with a server. When data is collected digitally with ODK, Kobo or other tools, it is normally stored on a webserver. One can then use a specified request to the API of that server to request a download of the dataset of interest. Normally it requires providing your password and username (e.g. for KOBO or ODK Central) for authentication.
 
 The R functions for this can be found in the [data_import.R](code/data_import.R) file. 
 
@@ -36,6 +35,7 @@ user <- "your_username"
 passowrd <- "your_password"
 
 #retrieve data
+source(data_import.R)
 df <- api_call(f,user,password)
 
 #write data to file for future use
@@ -43,12 +43,12 @@ write.csv(df,"outputs/df.csv")
 ```
 
 
-# Data cleaning and anonymization
+# 2. Data cleaning and anonymization
 
 Data cleaning and anonymization is crucial for secure data storage and effective analytics.
 
 
-#### Renaming variables to standard one
+#### 2.1 Renaming the column headers to standard variable names
 
 To work with several datasets, it is important to rename all variable names into the same, standard variables. Ideally, standard variable names are used in the ODK tools so that the recorded data can easily be analyzed. If during data collection it was decided to change variable names - or older surveys are added - then this section provides support for renaming variable names.
 
@@ -73,7 +73,7 @@ write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
 
-#### Adding secondary data (e.g. climate,soil) requiring specific geo-locations
+#### 2.2 Adding secondary data (e.g. climate,soil) requiring specific geo-locations
 
 For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
 
@@ -93,7 +93,7 @@ write.csv(df,"lcas_secondary.csv")
 ```
 
 
-#### Anonymization
+#### 2.3 Anonymization
 Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father's name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
 
 Importantly, the variable names have to be standardized for the functions to work. The R code for anonymizing raw LCAS data can be found in [anonymize_lcas.R](code/anonomyze_lcas.R).
@@ -110,12 +110,12 @@ df <- anonymize_lcas(df)
 write.csv(df,"lcas_anonymized.csv")
 ```
 
-# Feature generation
+# 3. Feature generation
 
 Much of the variables collected are sub-components of another feature of interest. These features require further transformation to be available for use in models and analyses. For example, inputs and outputs tend to be normalized by area (yield, fertilizer applicated rates etc.) While there's a multitude of such features, we provide an overview and the tools to calculate the most important ones here.
 
 
-#### Local land unit (LLU) conversions
+#### 3.1 Local land unit (LLU) conversions
 
 Since most farmers use LLUs - the raw data is collected in these with addition to a LLU conversion factor. Since most application require ha for land units - we provide a function that converts all variables collected in LLU towards ha.
 
@@ -135,7 +135,7 @@ df <- calc_llu_to_ha(df)
 
 
 
-#### Yield per ha
+#### 3.2 Yield per ha
 
 Most application are intested in yield outcomes. Yields are generally calculated by dividing a farms total production of a crop in that season through the area on which this crop was calculated.
 
@@ -154,7 +154,7 @@ df <- calc_yield(df)
 ```
 
 
-#### Fertilizer Rates
+#### 3.3 Fertilizer Rates
 
 Fertilizer application rates are calculated by summing the fertilizer inputs (basal application + top dressings) and multplying each fertilizer input with the percentage of N, P, or K contained in the fertilizer. The total nutrient inputs are then normalized by the area of the field towards a per ha basis.
 
@@ -179,7 +179,7 @@ df <- calc_fert_rate(df)
 ```
 
 
-#### Convert dates to day of year and days since 1980-01-01
+#### 3.4 Convert dates to day of year and days since 1980-01-01
 
 Most application require that dates are saved in a numeric format. Although some functions and packages can handle variables formatted as dates, it is often required to use simple numeric fomats. The most straightforward way is to convert dates into days per year. However, when an anlaysis stretches across one calendar year then the re-starting of the counting at 1 can cause issues. For this purpose we provide both the day of the year and the days since 1980-01-01 - a standard practice.
 
@@ -201,7 +201,7 @@ df <- calc_dates(df)
 
 
 
-#### Combine different LCAS datasets
+#### 3.5 Combine different LCAS datasets
 
 
 Sometimes one may wish to combine different surveys (e.g. all rice surveys in India; all crop surveys in South Asia etc.). For this we provide the following convenience script. 
@@ -222,44 +222,31 @@ df <- combine_lcas(df1,df2,"drop")
 write.csv(df,"lcas_combined.csv")
 ```
 
-# Analytics
+# 4. Analytics
 
+#### 4.1 Descriptive stats
 
-#### Descriptive stats
+#### 4.2 Basic Analytics by module
 
+#### 4.3 Random forest for yield predictions and diagnostics
 
-
-
-#### Basic Analytics by module
-
-
-
-
-
-
-
-#### Random forest for yield predictions and diagnostics
-
-
-# Outlier detections
+# 5. Outlier detections
 
 Here we provide scripts that support outlier removal by Trimming, Winsorization, Mahalanobis distance, and Isolation forests.
 
-#### Trimming
+#### 5.1 Trimming
 
-#### Mahalanobis distance
+#### 5.2 Mahalanobis distance
 
-#### Isolation forests
+#### 5.3 Isolation forests
 
+# 6. Toolboxes for advanced
 
+#### 6.1 Maxwell's causal forests
 
-# Toolboxes for advanced
+#### 6.2 Hari's yield gap analytics
 
-#### Maxwell's causal forests
-
-#### Hari's yield gap analytics
-
-#### Sonam's N recs
+#### 6.3 Sonam's N recs
 
 
 
