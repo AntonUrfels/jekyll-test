@@ -8,6 +8,17 @@
 # Be converted to real unique ID's. We are currently working on constructing these.
 
 
+#Currently, fertilizer applications are the only 'complicated' module where redunant info
+#is saved in the variable names and a special cleaning has been implement for this one.
+
+
+#TODO Allow for reshaping of 'complicated' modules when multiple plots are present.
+#TODO Add checks for whether hh_id/plot_id exists.
+#TODO Implement additional 'complicated' modules if necesary - e.g. cropcuts, 
+#     irrigation applications etc. - in principle any activity that's performed
+#     multiple times per season.
+
+
 # Read in dataset with standard variable names. Sample code  -----------------
 # f <- "data/india_rice_17_18.csv"
 # df <- read.csv(f)
