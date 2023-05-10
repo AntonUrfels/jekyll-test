@@ -20,9 +20,11 @@ The LCAS is designed to provide rapid insights through efficiently collected sur
 4. Run automated, simple analytics
 5. Run more advanced analytics requiring manual fine-tuning
 
+To get started, you may clone the LCAS github repo. It contains all the scripts and samples for how to run these scripts with existing anonymized datasets that have been collected for India.
+
 [![](Workflow_analysis.png)](../Workflow_analysis.png)
 
-To get started, you may clone the LCAS github repo. It contains all the scripts and samples for how to run these scripts with existing anonymized datasets that have been collected for India.
+
 
 
 # 1. Importing data into the analysis envrionment
