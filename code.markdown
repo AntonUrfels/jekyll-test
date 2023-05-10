@@ -208,8 +208,7 @@ Many surveys such as LSMS and DHS store their datasets in long format and per mo
 
 The standard data format for LCAS is therefore the wide format. For convenience, we provide here reshaping scripts that convert the wide format LCAS into seperate modules in long format. This might be helpful for compatibility with other surveys and if researchers seek to collect data for multiple plots per household.
 
-The code is stored in [data_shaping.R](https://github.com/AntonUrfels/lcas/blob/gh-pages/code/data_shaping.R).
-
+The code is stored in <a href="https://github.com/AntonUrfels/lcas/blob/gh-pages/code/data_shaping.R" target="_blank">data_shaping.R</a>.
 
 ```R
 # Read in dataset with standard variable names. Sample code  -----------------
