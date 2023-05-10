@@ -1,0 +1,678 @@
+﻿module,old_name,proposed_name,label,choices
+survey,uniqueID,UID,,
+survey,deviceid,deviceid,,
+survey,collectionDate,collection_date,,
+survey,start,start_time,,
+survey,end,end_time,,
+survey,wc,wc,"
+
+
+Hi ! Welcome to  
+CROP YIELD & PRODUCTION PRACTICES SURVEY 
+form. 
+
+Kindly read the instructions carefully for each question before you fill in. 
+
+
+Unless otherwise indicated, all responses correspond to information 
+from __ the largest plot __
+for selected crop on each farm ! 
+
+
+Thank you for filling out !",
+survey,consentDisclaimer,consent,"Thank you for the opportunity to speak with you. I would like to interview you and your household for a survey. Our investigation aims at getting insight into different crop production practices & grain yield.
+
+We are inviting you to be a participant in this study.  We value your opinion and there are no right or wrong answers to the questions we will be asking in the interview. All we ask is for your honest answer and opinion.  The interview takes approximately around forty minutes to complete. If you agree to participate, you can choose to stop at any time or to skip any questions you do not want to answer. Your answers will be completely confidential; we will not share information that identifies you with anyone and your name and location will be kept safe using a coding system. After entering the questionnaire into a database, we will also restrict access to all information such as your name which will link these responses to you so that you can not be identified and will remain completely anonymous.
+
+Your participation will be highly appreciated.  The answers you give will help provide better information to policy-makers, development practitioners, agricultural extension agents, and program managers so that they can plan for better services that will respond to your needs.   If in the future you have any questions regarding study and the interview, or concerns or complaints we welcome you to ask our (the data collector) contact details.
+
+Would you like to participate in the survey?","No,Yes"
+survey,name_enumerator,enumerator_name,Name of the enumerator,
+,,,,
+respondent,q110_fName,name,name,
+respondent,q111_fGender,sex,sex,"Male,Female"
+respondent,q112_fEdu,edu,Education level of ${q110_fName},"Primary,Senior secondary,PhD,Matriculation,Bachelors,Masters,No schooling"
+respondent,q114_mobile,mobile,Mobile number of ${q110_fName},
+respondent,,aadhar_card,Aadhar card,
+respondent,q113_socialCategory,group,Social group of ${q110_fName},"Other,SC,General,ST,OBC"
+respondent,,father_name,Respondent's father name,
+respondent,"currency, unit of measure(dynamic)",local_currency,currency,
+respondent,age,age,age of the respondent,
+respondent,spouse_edu,spouse_edu,Spouse education,
+,,,,
+,,,,
+location,q105_village,village,Name of village,
+location,q101_country,country,Name of country,Any country
+location,q102_state,adm_1,Name of ADM1,
+location,q103_district,adm_2,Name of ADM2,
+location,q104_subDistrict,adm_3,Name of ADM3,
+location,,adm_4,Name of ADM4,
+location,,adm_5,Name of ADM5,
+location,,latitude,,
+location,largestPlotGPS,longitude,GPS from the center of the ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop}.Unique ID :${uniqueID},
+location,,altitude,This is auto generated ,
+location,,accuracy,This is auto generated ,
+,,,,
+crop,q115_crop,crop_name,Select the crop for the survey (this can be multi select or single select depending on the survey),"Wheat,Maize,Rice"
+crop,q116_season,survey_season,Select the season of the ${q115_crop} (Region specific),"Rabi,Summer,Aman,Aus,Boro,Kharif"
+crop,q117_harvYear,harvest_year,Select the year in which ${q115_crop} was harvested,2.02E+19
+crop,q304_cropCultLand,total_crop_cult_area,Total ${q115_crop} cultivated land (owned and leased) in this season in ${q301_LLU},
+crop,q305_cropLargestArea,surveyed_plot,Largest ${q115_crop} plot (owned or leased) in this season in ${q301_LLU},
+crop,q704_marketSaleShare,market_sale_share,Share of total ${q115_crop} crop production sold to market (%),"10,80,40,60,70,100,0,20,90,5,30,50"
+crop,q706_cropShareAg,crop_income_importance,How important is ${q115_crop} crop to your household income?,"Medium,Low,High"
+crop,q707_cropSP,current_crop_sellingprice,Current selling price for ${q115_crop} crop sold to market? (Rs/ quintal),
+crop,q708_cropAvgSP,crop_avg_sellingprice,Average selling price for ${q115_crop} crop sold to market (Rs / quintal) (average over the last five years),
+crop,,crop_agincome_share_5year,Share of total agricultural income derive from $crop (%)? (approximate value over the last 5 years),
+,,,,
+cropcut,,cropcut_previous_participation,Previous year participation in cropcut?,
+cropcut,cropCutDone,cropcut_done,Was crop cut done in your field?,"No,Yes"
+cropcut,,cropcut_date,Cropcut year,
+cropcut,,cropcut_quadrants,Number of cropcut quadrants,
+cropcut,,fieldID,,
+cropcut,,crop,,
+cropcut,,ID,,
+cropcut,,tagb_quad_1,Total above ground biomass- fresh weight from quadrant (kg) ,
+cropcut,,area_quad_1,Enter the area of the first quadrant? (unit to be defined as per region selection),
+cropcut,,grain_weight_quad_1,Grain weight(kg) in  the second quadrant,
+cropcut,,moist_quad_1,Moisture % of grain at the time of measuring grain weight,
+cropcut,,tagb_quad_2,Total above ground biomass- fresh weight from quadrant (kg) ,
+cropcut,,area_quad_2,Enter the area of the first quadrant? (unit to be defined as per region selection),
+cropcut,,grain_weight_quad_2,Grain weight(kg) in  the second quadrant,
+cropcut,,moist_quad_2,"Moisture % of grain at the time of measuring grain
+weight",
+cropcut,,tagb_quad_3,Total above ground biomass- fresh weight from quadrant (kg) ,
+cropcut,,area_quad_3,Enter the area of the first quadrant? (unit to be defined as per region selection),
+cropcut,,grain_weight_quad_3,Grain weight(kg) in  the second quadrant,
+cropcut,,moist_quad_3,"Moisture % of grain at the time of measuring grain
+weight",
+cropcut,ccCheck,,"You have pulled data for ${fname} who resides in village: ${village}; 
+block : ${block}; 
+district : ${district} ;
+contact number is : ${mobile} ;
+grain yield is : ${grainYield_tonPerHa} ton per hectare
+
+If all the information entered is true then proceed ahead else go back and recheck the farmer's name on which you did crop cut",
+,,,,
+landholding,C,,Land Unit and Ownership,
+landholding,q301_LLU,llu,Select the local land unit used by ${q110_fName} referring to the largest plot ,"Kattha,Acre,Bigha,Decimal,Dhur,Guntha"
+landholding,q302_acreConv,local_to_acre,How many ${q301_LLU} are in 1 acre?,
+landholding,q303_cultLand,local_to_ha,How many ${q301_LLU} are in 1 hectare?,
+landholding,,total_landholding,Total landholding,
+landholding,q303_cultLand,total_cultivated_land,Total cultivated land (owned and leased) in this season in ${q301_LLU},
+landholding,total_rice_cult_area,total_crop_cult_area,Total crop cultivated area (crop specific),
+landholding,largest_plot_area,surveyed_plot,Largest plot (Survyed plot),
+landholding,,total_land_leased_in,Land leased in (Kattha),
+landholding,,total_land_leased_out,Land leased out in Kattha,
+,,,,
+plot_characteristics,q307_largestPlotType,ownership,Type of ownership of the largest [${q305_cropLargestArea}__${q301_LLU} ] ${q115_crop} plot ?,"Leased-in,Owned,Share Cropping"
+plot_characteristics,q401_soilTexture,soil_texture,Soil texture of the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot,"Medium,Light,Heavy"
+plot_characteristics,q404_RecedeWater,recede_water,"After flooding/flood irrigation, how long does it take to recede water from your largest ${q305_cropLargestArea}__${q301_LLU} plot? ","1 day,4 days,2 Weeks,5 days,7 days,1 Week,4 Weeks,2 days,6 days,3 Weeks,3 days"
+plot_characteristics,q405_drainClass,drainage_class,Drainage class of the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot,"Medium land,Upland,Low land"
+plot_characteristics,q406_soilPerception,soil_perception,Farmer?s perception of soil quality on the plot of ${q305_cropLargestArea}__${q301_LLU} ,"Medium,Low,High"
+,,,,
+crop_establishment,,water_status,Water Satus ,"Rainfed, continous flooded"
+crop_establishment,q402_DryField,dry_field,"At the end of the wet season, when is your largest ${q305_cropLargestArea}__${q301_LLU} plot dry enough to have access for dry crop?","After 4th week of December,4th week of November,3rd week of December,4th week of October,3rd week of November,4th week of December,Before 3rd week of October,3rd week of October,1st week of November,1st week of December,2nd week of December,2nd week of November"
+crop_establishment,q403_DryField5Years,dry_field_five_year_avg,"Over the last five years, at the end of the wet season, when is your largest ${q305_cropLargestArea}__${q301_LLU} plot dry enough to have access for dry crop?","After 4th week of December,4th week of November,3rd week of December,4th week of October,3rd week of November,4th week of December,Before 3rd week of October,3rd week of October,1st week of November,1st week of December,2nd week of December,2nd week of November"
+crop_establishment,,was_land_fallow,Was  the largest plot  fallow between two crops (Wheat and previous crop)?  ,
+crop_establishment,,fallow_duration,"Fallow duration(days) between two crops  (Harvested rice and the previous crop)
+ (Keep ""0"" if there is no fallow)",
+crop_establishment,,water_logged_during_fallow,During fallow period was it water logged?,
+crop_establishment,,fallow_waterlogged_days,"If yes, for how many days the land was waterlogged? ",
+crop_establishment,q407_prevCrop,previous_crop,Previous major crop cultivated before ${q115_crop} in ${q305_cropLargestArea}__${q301_LLU} plot,"Jowar,Redgram,PigeonPea,Soybean,Caster,Rice,Maize,Bajra,Turmeric,Lentil,GreenManure,Greengram,Vegetables,Chilli,Wheat,Mentha,Cotton,Sugarcane,Blackgram,Sunflower,Groundnut,IndianMustard,Pulses,Other,Fallow,Chickpea (Gram),Banana,Mungbean"
+crop_establishment,,other_previous_crop,Name of other previous crop,
+crop_establishment,q408_ThirdCrop,third_crop_yesno,Have you grown any third crop on ${q305_cropLargestArea}__${q301_LLU} plot,"No,Yes"
+crop_establishment,q409_ThirdCropName,third_crop_name,Select the third crop grown on ${q305_cropLargestArea}__${q301_LLU} plot,"Jowar,Redgram,PigeonPea,Tobacco,Potato,Caster,Rice,Soybean,Maize,Bajra,Turmeric,GreenManure,Greengram,Vegetables,Chilli,Wheat,Mentha,Cotton,Blackgram,Sunflower,Groundnut,IndianMustard,Pulses,Other,Fallow,Mungbean"
+crop_establishment,q410_prevCropTillage,prev_crop_tillage,What was the tillage type for previous ${q407_prevCrop} crop in ${q305_cropLargestArea}__${q301_LLU} plot? (select all that apply),"No tillage,Other,Tyne cultivator,4 wheel tractor rotavator,Puddling (wet tillage) (NOT applicable for Wheat),Strip tillage,Bullock drawn plough,Disc harrow,2 wheel tractor rotavator"
+crop_establishment,,prev_crop_tillage_others,Other tillage (specify),
+crop_establishment,pCHarv,prev_crop_harvest_date,Enter date of previous ${q407_prevCrop} crop HARVEST in ${q305_cropLargestArea}__${q301_LLU} plot,
+crop_establishment,q412_pharvMethod,prev_crop_harvest_method,What was the method of previous crop harvesting?,"Combine,Reaper,Manual"
+crop_establishment,,residue_retained,Was previous crop residue retainde?,
+crop_establishment,,prev_crop_residue_perc,what percentage of residue was retained from previous crop?,
+crop_establishment,q413_pcropresidue ,prev_crop_residue,${q407_prevCrop} crop residue was-,"Burnt in the field,Removed from the field,Retained in the field"
+crop_establishment,,other_crop_residue,Other crop residue,
+crop_establishment,q414_VarName ,variety_name,Variety name of ${q115_crop},"CBW38,PBW2076,Radhika,P3522,BR8,WH1105,BRRIDhan43,Silki,DKC9081,PHB71_hybrid,Ranjit,SabourSurbhit,Pioneer27P63,SabourSampann,US312_hybrid,WK1204,ShriRam505,RajendraMansoori1,Mansuri_MTU7029,BRRIDhan46,GangaKaveri_MTU7029,BR11,BRRIDhan41,UP306,Binadhan18,HD2967,P6607,BL 4341,NHR31_hybrid,Binadhan17GSR,Pioneer3522,Gorakhnath,PAC740,BRRIDhan58,Diamond_hybrid,Dhanrekha,US382_hybrid,Sukkha1,BR14,Sampada,Swanam,HI1563,BR26,NW1012,BRRIDhan31,Pioneer9081,Jhapa,Iratom24,Kargil22,RR21,Aditya,RajendraKasturi,Kranti,Binadhan11,Binadhan4,Pioneer3535,Arize6129_hybrid,Upaj,BR1,BR24,SupremeSona,Gautam,Binayak,NK5251_hybrid,Garima,MiniMansuri_MTU7029,BRRIDhan33,Sukkha4,BRRIDhan39,BRRIDhan50,P3355,HD2985,Dekalb6607,Tez_Arize_hybrid,Sankar_hybrid,Binadhan10,HD3118,BR12,Baaz,BR22,Suryamukhi,Pioneer3523,BRRIDhan28,Poonam,BR7,Damini,RHM406_hybrid,Sonali,GoldenSambha_BPT5204,HW2045,KP108,Pioneer3396,Prasanna,Jaya,BRRIDhan40,Binadhan6,BRRIDhan29,BR4,Hero22,RajendraSuhasini,Sudha,Pioneer27P31_hybrid,Chaite4,BR21,BR25,SabourHarshit,BRRIDhan44,BR19,Prachanda,HUW234,HD2824,UP262,BR10,MTU52,BR15,P3533,PusaSugandh5,BRRIDhan62,Khajura,Bhrikuti,PBW550,PAC835_hybrid,NL1,Sonam,BR9,BRRIDhan27,Ramdhan,Bhagwan,Sabitri,Binadhan13,BPT5207,SL8,DBW14,Loknath,NL2,Pioneer27P37_hybrid,SabourArdhjal,K307,Sukkha2,NW2036,HD3059,Arize6444Gold_hybrid,JK401_hybrid,SabourDeep,P7720,HD2733,Dekalb9103,NL297,Binadhan12,Pioneer9120,P3396,Laxmi,BhagalpurKatarni,HaritaGold152,Pioneer27P31,Kedar,PHB72_hybrid,SuperMoti,K9107,PBW502,Binadhan7,P2136,Sampoorna,MotiGold,BPT5204,P3322,Pioneer3355,PBW373,MTU1001,MTU7026,SabourNirjal,Dekalb9120,Prabhat,Pioneer30V92,Dhanya775_hybrid,Maheen,BR2,NK7720,P2277,PAC835,R20,HD3086,Kundan,MTU1010,Binadhan9,PBW167,Binasail,Swargadwari,P3335,SabourShri,Sukkha3,Dekalb9135,PAC751ADVANTA,Vijay,Pioneer27P63_hybrid,SUPER172,BRRIDhan48,RajendraBhagwati,WH711,BR23,Dekalb3522,BRRIDhan42,Subolata,RajendraShweta,KW412,BR20,Hardinath,DBW17,LOK1,Minikit,P3196,Sarwada,Binadhan15,Monsanto9146,BR3,Kaberi,MTU7029,Sarju52,BR18,BH21,BRRIDhan51,BRRIDhan32,DKC835,P9081,PBW443,Ankur,WR544,NL971,Radha4,BRRIDhan45,DPW621_50,K2888,SabourSamriddhi,Binadhan5,RajendraSaraswati,Dekalb9081,Tubuliya,SabourShresth,Moti,Unknown,PAC751,BRRIDhan56,SUPER303,Arize6444_hybrid,MTU7027,BRRIDhan52,DY69,PBW154,Arize6120_hybrid,Dhanwan,Mungeriya,Local,JK2082_hybrid,Binadhan8,Pioneer3401,NL3,Nano_hybrid,BRRIDhan30,BRRIDhan34,SwarnaSub1,SpeedCrystal_hybrid,BR5,Binadhan14,Binadhan16,Pioneer3501,Gangotri,Other,Golden_MTU7029,KalaNamak,PBW343,Sahabhagi,Dhaulagiri,Agahani,Basmati,Janaki,Radha9,ShushkSamrat,Maina,BR16,BRRIDhan47,BRRIDhan49,P3501"
+crop_establishment,q414a_OtherVarName,variety_name_other,Enter name of other ${q115_crop} variety,
+crop_establishment,q415_varType,variety_type,What is the variety type of ${q115_crop}?,"Hybrid,Improved,Other"
+crop_establishment,,tillage_method,Tillage method,"conventional tillage, Reduced tillage, no tillage"
+crop_establishment,,tillage_method_year,For how many years have you used the tillage method?,
+crop_establishment,q416_cropEst,ce_method,${q115_crop} establishment method in the largest ${q305_cropLargestArea}__${q301_LLU} plot,"Manual transplanted (Random),Manual transplanted in line,Zero tillage,Directly sown followed by beushening,Broadcasting,Manual line sowing,Other,Machine transplanted,Directly sown by seed drill,Directly sown by broadcast method,Seed drill,Line sowing after tillage"
+crop_establishment,,other_ce_method,,
+crop_establishment,,tillage_rotavator_2wt,"If tillage by rotavator, number of years of continuous use in the largest crop plot",
+crop_establishment,,tillage_rotavator_4wt,"If tillage by rotavator, number of years of continuous use  in the largest crop plot",
+crop_establishment,,,,
+crop_establishment,,total_tillage_times,Number of times of tillage (including puddling),
+crop_establishment,q417_IrriCrpEst,ce_irrigation,Did you apply irrigation at the time of crop establishment in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot?,"No,Yes"
+crop_establishment,q418_LandPrep,land_prep_method,Land preparation method in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot (select all that apply),"No tillage,Puddling,Bullock drawn plough,Tyne cultivator,4 wheel tractor rotavator,Strip tillage,Puddling (Wet tillage),Disc harrow,2 wheel tractor rotavator"
+crop_establishment,q419_RotUseYear,rotavator_till_number_of_years,"If tillage by rotavator, number of years of continuous use in ${q305_cropLargestArea}__${q301_LLU} plot","10,9,2,3,7,8,5,6,1,4"
+crop_establishment,riceNursery,date_nursery_estd,"If rice transplanted, date of nursery establishment for ${q305_cropLargestArea}__${q301_LLU} plot",
+crop_establishment,,planting_date_dsr,If rice planted (DSR),
+crop_establishment,seedingSowingTransplanting,transplanting_day,Transplanting (Days after nursery establishment),
+crop_establishment,,transplanting_date,date of transplanting,
+crop_establishment,,years_continuous_use_sp,Years of continuous use of the surveyed plot,
+crop_establishment,,cost_of_dsr,Cost of DSR (if dsr),
+crop_establishment,,was_sowing_delayed,Was wheat planting delayed past November 30th? (date),
+crop_establishment,whSDelayReason,delay_reasons,"If wheat planting was delayed past November 30 in this season, why? Sowing date : ${q421_seedingSowingTransDate} (Select all that apply)","Non availability of tillage equipment,Non availability of seed,No delay,Lack of moisture at sowing,Other,Lack of funds,Labor shortage,Land too wet for ploughing,No availability of fertilizers,Previous crop (e.g. rice) harvested late"
+crop_establishment,whOtherSDelay,delay_reason_others,Enter other reason in delay of sowing this season,
+crop_establishment,whComDelayReason,delay_common_reason,"If wheat planting is commonly delayed past November 30th in most years, why? (Select all that apply)","Non availability of tillage equipment,Non availability of seed,Lack of moisture at sowing,Lack of funds,Labor shortage,Land too wet for ploughing,No availability of fertilizers,Previous crop (e.g. rice) harvested late,No Delay"
+crop_establishment,whOtherComDelay,delay_common_reason_oth,Enter other reason if wheat planting is commonly delayed past Nov 30th in most year.,
+crop_establishment,q424_nursDetFactor,nursery_determining_factor,What mostly determines the timing of rice nursery establishment? (Select all that apply),"Weather forecast information,Irrigation water availability,Other,Arrival of pre-monsoon showers,Seed availability,Practices of neighboring farmers,Calendar date"
+crop_establishment,,other_nursery_determining_factor,,
+crop_establishment,q425_transDetFactor,timing_determing_factor,What mostly determines the timing of rice planting in the largest ${q305_cropLargestArea}__${q301_LLU} plot? (Select all that apply),"Seedling age (rice), harvest previous crop, Irrigation water availability,Labor availability,Arrival of rains,Calendar date"
+crop_establishment,q426_cropSeedAmt,seed_amount,${q115_crop} seed amount used for the largest ${q305_cropLargestArea}__${q301_LLU} plot in kg,
+crop_establishment,q427_seedSource,seed_source,What is the source of seed for ${q115_crop} used for the largest ${q305_cropLargestArea}__${q301_LLU} plot?,"Self saved,Cooperative,Neighbor or Relative,Private seed dealer,Government / KVK / SAU"
+crop_establishment,,seed_source_other,Other seed source,
+crop_establishment,,seed_cost,Seed cost (NRs/kg),
+crop_establishment,,seed_treatment,Is Seed Treatment done?,
+crop_establishment,,cost_seed_treatment,Cost of seed treatment (NRs),
+crop_establishment,,seedbed_prep_method,Seedbed preparation method ,
+crop_establishment,,diesel_seedbed_prep,Diesel (liter) consumed for tillage operation to prepare seedbed ,
+crop_establishment,,diesel_surveyedland_prep,Diesel (liter) consumed for tillage operation to prepare surveyed plot,
+crop_establishment,,total_diesel_cost_ce,Total diesel cost for tillage (Taka) (Currecy to be determined by selection of country),
+crop_establishment,,tillage_cost_ce,Tillage crop establishment cost in the surveyed  plot,
+crop_establishment,,payment_method_transplanting,How did you pay for the transplanting cost?,
+crop_establishment,,cost_contract_tp,"If transplanting was done by contract basis, transplanting cost of the surveyed plot",
+crop_establishment,,sowing_date,For crops other than rice use this as the sowing date,
+crop_establishment,,cost_daily_tp,"If transplanting was done by daily basis, transplanting cost of the surveyed plot",
+crop_establishment,,cost_petrol_tp,"If transplanting was done by rice transplanter, petrol consumed of the surveyed plot during transplanting",
+crop_establishment,,cost_tp,"If transplanting was done by rice transplanter, total cost of transplanting",
+crop_establishment,,reason_delay_tp,"If the transplanting was late, mention the reason",
+,,,,
+fertility_management,E,,Fertility management in the largest ${q305_cropLargestArea}__${q301_LLU}  for ${q115_crop},
+fertility_management,q5101_statSHC,shc_recommendation,Are soil health card recommendations available for the largest  ${q305_cropLargestArea}__${q301_LLU} plot?,"Yes, but information not used,No,Yes, and information used"
+fertility_management,,was_organic_fert_applied,Was organic fertilizer applied?,
+fertility_management,,organic_fert_applied,Which organic fertilizer was applied in the surveyed plot?s,
+fertility_management,,organic_fert_type,Type of Organic fertilzier applie?,
+fertility_management,q5102_FYM,fym_applied,Was Farm Yard Manure (FYM) applied in the largest ${q305_cropLargestArea}__${q301_LLU} plot in last one year?,"No,Yes"
+fertility_management,q5103_NoFYMApplication,fym_no_applied,"If no, What is your reason for not using FYM?","Used for fuel,Sold,Not Available"
+fertility_management,q5104_FYMAmount,fym_applied_qty,How much FYM in quintal is applied during each application in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot?,
+fertility_management,q5105_FYMApplication,fym_applied_avg_five_year_times,"Over the last five years, how many times FYM was applied in the largest ${q305_cropLargestArea}__${q301_LLU} plot?","10,9,2,3,0,7,8,5,6,1,4"
+fertility_management,,fym_cost,Cost of the FYM applied in the largest plot? (NRs/ quintal),
+fertility_management,,fym_type,Type of FYM applied in the largest plot?,
+fertility_management,,qty_compost,"Quantity of compost, applied in the largest plot? (quintal)",
+fertility_management,,cost_compost,Cost of the compost applied in the largest plot? (NRs/ quintal),
+fertility_management,,type_compost,Type ofcompost applied in the largest plot?,
+fertility_management,,compost_prod_method,Production method of compost ,
+fertility_management,,qty_om,"Quantity of market availale organic manure, applied in the largest plot? (quintal)",
+fertility_management,,cost_om,Cost of the market availale organic manure applied in the largest plot? (NRs/ quintal),
+fertility_management,,type_om,Type of market availale organic manure applied in the largest plot?,
+fertility_management,,apply_lime,Did you apply lime in your largest plot?,
+fertility_management,,qty_lime,Amount of lime applied in the largest plot (kg)?,
+fertility_management,,cost_lime,Cost of lime (NRs/kg) ?,
+fertility_management,,cowdung_cost,Cost of Cowdung (per kg),
+fertility_management,,cowdung_type,Cowdung type ,
+fertility_management,,qty_cowdung,Total cowdung applied (kg)  ,
+fertility_management,,Manure_cost,Cost of Manure (per kg),
+fertility_management,,manure_type,Manure type in the surveyed plot ?,
+fertility_management,,qty_manure,Total manure applied (kg)  ,
+fertility_management,,vermi_amount,Total vermicompost applied (kg)  in the largest wheat grown plot ?,
+fertility_management,,green_manure_amount,Total green manure applied (kg)  in the largest wheat grown plot ?,
+fertility_management,,vermi_cost,Cost of Vermicompost(kg),
+fertility_management,,green_manure_cost,Cost of Green_manure(kg),
+,,,,
+fertility_management,q5106_applyMineralFert,apply_minfert,Did you apply mineral fertilizer in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot?,"No,Yes"
+,,,,
+detailed_fertility_management,F,,Detailed fertility management in the largest ${q305_cropLargestArea}__${q301_LLU} plot of ${q115_crop},
+detailed_fertility_management,basalFerts,chem_fert_applied,Select the fertilizer(s) applied at planting (basal) for ${q115_crop} (Select all that apply),"SSP,TSP,ZnSO4,NPKS,NPK,None,Boron,MoP,Urea,Other (e.g. Liquid fertilizers),DAP,Gypsum"
+detailed_fertility_management,,chem_fert_applied_others,,
+detailed_fertility_management,q5202_basalDAP,amt_dap_basal,DAP at planting (basal) in kg,
+detailed_fertility_management,q5203_basalNPK,amt_npk_basal,NPK product (mixture fertilizer)at planting (basal) in kg,
+detailed_fertility_management,q5204_basalUrea,amt_urea_basal,Urea at planting (basal) in kg,
+detailed_fertility_management,q5205_basalNPKS,amt_npks_basal,NPKS at planting (basal) in kg,
+detailed_fertility_management,q5206_basalMoP,amt_mop_basal,MoP at planting (basal) in kg,
+detailed_fertility_management,q5207_basalSSP,amt_ssp_basal,SSP at planting (basal) in kg,
+detailed_fertility_management,q5208_basalTSP,amt_tsp_basal,TSP at planting (basal) in kg,
+detailed_fertility_management,q5209_basalZnSO4,amt_znso4_basal,Zinc Sulphate at planting (basal) in kg,
+detailed_fertility_management,q5210_basalGypsum,amt_gypsum_basal,Gypsum at planting (basal) in kg,
+detailed_fertility_management,q5211_basalBoron,amt_boron_basal,Boron at planting (basal) in kg,
+detailed_fertility_management,q52111_otherBasalFert,other_chem_ferts,Enter name of other basal fertilizer applied,
+detailed_fertility_management,q52112_otherBasalFertAmt,amt_other_chem_ferts,Total ${q52111_otherBasalFert} applied in kg,
+detailed_fertility_management,firstTopDressFert,td1_fert_applied,Select the fertilizer(s) applied at first top dressing for ${q115_crop} (Select all that apply),"SSP,TSP,ZnSO4,NPKS,NPK,None,Boron,MoP,Urea,Other (e.g. Liquid fertilizers),DAP,Gypsum"
+detailed_fertility_management,q5212_1tdDAP,td1_amt_dap,"Basal DAP applied: ${q5202_basalDAP} kg
+Enter DAP amount applied at first top dressing in KG
+",
+detailed_fertility_management,q5213_1appDaysDAP,fert_dap_td1_das,Timing of first DAP top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5214_1tdNPK,td1_amt_npk,"Basal NPK applied: ${q5203_basalNPK} kg
+Enter NPK amount applied at first top dressing in kg",
+detailed_fertility_management,q5215_1appDaysNPK,fert_npk_td1_das,Timing of first NPK top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5216_1tdUrea,td1_amt_urea,"Basal Urea applied: ${q5204_basalUrea} kg
+Enter Urea amount applied at first top dressing in kg
+",
+detailed_fertility_management,q5217_1appDaysUrea,fert_urea_td1_das,Timing of first Urea top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5218_1tdNPKS,td1_amt_npks,"Basal NPKS applied: ${q5205_basalNPKS} kg
+Enter NPKS amount applied at first top dressing in kg",
+detailed_fertility_management,q5219_1appDaysNPKS,fert_npks_td1_das,Timing of first NPKS top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5220_1tdMoP,td1_amt_mop,"Basal MoP applied: ${q5206_basalMoP} kg
+Enter MoP amount applied at first top dressing in kg",
+detailed_fertility_management,q5221_1appDaysMoP,fert_mop_td1_das,Timing of first MoP top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5223_1tdSSP,td1_amt_ssp,"Basal SSP applied: ${q5207_basalSSP} kg
+Enter SSP amount applied at first top dressing in kg",
+detailed_fertility_management,q5224_1appDaysSSP,fert_ssp_td1_das,Timing of first SSP top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5225_1tdTSP,td1_amt_tsp,"Basal TSP applied: ${q5208_basalTSP} kg
+Enter TSP amount applied at first top dressing in kg
+",
+detailed_fertility_management,q5226_1appDaysTSP,fert_tsp_td1_das,Timing of first TSP top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5227_1tdZnSO4,td1_amt_znso4,"Basal Zinc Sulphate applied: ${q5209_basalZnSO4}
+Enter Zinc Sulphate amount applied at first top dressing in kg",
+detailed_fertility_management,q5228_1appDaysZnSO4,fert_znso4_td1_das,Timing of first Zinc Sulphate top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5229_1tdGypsum,td1_amt_gypsum,"Basal Gypsum applied: ${q5210_basalGypsum}
+Total Gypsum amount applied at first top dressing in kg",
+detailed_fertility_management,q5230_1appDaysGypsum,fert_gypsum_td1_das,Timing of first Gypsum top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q5231_1tdBoron,td1_amt_boron,"Basal Boron applied: ${q5211_basalBoron}
+Enter Boron amount applied at first top dressing in kg",
+detailed_fertility_management,q5232_1appDaysBoron,fert_boron_td1_das,Timing of first Boron top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,q52321_1tdOtherFert,td1_oth_name,Enter other fertilizer name applied ,
+detailed_fertility_management,q52322_1tdOtherFertAmt,td1_amt_oth,${q52321_1tdOtherFert} amount applied in kg,
+detailed_fertility_management,q52323_1appDaysOtherFert,fert_oth_td1_das,Timing of first ${q52321_1tdOtherFert} top dressing (in days after sowing/transplanting) ,
+detailed_fertility_management,secondTopDressFert,td2_fert_applied,Select the fertilizer(s) applied for second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG (Select all that apply),"SSP,TSP,ZnSO4,NPKS,NPK,None,Boron,MoP,Urea,Other (e.g. Liquid fertilizers),DAP,Gypsum"
+detailed_fertility_management,q5233_2tdDAP,td2_amt_dap,"Basal DAP applied: ${q5202_basalDAP} kg
+DAP applied at First top dressing: ${q5212_1tdDAP} kg
+Enter DAP amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG (Select all that apply)",
+detailed_fertility_management,q5234_2appDaysDAP,fert_dap_td2_das,Days of application of second top dressing DAP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5235_2tdNPK,td2_amt_npk,"Basal NPK applied: ${q5203_basalNPK} kg
+NPK applied at First top dress: ${q5214_1tdNPK} kg
+Enter NPK product amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5236_2appDaysNPK,fert_npk_td2_das,Days of application of second top dressing NPK after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5237_2tdUrea,td2_amt_urea,"Basal Urea applied: ${q5204_basalUrea} kg
+Urea applied at First top dress : ${q5216_1tdUrea} kg
+Enter Urea amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5238_2appDaysUrea,fert_urea_td2_das,Days of application of second top dressing Urea after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot in KG,
+detailed_fertility_management,q5239_2tdNPKS,td2_amt_npks,"Basal NPKS applied: ${q5205_basalNPKS} kg
+NPKS applied at First top dress : ${q5218_1tdNPKS} kg
+Enter NPKS amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5240_2appDaysNPKS,fert_npks_td2_das,Days of application of second top dressing NPKS after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5241_2tdMoP,td2_amt_mop,"Basal MoP applied: ${q5206_basalMoP} kg
+MoP applied at First top dress: ${q5220_1tdMoP} kg
+Enter MoP amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5242_2appDaysMoP,fert_mop_td2_das,Days of application of second top dressing MoP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5243_2tdSSP,td2_amt_ssp,"Basal SSP applied: ${q5207_basalSSP} kg
+SSP applied at First top dress: ${q5223_1tdSSP}   kg
+Enter SSP amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5244_2appDaysSSP,fert_ssp_td2_das,Days of application of second top dressing SSP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5245_2tdTSP,td2_amt_tsp,"Basal TSP applied: ${q5208_basalTSP} kg
+TSP applied at First top dress: ${q5225_1tdTSP} kg
+Enter TSP amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5246_2appDaysTSP,fert_tsp_td2_das,Days of application of second top dressing TSP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5247_2tdZnSO4,td2_amt_znso4,"Basal Zinc Sulphate applied: ${q5209_basalZnSO4}
+Zinc Sulphate applied at First top dress: ${q5227_1tdZnSO4} kg
+Enter Zinc Sulphate amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5248_2appDaysZnSO4,fert_znso4_td2_das,Days of application of second top dressing Zinc Sulphate after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5249_2tdGypsum,td2_amt_gypsum,"Basal Gypsum applied: ${q5210_basalGypsum}
+Gypsum applied at First top dress: ${q5229_1tdGypsum}
+Enter Gypsum amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5250_2appDaysGypsum,fert_gypsum_td2_das,Days of application of second top dressing Gypsum after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5251_2tdBoron,td2_amt_boron,"Basal Boron applied: ${q5211_basalBoron}
+Boron applied at First top dress: ${q5231_1tdBoron} kg
+Enter Boron amount applied at second top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5252_2appDaysBoron,fert_boron_td2_das,Days of application of second top dressing Boron after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q52521_2tdOtherFert,td2_oth_name,Enter other fertilizer name applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,
+detailed_fertility_management,q52522_2tdOtherFertAmt,td2_amt_oth,${q52521_2tdOtherFert} amount applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,
+detailed_fertility_management,q52523_2appDaysOtherFert,fert_oth_td2_das,Days of application of second top dressing ${q52521_2tdOtherFert} in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,thirdTopDressFert,td3_fert_applied,Select the fertilizer(s) applied for third top dressing (Select all that apply),"SSP,TSP,ZnSO4,NPKS,NPK,None,Boron,MoP,Urea,Other (e.g. Liquid fertilizers),DAP,Gypsum"
+detailed_fertility_management,q5253_3tdDAP,td3_amt_dap,"Basal DAP applied: ${q5202_basalDAP} kg
+DAP applied at First top dressing: ${q5212_1tdDAP} kg
+DAP applied at Second top dressing: ${q5233_2tdDAP} kg
+Enter DAP amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5254_3appDaysDAP,fert_dap_td3_das,Days of application of third top dressing DAP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5255_3tdNPK,td3_amt_npk,"Basal NPK applied: ${q5203_basalNPK} kg
+NPK applied at First top dress: ${q5214_1tdNPK} kg
+NPK applied at Second top dress: ${q5235_2tdNPK} kg
+Enter NPK product amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5256_3appDaysNPK,fert_npk_td3_das,Days of application of third top dressing NPK after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5257_3tdUrea,td3_amt_urea,"Basal Urea applied: ${q5204_basalUrea} kg
+Urea applied at First top dress : ${q5216_1tdUrea} kg
+Urea applied at Second top dress: ${q5237_2tdUrea} kg
+Enter Urea amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5258_3appDaysUrea,fert_urea_td3_das,Days of application of third top dressing Urea after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5259_3tdNPKS,td3_amt_npks,"Basal NPKS applied: ${q5205_basalNPKS} kg
+NPKS applied at First top dress : ${q5218_1tdNPKS} kg
+NPKS applied at Second top dress: ${q5239_2tdNPKS} kg
+Enter NPKS amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5260_3appDaysNPKS,fert_npks_td3_das,Days of application of third top dressing NPKS after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5261_3tdMoP,td3_amt_mop,"Basal MoP applied: ${q5206_basalMoP} kg
+MoP applied at First top dress: ${q5220_1tdMoP} kg
+MoP applied at Second top dress: ${q5241_2tdMoP} kg
+Enter MoP amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5262_3appDaysMoP,fert_mop_td3_das,Days of application of third top dressing MoP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5263_3tdSSP,td3_amt_ssp,"Basal SSP applied: ${q5207_basalSSP} kg
+SSP applied at First top dress: ${q5223_1tdSSP}   kg
+SSP applied at Second top dress: ${q5243_2tdSSP} kg
+Enter SSP amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5264_3appDaysSSP,fert_ssp_td3_das,Days of application of third top dressing SSP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5265_3tdTSP,td3_amt_tsp,"Basal TSP applied: ${q5208_basalTSP} kg
+TSP applied at First top dress: ${q5225_1tdTSP} kg
+TSP applied at Second top dress: ${q5245_2tdTSP} kg
+Enter TSP amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5266_3appDaysTSP,fert_tsp_td3_das,Days of application of third top dressing TSP after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5267_3tdZnSO4,td3_amt_znso4,"Basal Zinc Sulphate applied: ${q5209_basalZnSO4} kg
+Zinc Sulphate applied at First top dress: ${q5227_1tdZnSO4} kg
+Zinc Sulphate applied at Second top dress: ${q5247_2tdZnSO4} kg
+Enter Zinc Sulphate amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG
+",
+detailed_fertility_management,q5268_3appDaysZnSO4,fert_znso4_td3_das,Days of application of third top dressing Zinc Sulphate after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5269_3tdGypsum,td3_amt_gypsum,"Basal Gypsum applied: ${q5210_basalGypsum} kg
+Gypsum applied at First top dress: ${q5229_1tdGypsum} kg
+Gypsum applied at Second top dress: ${q5249_2tdGypsum} kg
+Enter Gypsum amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5270_3appDaysGypsum,fert_gypsum_td3_das,Days of application of third top dressing Gypsum after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q5271_3tdBoron,td3_amt_boron,"Basal Boron applied: ${q5211_basalBoron}
+Boron applied at First top dress: ${q5231_1tdBoron} kg
+Boron applied at Second top dress: ${q5251_2tdBoron} kg
+Enter Boron amount applied at third top dressing in ${q305_cropLargestArea}__${q301_LLU} plot in KG",
+detailed_fertility_management,q5272_3appDaysBoron,fert_boron_td3_das,Days of application of third top dressing Boron after sowing / transplanting in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,q52721_3tdOtherFert,td3_oth_name,Enter other fertilizer name applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,
+detailed_fertility_management,q52722_3tdOtherFertAmt,td3_amt_oth,${q52721_3tdOtherFert} amount applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,
+detailed_fertility_management,q52723_3appDaysOtherFert,fert_oth_td3_das,Days of application of third top dressing ${q52721_3tdOtherFert} in ${q305_cropLargestArea}__${q301_LLU} plot,
+detailed_fertility_management,totAmtDAP,total_dap_applied,,
+detailed_fertility_management,totAmtNPK,total_npk_applied,,
+detailed_fertility_management,totAmtUrea,total_urea_applied,,
+detailed_fertility_management,totAmtNPKS,total_npks_applied,,
+detailed_fertility_management,,grade_npk,,
+detailed_fertility_management,,grade_npks,,
+detailed_fertility_management,gradeN,grade_N,Select the grade of Nitrogen in NPK/NPKS mixture applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,"10,14,16,12,20,17"
+detailed_fertility_management,gradeP,grade_P,Select the grade of Phosphorous in NPK/NPKS mixture applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,"35,20,17,26,32"
+detailed_fertility_management,gradeK,grade_K,Select the grade of Potassium in NPK/NPKS mixture applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,"14,16,0,17,26"
+detailed_fertility_management,gradeS,grade_S,Select the grade of Sulphur in NPK/NPKS mixture applied in ${q305_cropLargestArea}__${q301_LLU} plot in KG,13
+detailed_fertility_management,totAmtMoP,total_mop_applied,,
+detailed_fertility_management,totAmtSSP,total_ssp_applied,,
+detailed_fertility_management,totAmtTSP,total_tsp_applied,,
+detailed_fertility_management,totAmtZnSO4,total_znso4_applied,,
+detailed_fertility_management,totAmtGypsum,total_gypsum_applied,,
+detailed_fertility_management,totAmtBoron,total_boron_applied,,
+detailed_fertility_management,,total_other_fert_applied,,
+detailed_fertility_management,Nitrogen_Kg_ha,n_rate,,
+detailed_fertility_management,Phosphorus_Kg_ha,p_rate,,
+detailed_fertility_management,Potassium_Kg_ha,k_rate,,
+detailed_fertility_management,q5112_priceDAP,dap_price,DAP price per kg ,
+detailed_fertility_management,q5113_priceNPK,npk_price,NPK price per kg ,
+detailed_fertility_management,q5114_priceUrea,urea_price,Urea price per kg ,
+detailed_fertility_management,q5127_priceMoP,mop_price,Price of MoP per kg ,
+detailed_fertility_management,q5115_priceZnSO4,znso4_price,Zinc Sulphate price per kg ,
+detailed_fertility_management,q5116_priceGypsum,gypsum_price,Gypsum price per kg ,
+detailed_fertility_management,q5117_priceBoron,boron_price,Boron price per kg ,
+detailed_fertility_management,q5126_priceNPKS,npks_price,Price of NPKS per kg ,
+detailed_fertility_management,q5128_priceSSP,ssp_price,Price of SSP per kg ,
+detailed_fertility_management,q5129_priceTSP,tsp_price,Price of TSP per kg ,
+detailed_fertility_management,,other_chem_fert_price,Price of Other chemical ferilizer per kg,
+detailed_fertility_management,q5273_fertInfoSource,fert_info_source,What is your source of information on fertilizer/micronutrient use? (Select all that apply),"Cooperatives,Extension agents / KVK / Universities,Input dealers,None,Soil Health Card,Neighbors or family"
+detailed_fertility_management,,fert_info_source_others,Other source of information on fertilizer use,
+detailed_fertility_management,,source_chem_fert_purchase,Source of purchase of chemical fertilizers,
+detailed_fertility_management,,source_chem_fert_purchase_others,Other sources of purchases,
+detailed_fertility_management,q5274_sourceDAP,source_dap,Source of purchase of DAP,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_dap_other,,
+detailed_fertility_management,q5275_sourceNPK,source_npk,Source of purchase of NPK product,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_npk_other,,
+detailed_fertility_management,q5276_sourceUrea,source_urea,Source of purchase of Urea,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_urea_other,,
+detailed_fertility_management,q5277_sourceZnSO4,source_znso4,Source of purchase of ZnSO4,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_znso4_other,,
+detailed_fertility_management,q5278_sourceGypsum,source_gypsum,Source of purchase of Gypsum,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_gypsum_other,,
+detailed_fertility_management,q5279_sourceBoron,source_boron,Source of purchase of Boron,"India for Nepal,Cooperative,Input Dealer/Village level shop"
+detailed_fertility_management,,source_boron_other,,
+detailed_fertility_management,q5280_fertOnTime,fert_timely_available,Is fertilizer / micronutrients generally available on time?,"No,Yes"
+detailed_fertility_management,q5281_avgDelayWeeks,avg_delay_chem_fert, average delay in fertilizer availability in weeks (Select one),"10,9,2,3,7,8,5,6,1,4"
+detailed_fertility_management,,times_urea_applied,Total times urea applied (calculated),
+detailed_fertility_management,,times_dap_applied,Total times dap applied(calculated),
+detailed_fertility_management,,times_mop_applied,Total time mop applied (calculated),
+detailed_fertility_management,,times_znso4_applied,Total times znso4 applied (calculated),
+detailed_fertility_management,,times_ssp_applied,Total times ssp applied (calculated),
+,,,,
+irrigation_management,G,,Irrigation management in ${q305_cropLargestArea}__${q301_LLU}  for ${q115_crop},
+irrigation_management,q5300_irrigAvail,access_to_irrgation,Do you have access to irrigation for the largest ${q305_cropLargestArea}__${q301_LLU} plot of ${q115_crop}?,"No,Yes"
+irrigation_management,q5301_irrigate,irrigation_done,Did you irrigate your largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot?,"No,Yes"
+irrigation_management,,why_no_irrigation,Why did you not irrigate your plot?,
+irrigation_management,,why_no_irrigation_others,Other reasons for not irrigating,
+irrigation_management,q5302_irrigSource,source_of_irrigation,Source of irrigation for ${q305_cropLargestArea}__${q301_LLU} plot for ${q115_crop} (Select all that apply),"River,Pond/Tank,Deep TubeWell,Canal,Shallow TubeWell"
+irrigation_management,,source_irrigation_others,Other source of irrigation (specify),
+irrigation_management,q5304_irrigGrthStage,application_stage,At what stage was irrigation applied in ${q305_cropLargestArea}__${q301_LLU} plot for ${q115_crop}? (Select all that apply),"Flowering,Mid Vegetative,Grain Filling,Early Vegetative"
+irrigation_management,,preseed_DAS,Irrigation apply in pre seeding stage at_______________DBS ,
+irrigation_management,,crownroot_DAS,Irrigation apply in crow Root Initiation  stage at_______________DAS,
+irrigation_management,,tillering_DAS,Irrigation apply in tillering stage at_______________DAS,
+irrigation_management,,jointing_DAS,Irrigation apply in jointing stage at_______________DAS,
+irrigation_management,,flowering_DAS,Irrigation apply in flowering stage at_______________DAS,
+irrigation_management,,milking_DAS,Irrigation apply in milking stage at_______________DAS,
+irrigation_management,,dough_DAS,Irrigation apply in dough stage at_______________DAS,
+irrigation_management,q5305_irrigTimes,irrigation_times,Number of irrigations applied after crop establishment in ${q305_cropLargestArea}__${q301_LLU} plot for ${q115_crop} (Select one),"11,14,18,29,7,5,28,1,4,26,24,16,15,23,27,20,10,9,19,2,21,25,13,22,17,30,6,12,3,0,8"
+irrigation_management,,irrigation_avg_hr,"On average, how many hours did it take you to complete one irrigation event (consider only the time the pump is running)?",
+irrigation_management,,irri_seedling,Number of irrigation applied at seedling stage,
+irrigation_management,,irri_vegetative,Number of irrigation applied at vegetative stage,
+irrigation_management,,irri_bootFlowering,Number of irrigation applied at booting to flowering stages,
+irrigation_management,,irri_grainMaturity,Number of irrigation applied at grain filling to maturity stages,
+,,,,
+irrigation_management,q5401_irrigDecision,irrigation_decision_factor,How do you decide when to irrigate the ${q305_cropLargestArea}__${q301_LLU}  for ${q115_crop}? (Select all that apply),"Soil dryness/cracking,Disappearance of flood water,Visible crop stress,Crop Growth Stages"
+irrigation_management,,irrigation_decision_factor_others,Others factors deciding when to irrigate,
+irrigation_management,q5402_notIrrigReason,constraint_factor,"If ${q115_crop} was not irrigated when required, why? (Select all that apply)","Water not available when required,Pump/Tubewell not available when required,Sufficient Rainfall,Expensive,Other,Irrigation not required"
+irrigation_management,q5403_tubewellDepthFeet,tubewell_depth,Depth of tubewell in FEET used to irrigate ${q305_cropLargestArea}__${q301_LLU}  plot,
+irrigation_management,pumpUse,pump_use,Did ${q110_fName} use pump to irrigate ${q305_cropLargestArea}__${q301_LLU}  plot?,"No,Yes"
+irrigation_management,q5404_pumpEnergy,pump_energy_src,Energy source for the pump,"Diesel,Both electricity and diesel,Electricity"
+irrigation_management,q5405_HpPump,pump_hp,Select the Horsepower of the pump,">1 to 2 HP,10-20 HP,30-40 HP,5-10 HP,>2 to 5 HP,>40 HP,20-30 HP,0 to 1 HP"
+irrigation_management,,irri_manpower,"If traditional method (swing basket, treadle pump, don etc) used for surface irrigation, manpower required for single irrigation (man-day) ",
+irrigation_management,,pump_own_rent,Is the pump used for irrigation owned or rented? ,
+irrigation_management,,type_of_pump,What type of pump do you use? ,
+irrigation_management,,pump_manufactured,Where is it manufactured? ,
+irrigation_management,,pump_manufactured_others,Manufacture in other (Specify),
+irrigation_management,,brand_name,"What is the brand name (record name exactly as spelt on pumpset, including any model number)? ",
+irrigation_management,,distace_from_water_src, How far is the water source from the $plot (meters)?,
+irrigation_management,,water_move,How do you move water from the source to the largest plot?,
+irrigation_management,,water_move_others,Other water movement way ,
+irrigation_management,,tubewell_type,Is the tubewell used for irrigation deep or shallow?,
+irrigation_management,,tubewell_owned,Is the tubewell used for irrigation owned or rented? ,
+irrigation_management,,wait_for_water_access,Were there any months/stages of the season when you had to wait or were unable to access water for irrigation? ,
+irrigation_management,,irrigation_delay_reasons,What was the main cause of delays to irrigation timing? ,
+irrigation_management,,irrigation_delay_reasons_others,Specify other causes for delay,
+irrigation_management,,depth_of_visual_ponding,Specify the depth of visual ponding at which irrigation in stopped,
+irrigation_management,,wait_time_irrigation,"In each month/stage, what was the maximum amount of time you had to wait to access irrigation?",
+irrigation_management,,total_irrigation_cost,"What was the total cost (currency) over the season of irrigation (include costs of fuel, equipment rental and any water access fees) in the largest plot ?",
+irrigation_management,,total_irrigation_fuel_electricity,"Of total irrigation cost, how much was spent on fuel or electricity (NPR) in the largest plot? ",
+irrigation_management,,total_irrigation_fuel_diesel,"Of total irrigation cost, how much was spent on fuel (Diesel)  in the largest plot? ",
+irrigation_management,,total_irrigation_electricity,"Of total irrigation cost, how much was spent on electricity (NPR) in the largest plot? ",
+irrigation_management,,fuel_cost_per_unit,"What was the cost per unit (liter for diesel/petrol/kerosene, kwh for electricity) of fuel in the largest plot?",
+irrigation_management,,pump_rental_fee,How much of total irrigation cost is for pump rental fees for the largest plot?,
+irrigation_management,,pump_rental_rate,What was rental rate ($currency per unit time)?,
+irrigation_management,,pump_rental_unit_time,"Specify Unit of time (e.g per day, per hours,season)",
+irrigation_management,,any_other_fee_irrigation,"Does the total cost of irrigation include any fees for accessing the water source (e.g. borewell rental, canal fees, etc) for the largest plot?",
+irrigation_management,,other_fee_npr,what was the access fee rate ,
+irrigation_management,,other_fee_time,"Specify Unit of time (e.g per day, per hours)",
+irrigation_management,,pay_share,"If crop share, what proportion of crop you need to share with pump owner?",
+irrigation_management,,pay_machine,"If pay for machine and fuel, how much (Taka) did you pay for machine for a single crop season? ",
+irrigation_management,,pay_season,"If seasonal contract, how much (Taka) did you pay to the pump owner for a unit area of land in a single season (Tk/ unit land)?",
+irrigation_management,,area_pump,Mention the area of land (Decimal),
+irrigation_management,q5406_layFlatPipe,lay_flat_pipe,Did you use lay ? flat pipe to irrigate the ${q305_cropLargestArea}__${q301_LLU}  plot?,"No,Yes"
+,,,,
+production_constraints,H,,Production constraints in ${q305_cropLargestArea}__${q301_LLU}  for ${q115_crop},
+production_constraints,q5501_drought,face_drought,Did your ${q115_crop} crop face drought stress? (in ${q305_cropLargestArea}__${q301_LLU}),"No,Yes"
+production_constraints,q5502_droughtGS,drought_growth_stage,In which growth stage(s) did drought affect the crop? (in ${q305_cropLargestArea}__${q301_LLU}) (Select all that apply),"Flowering,Mid Vegetative,Grain Filling,Early Vegetative"
+production_constraints,,drought_severity,Severity of overall drought stress in the surveyed plot,
+production_constraints,q5503_flood,flood_stress,Did your ${q115_crop} crop face flood stress? (in ${q305_cropLargestArea}__${q301_LLU}),"No,Yes"
+production_constraints,q5504_floodGS,flood_growth_stage,In which growth stage(s) did flood affect the crop? (in ${q305_cropLargestArea}__${q301_LLU}) (Select all that apply),"Flowering,Mid Vegetative,Grain Filling,Early Vegetative"
+production_constraints,,flood_severity,,
+production_constraints,,face_lodging_prob,Did you face lodging problem in the  crop cut plot  in the largest wheat grown plot??,
+production_constraints,q5511_lodgingPercent,lodging_perc,Percentage of crop that lodged (%) in ${q305_cropLargestArea}__${q301_LLU},"10,80,40,60,70,100,0,20,90,5,30,50"
+,,,,
+weed_and_pest_control,,weed_density,Weed density in the largest plot,
+weed_and_pest_control,,weed_control,Did you control weed in the largest  plot?,
+weed_and_pest_control,,weed_conMethod,Methods used to control weed,
+weed_and_pest_control,herbapp,herbicide_applied,Did you apply herbicide for ${q115_crop}?,"No,Yes"
+weed_and_pest_control,herbAppTimes,herbicide_times_applied,How many times did you apply herbicide in ${q305_cropLargestArea}__${q301_LLU}?,"3,2,1"
+weed_and_pest_control,herbtype,herbicide_type,Type of herbicide applied for ${q115_crop},"Both,Pre-emergence,Post-emergence"
+weed_and_pest_control,q5601_1herbName,herbicide_name,Name of herbicide for first application in ${q305_cropLargestArea}__${q301_LLU} plot,
+weed_and_pest_control,q5602_1herbAppDays,herbicide_timing_das,Timing of first herbicide application (in days after sowing/transplanting) plot,
+weed_and_pest_control,q5602_1herbAppDays,herbicide_amount,Amount of herbicide (ml/ mg)  in the largest wheat grown plot?,
+weed_and_pest_control,q5602_1herbAppDays,herbicide_total_cost,Total cost of herbicide applied,
+weed_and_pest_control,manualWeedTimes,manual_weeding_times,How many times did you do manual weeding in ${q305_cropLargestArea}__${q301_LLU}?,"3,2,0,1"
+weed_and_pest_control,q5607_1manualWeeding,manual_weeding_das,Time of first manual weeding ( days after crop establishment / sowing in ${q305_cropLargestArea}__${q301_LLU} plot),
+weed_and_pest_control,,mech_weeding,Numbers of times for mechanical (Machine) weeding  in the largest plot,
+weed_and_pest_control,,mech_weeding_das,Date of Mechanical (Machine) weeding (Days after sowing/ Days after transplanting),
+weed_and_pest_control,J,,Weed identification in the largest ${q305_cropLargestArea}__${q301_LLU}  for ${q115_crop},
+weed_and_pest_control,allWeeds,all_weeds,"Identify top ten weeds for surveyed crop in the largest plot based on severity, occurrence and damage in ${q305_cropLargestArea}__${q301_LLU} (Select all that apply)","WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,,all_other_weeds,,
+weed_and_pest_control,q5702_top1stWeed,severity_1_weed,Rank the first weed based on severity of damage in ${q305_cropLargestArea}__${q301_LLU},"WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,q5703_top2ndWeed,severity_2_weed,Rank the second weed based on severity of damage in ${q305_cropLargestArea}__${q301_LLU},"WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,q5704_top3rdWeed,severity_3_weed,Rank the third weed based on severity of damage in ${q305_cropLargestArea}__${q301_LLU},"WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,q5705_top4thWeed,severity_4_weed,Rank the fourth weed based on severity of damage in ${q305_cropLargestArea}__${q301_LLU},"WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,q5706_top5thWeed,severity_5_weed,Rank the fifth weed based on severity of damage in ${q305_cropLargestArea}__${q301_LLU},"WheatWeed_18,RiceWeed_14,RiceWeed_6,RiceWeed_11,RiceWeed_18,RiceWeed_3,RiceWeed_35,WheatWeed_12,RiceWeed_28,WheatWeed_22,WheatWeed_16,RiceWeed_1,WheatWeed_21,RiceWeed_7,RiceWeed_36,WheatWeed_5,WheatWeed_6,WheatWeed_28,RiceWeed_24,WheatWeed_4,WheatWeed_27,RiceWeed_44,RiceWeed_27,RiceWeed_33,RiceWeed_9,RiceWeed_13,RiceWeed_31,RiceWeed_32,RiceWeed_43,RiceWeed_39,RiceWeed_17,WheatWeed_13,RiceWeed_8,RiceWeed_4,RiceWeed_23,RiceWeed_21,RiceWeed_41,RiceWeed_30,RiceWeed_12,RiceWeed_46,WheatWeed_17,RiceWeed_22,RiceWeed_37,RiceWeed_45,RiceWeed_10,RiceWeed_25,WheatWeed_2,WheatWeed_15,WheatWeed_26,RiceWeed_15,RiceWeed_19,RiceWeed_29,WheatWeed_1,WheatWeed_8,WheatWeed_24,WheatWeed_23,RiceWeed_5,WheatWeed_25,WheatWeed_14,WheatWeed_19,RiceWeed_20,WheatWeed_3,WheatWeed_9,WheatWeed_20,RiceWeed_34,WheatWeed_7,Other,RiceWeed_2,RiceWeed_16,RiceWeed_26,RiceWeed_38,RiceWeed_42,WheatWeed_10,WheatWeed_11,RiceWeed_40"
+weed_and_pest_control,q5505_insecticides,insecticide_applied,Were insecticides applied in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop}?,"No,Yes"
+weed_and_pest_control,,insect_presence,Did you suffer from insect infestation  in the largest wheat grown plot??,
+weed_and_pest_control,,insect_severity,Severity of insect pressure  in the largest wheat grown plot?,
+weed_and_pest_control,,insecticide_times_applied,Number of times for insecticides application in the largest plot,
+weed_and_pest_control,,insecticide_amount,Amount of insecticide (ml/ mg)  in the largest wheat grown plot?,
+weed_and_pest_control,q5506_insecticidesName,insecticide_name,Insecticide Name (begin repeat),
+weed_and_pest_control,,insectide_timing_das,Time of insecticide application (Days after sowing / Days after transplantation ),
+weed_and_pest_control,,insecticide_cost,Total cost of insecticides in the largest plot? (NRs),
+weed_and_pest_control,q5507_InsecticideappnMethod,insecticide_app_method,Method of Insecticide application,"Canopy Applied (Foiler spray),Irrigation Applied,Soil Applied"
+weed_and_pest_control,q5508_pesticides,pesticide_applied,Were pesticides applied in ${q305_cropLargestArea}__${q301_LLU} for disease control for ${q115_crop}?,"No,Yes"
+weed_and_pest_control,q5509_pesticidesName,pesticide_name,"If yes, name of pesticides",
+weed_and_pest_control,q5510_PesticideappnMethod,pesticide_app_method,Method of Pesticide application,"Soil Applied,Canopy Applied (Foiler spray),Seed Treatment"
+weed_and_pest_control,,disease_presence,Did you face disease problem in the  largest wheat grown plot?,
+weed_and_pest_control,,disease_severity,Severity of disease pressure  in the largest wheat grown plot?,
+weed_and_pest_control,,fungicide_applied,Did you apply fungicides in the largest plot?,
+weed_and_pest_control,,fungicide_times_applied,Number of times for fungicide application in the largest plot,
+weed_and_pest_control,,fungicide_name,Fungicide Name,
+weed_and_pest_control,,fungicide_timing_das,Time of fungicide application(Days after sowing / Days after transplantation ),
+weed_and_pest_control,,cost_of_fungicide,Total cost of fungicide in the largest plot? (NRs),
+weed_and_pest_control,,fungicide_amount,Amount of fungicide (ml/ mg)  in the largest wheat grown plot?,
+,,,,
+harvest,,,,
+harvest,harvDate,harvest_date,Harvest date of ${q115_crop} in ${q305_cropLargestArea}__${q301_LLU},
+harvest,cropDurationDays,harvest_days,Harvest date - sowing date ,
+harvest,q602_harvestMethod,harvest_method,Harvesting method of ${q115_crop} in ${q305_cropLargestArea}__${q301_LLU},"Combine,Reaper,Manual"
+harvest,q603_CropResidue ,crop_residue,${q115_crop} crop residue was-,"Burnt in the field,Removed from the field,Retained in the field"
+harvest,,residue_sell,Did you sell the rice residue?,
+harvest,,residue_price,Price of the rice residue (NRs/quintal).,
+harvest,q604_threshing,threshing_method,"If reaper or manual, threshing method in ${q305_cropLargestArea}__${q301_LLU}","Machine,Manual"
+harvest,q605_largestPlotYieldQUNITAL,total_production_lp,Total ${q115_crop} yield from ${q305_cropLargestArea}__${q301_LLU} in QUINTAL (self ?reported),
+,,local_weight_unit,,
+,,other_weight_unit_ha_conversion,,
+harvest,quintalPerAcre,qunital_per_acre,convert the yield from kg/llu >> kg/acre,
+harvest,tonPerHectare,ton_per_hc,kg/acre >> T/Hc conversion,
+harvest,,total_cost_harvesting,Total cost of harvesting by ${harvesting_method}  (NRs),
+harvest,,total_production_farm,"Total rice production in your farm in the rice
+ cultivated area?(kg or quintal)  (Rice cultivated area was : ${total_rice_cultivated_area}, ${llu})",
+harvest,,harvest_time,"If harvesting was done by harvester or reaper, total time required to harvest the surveyed plot (minute)",
+harvest,,harvest_payment,Payment method for harvesting ,
+harvest,,harvest_cropShare,"If harvesting was done crop share basis, what proportion of crop you need to share?",
+harvest,,harvest_contractCost,"If harvesting was done by contract, harvesting cost (Taka)  for the surveyed plot? ",
+harvest,,harvest_dailyCost,"If harvesting was done by daily basis, harvesting cost (Taka)  for the surveyed plot? ",
+harvest,q606_farmGatePrice,avg_farm_gate_price,What was the farm gate price per quintal for ${q115_crop} at the time of harvest? (Rs / Taka per quintal),
+harvest,q607_fiveYearGProd,production_compare_5_years,How is the production compared of ${q115_crop} to the last five years?,"Below average,Average,Higher than average"
+harvest,,current_crop_market_price,Current selling price of wheat in market (Taka/ Rs/ NPR per quintal/ Maund),
+harvest,,avg_crop_market_price,Market price of crop (NRs/Kg),
+harvest,,harvest_fuel,Harvester/Reaper run by_?,
+harvest,,harvest_fuelCons,Hourly fuel consumption of the harvester/reaper(Liter),
+harvest,,cost_diesel,Cost of diesel/liter (Taka),
+harvest,,cost_petrol,Cost of petrol/liter (Taka),
+harvest,,cost_electricity,Cost of electricity (Kw-hr/unit) ,
+harvest,,crop_residue_percent,,
+household,q703_hhruminants,ruminants,How many ruminants (Cow(s) / Buffalo(es) ) are maintained by you?,"10,11,9,2,12,3,0,7,8,5,6,1,4"
+household,q705_agIncomeShare,agri_income_importance,How important is agriculture to your household income?,"Medium,Low,High"
+household,,avg_income_share_5year,Share of total household income derived from agriculture (%)? (approximate value over the last 5 years),
+household,,avg_crop_income_share_5year,Share of total agricultural income derive from wheat (%)? (approximate value over the last 5-years),
+household,,market_distance,Nearest input market distance (km),
+household,,avg_perc_crop_sold,Share of total wheat production that is sold to market (%)? (approximate value over the last 5-years),
+household,q701_hhMember,total_members,Total members,
+household,q702_hhMemAg,total_members_inv_agriculture,Total members involved in agriculture,
+household,male_mem,total_male,Total male members,
+household,female_mem,total_female,Total female members,
+household,total_child,total_child,Total child,
+,,,,
+,,,,
+cost_of_cultivation,,avg_female_labor_rate,Average seasonal female labor wage rate (NRs/day),
+cost_of_cultivation,,avg_male_labore_rate,Average seasonal male labor wage rate (NRs/day),
+,,,,
+tracking_ghg_emission,q835_GHGmodule,ghg_module_consent,Do you wish to share information on Green house gas emissions?,"No,Yes"
+tracking_ghg_emission,q901_FloodTimes,flood_frequency,What is the frequency of flooding of the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot in a given season,"1 day,4 days,2 Weeks,5 days,7 days,1 Week,4 Weeks,2 days,6 days,3 Weeks,3 days"
+tracking_ghg_emission,q902_TillageIntensityPuddling,number_passespuddling,What is the avearge number of passes for Puddling?,"2,3,5,1,4"
+tracking_ghg_emission,q903_TillageIntensityTyneCultivator,number_passestyne,What is the avearge number of passes for Tyne Cultivator?,"2,3,5,1,4"
+tracking_ghg_emission,q904_TillageIntensityDiscHarrow,number_passesdisc,What is the avearge number of passes for Disc Harrow?,"2,3,5,1,4"
+tracking_ghg_emission,q905_TillageIntensityFourWhTracRot,number_passes4wt,What is the avearge number of passes for Four Wheel Tractor Rotavator?,"2,3,5,1,4"
+tracking_ghg_emission,q906_TillageIntensityTwoWhTracRot,number_passes2wt,What is the avearge number of passes for Two Wheel Tractor Rotavator?,"2,3,5,1,4"
+tracking_ghg_emission,q907_TillageIntensityBullockPlough,number_passesbullock,What is the avearge number of passes for Bullock drawn plough?,"2,3,5,1,4"
+tracking_ghg_emission,,number_passesstrip,How many passes of strip tillage?  (in the largest wheat grown plot),
+tracking_ghg_emission,,number_passes_seed_drill,How many passes of DSR machine?  (in the largest wheat grown plot),
+tracking_ghg_emission,,number_passes_dsr_hand_broadcasting,How many passes of DSR hand broadcasting?  (in the largest wheat grown plot),
+tracking_ghg_emission,q908_ResidueRemovedTyne,perc_residue_removed,What is the percentage of residue removed by tyne cultivation?,"10,80,40,60,70,100,0,20,90,5,30,50"
+tracking_ghg_emission,q909_FYMUse,fym_used_how,How is FYM used on your farm?,"Fuel,Waste,Other,Soil Amendment,Sale"
+tracking_ghg_emission,q910_PerSoilAmend,perc_soil_amendement,What percentage of your FYM is used as a soil amendment?,"10,80,40,60,70,100,0,20,90,5,30,50"
+tracking_ghg_emission,q911_StandingWaterEarlyVegetative,rice_standing_water_early_growth,For how many days was there standing water in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot during early vegetative growth stage?,
+tracking_ghg_emission,q912_StandingWaterMidVegetative,rice_standing_water_mid_growth,For how many days was there standing water in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot during mid-vegetative growth stage?,
+tracking_ghg_emission,q913_StandingWaterflowering,rice_standing_water_flowering,For how many days was there standing water in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot during  flowering growth stage?,
+tracking_ghg_emission,q914_StandingWaterGrainFilling,rice_standing_water_grain_filling,For how many days was there standing water in the largest [${q305_cropLargestArea}__${q301_LLU}] ${q115_crop} plot during grain filling growth stage?,
+,,,,
+,,,,
+cost_of_cultivation,Would you like to share details for cost of cultivation?,coc_consent,Would you like to share details for cost of cultivation?,
+cost_of_cultivation,N,cultivation_cost,Cost of cultivation in the ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,LP,land_prep_cost,Cost of land preperation,
+cost_of_cultivation,q801_LabourLPCost,amount_paid_labor_land_prep,Amount paid to labors engaged in land preperation of your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,q802_MachineLPCost,amount_paid_hiring_machine_land_prep,Amount paid/incurred for hiring/using machine in land preperation of your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,LandPrepCost,,,
+cost_of_cultivation,q803_SeedCost,cost_of_seed,Cost of seed for your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,q804_laborbroadcastCost,amount_paid_broadcasting,Amount paid to labors for broadcasting seed on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,q805_MachineSeedingCost,amunt_paid_machine_seeing,Amount paid/incurred for hiring/using machine for seeding on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,q806_NurseryCost,cost_raising_buying_nursery,Cost incurred for raising/buying nursery for your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,q807_TransplantingCost,total_cost_seedling_trasnplanting,Total labor/machine cost incurred for seedling transplanting on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop} plot,
+cost_of_cultivation,CropEstCost,crop_estab_cost,T9,
+cost_of_cultivation,q808_FYMCost,fym_price_quintal,FYM price per quintal,
+cost_of_cultivation,q810_DAPCost,dap_price_kg,DAP price per kg,
+cost_of_cultivation,q812_NPKCost,npk_price_kg,NPK price per kg,
+cost_of_cultivation,q809_UreaCost,urea_price_kg,Urea price per kg,
+cost_of_cultivation,q811_PotashCost,mop_price_kg,MoP price per kg,
+cost_of_cultivation,q811_ZincSulphateCost,znso4_price_kg,Zinc Sulphate price per kg,
+cost_of_cultivation,q813_GypsumCost,gypsum_price_kg,Gypsum price per kg,
+cost_of_cultivation,q814_BoronCost,boron_price_kg,Boron price per kg,
+cost_of_cultivation,q815_NPKSCost,npks_price_kg,NPKS price per kg,
+cost_of_cultivation,q816_SSPCost,ssp_price_kg,SSP price per kg,
+cost_of_cultivation,q817_TSPCost,tsp_price_kg,TSP price per kg,
+cost_of_cultivation,q818_OtherFertilizerCost,other_chem_fert_price_kg,Total Cost for OtherFertilizer,
+cost_of_cultivation,q819_BasalApplLabourCost,labor_cost_basal_fert_app,Labor cost incurred for basal fertilizer application on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q820_1ApplLabourCost,labor_cost_td1,Labor cost incurred for first top dressing on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q821_2ApplLabourCost,labor_cost_td2,Labor cost incurred for second top dressing on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q822_3ApplLabourCost,labor_cost_td3,Labor cost incurred for third top dressing on your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q823_IrrigationCost,avg_one_irrigation_cost,Average cost incurred for applying one irrigation in your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q824_ManualWeedingCost,cost_manual_weeding,Cost incurred in manual weeding(s) for your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q825_HerbicideCost,cost_herbicide_purchased,Cost of herbicide(s) purchased for your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q826_1HerbicideSprayCost,cost_herbicide_first_spray,Sparying cost for first spray of herbicide in your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q827_2HerbicideSprayCost,cost_herbicide_second_spray,Sparying cost for second spray of herbicide in your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q828_3HerbicideSprayCost,cost_herbicide_third_spray,Sparying cost for third spray of herbicide in your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q829_PesticideCost,cost_pesticide,Cost of pesticide(s) purchased for your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q830_PesticideSprayCost,cost_spraying_pesticide,Total sparying cost of pesticide(s) in your ${q305_cropLargestArea}__${q301_LLU}  plot for ${q115_crop},
+cost_of_cultivation,q831_HarvestingLaborCost,labor_cost_harvesting,Total labour cost for harvesting of ${q115_crop} in your  ${q305_cropLargestArea}__${q301_LLU} plot,
+cost_of_cultivation,q832_HarvestingMachineCost,machine_cost_harvesting,Total machine cost for harvesting of ${q115_crop} in your  ${q305_cropLargestArea}__${q301_LLU} plot,
+cost_of_cultivation,q833_ThreshingLabourCost,labor_cost_threshing,Total labour cost for threshing of ${q115_crop} harvested from your  ${q305_cropLargestArea}__${q301_LLU} plot,
+cost_of_cultivation,q834_ThreshingMachineCost,machine_cost_threshing,Total machine cost for threshing of ${q115_crop} harvested from your  ${q305_cropLargestArea}__${q301_LLU} plot,
+,,,,
+tracking_technology_change,M,crop_choice,Tracking technology change in ${q115_crop},
+tracking_technology_change,newMgmtUse,new_practices,Did you use new practices for surveyed crop management this season? (Select all that apply),"Other,None,Nutrient Management,Variety replacement,Irrigation management,Weed management,Crop establishment"
+,,,,
+labor_requirement,,male_nursery,Number of males required for nursery and seed bed preparation,
+labor_requirement,,female_nursery,Number of females required for nursery and seed bed preparation,
+labor_requirement,,male_seed_uproot,Males required for seedling uprooting,
+labor_requirement,,female_seed_uproot,Femaes required for seedling uprooting,
+labor_requirement,,males_tp_sowing,males required for transplantation and sowing,
+labor_requirement,,female_tp_sowing,females required for transplantation and sowing,
+labor_requirement,,male_fertilizer_application,Males required for fertilizer application,
+labor_requirement,,female_fertilizer_application,Females required for fertilizer application,
+labor_requirement,,male_irrigation,Total number of males required for irrigation management,
+labor_requirement,,female_irrigaion,Total number of females required for irrigation management,
+labor_requirement,,male_weeding,Number of males required for weeding,
+labor_requirement,,female_weeding,Number of females required for weeding,
+labor_requirement,,male_ip,Number of males required for insecticide and pesticide application,
+labor_requirement,,female_ip,Number of females required for insecticide and pesticide application,
+labor_requirement,,male_fym_app,Number of males required for fym application,
+labor_requirement,,female_fym_app,Number of females required for fym application,
+labor_requirement,,male_herbicide_app,Number of males required for herbicide application,
+labor_requirement,,female_herbicide_app,Number of females required for herbicide application,
+labor_requirement,,male_harvesting,Number of males required for harvesting,
+labor_requirement,,female_harvesting,Number of females required for harvesting,
+labor_requirement,,male_threshing,Number of males required for threshing,
+labor_requirement,,female_threshing,Number of females required for threshing,
+labor_requirement,,male_transporting_packaging,Number of males required for transportation and packaging,
+labor_requirement,,female_transporting_packaging,Number of females required for transportation and packaging,
+labor_requirement,,others_labor,Other labor required (yes/no),
+labor_requirement,,specify_other,Specify other labors required,
+labor_requirement,,male_others_labor,Number of males required for other labor,
+labor_requirement,,female_others_labor,Number of females required for other labor,
