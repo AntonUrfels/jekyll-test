@@ -1,0 +1,118 @@
+---
+title: "Landscape Crop Assessment Survey (LCAS) Report"
+author: "LCAS team"
+date: "`r Sys.Date()`"
+output: html_document
+knit: (function(inputFile, encoding) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_file='../outputs/reports/LCAS_Report.html') })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+base_col <- "#78b766"
+```
+
+This document provides a sample report for automated insights into drivers and
+outcomes of crop prodcution systems at landscape level as part of the LCAS system.
+
+
+## Initial overview
+First, we need to load the datast of interest. 
+Make sure it has been cleaned properly using the cleaning files.
+
+```{r}
+f <- "../data/india_rice_17_18.csv"
+df <- read.csv(f)
+```
+
+We can then produce some key statistics to provide and overview of the dataset.
+
+The dataset contains data from the following countries: **`r unique(df$country)`** from the years **`r unique(df$Year)`** for **`r unique(df$Crop)`**.
+
+The average landholding size was **`r format(mean(df$total_cultivated_land/df$local_to_acre/2.471,na.rm=T),digits=3)`** ha and the average size of the largest plot was **`r format(mean(df$cropLarestAreaAcre,na.rm=T)/2.471,digits=3)`** ha.
+
+Data has been collected in the following states/provinces: **`r unique(df$adm_1)`**.
+
+The dataset contains **`r format(nrow(df),big.mark=",")`** samples. And the following distribution of samples across the sample provinces/states: 
+
+```{r echo=FALSE}
+library(knitr)
+library(data.table)
+dt <- data.table(prop.table(table(df$adm_1))*100)
+dt <- setorder(dt, cols = -"N")  
+knitr::kable(dt,digits = 2,col.names = c("State/Province","% of samples"))
+```
+
+
+## Yield and crop variety patterns
+
+The average yield across the dataset is **`r format(mean(df$ton_per_hc,na.rm=T),digits=3)` t ha<sup>-1</sup>** with a standard deviation of **`r format(sd(df$ton_per_hc,na.rm=T),digits=3)` t ha<sup>-1</sup>**.
+
+The yield distribution looks as follows:
+
+```{r echo=FALSE}
+library(ggplot2)
+library(ggpubr)
+ggplot(df)+
+  geom_histogram(aes(x=ton_per_hc),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Yield in ton per ha")+
+  theme_classic2()
+  
+```
+
+The mean yield and standard deviation per state/province in descending order:
+
+```{r echo=FALSE}
+library(knitr)
+library(data.table)
+dt <- data.table(df)
+dt1 <- dt[,.(mean=mean(ton_per_hc,na.rm=T)),by=list(adm_1)]
+dt1$sd <- dt[,.(sd=sd(ton_per_hc,na.rm=T)),by=list(adm_1)]$sd
+dt1 <- setorder(dt1, cols = -"mean")  
+knitr::kable(dt1,digits = 2,col.names = c("State/Province","Mean yield","Standard Deviation"))
+```
+
+
+The same table per variety looks as follows:
+
+```{r echo=FALSE}
+library(knitr)
+library(data.table)
+dt <- data.table(df)
+dt1 <- dt[,.(mean=mean(ton_per_hc,na.rm=T)),by=list(variety_type)]
+dt1$sd <- dt[,.(sd=sd(ton_per_hc,na.rm=T)),by=list(variety_type)]$sd
+dt1 <- setorder(dt1, cols = -"mean")  
+knitr::kable(dt1,digits = 2,col.names = c("Variety Type","Mean yield","Standard Deviation"))
+```
+
+
+The most common varieites grown are the following:
+
+**TODO** Need script for cleaning variety names, lower_case, no space etc.
+
+```{r echo=FALSE}
+library(knitr)
+dt <- data.table(prop.table(table(df$variety_name)))
+dt <- setorder(dt, cols = -"N")
+dt <- dt[1:5,]
+
+knitr::kable(dt,digits = 2,col.names = c("Variety name","% of samples"))
+```
+
+## Management practices 
+
+
+```{r include=FALSE}
+mean_ydays <- round(mean(yday(as.Date(df$transplanting_date,format = "%d-%m-%Y")),na.rm = T),0)
+mean_ydays
+full_date_sow <- format(as.Date(mean_ydays,origin="1980-01-01"),format="%e. of %B")
+
+mean_ydays <- round(mean(yday(as.Date(df$harvest_date,format = "%d-%m-%Y")),na.rm = T),0)
+mean_ydays
+full_date_harvest <- format(as.Date(mean_ydays,origin="1980-01-01"),format="%e. of %B")
+
+```
+
+On average, rice crops have been (trans)planted or directly sown on **`r full_date_sow`** and harvested on **`r full_date_harvest`** with **`r round(mean(df$irrigation_times,na.rm=T),2)`** irrigation events and a total of **`r round(mean(df$total_urea_applied,na.rm=T),2)`** kg urea and **`r round(mean(df$total_npk_applied,na.rm=T),2)`** kg npk applied per plot.
