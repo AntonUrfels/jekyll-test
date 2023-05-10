@@ -25,7 +25,7 @@ The LCAS is designed to provide rapid insights through efficiently collected sur
 To get started, you may clone the LCAS github repo. It contains all the scripts and samples for how to run these scripts with existing anonymized datasets that have been collected for India.
 
 
-# 1. Importing data from the server
+# 1. Importing data into the analysis envrionment
 This section provides an overview of R scripts that import datasets through API calls. API stands for Advanced Programming Interface (API) - that is a standardized to communicate with a server. When data is collected digitally with ODK, Kobo or other tools, it is normally stored on a webserver. One can then use a specified request to the API of that server to request a download of the dataset of interest. Normally it requires providing your password and username (e.g. for KOBO or ODK Central) for authentication.
 
 The R functions for this can be found in the [data_import.R](code/data_import.R) file. 
