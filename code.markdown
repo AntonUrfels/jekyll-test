@@ -249,7 +249,7 @@ write.csv(df,"lcas_combined.csv")
 
 # 4. Analytics
 
-#### 4.1 Descriptive stats
+#### 4.1 Simple, automated analytics
 
 After collecting the data, one of the powerful functions of the LCAS system is to provide automated and quick insights into key drivers and outcomes of agricultural systems at landscape level.
 
@@ -267,12 +267,6 @@ df <- read.csv(f)
 generate_lcas_report(df,"outputs/reports/rice_india_17_18_report.html")
 ```
 
-
-
-
-#### 4.2 Basic Analytics by module
-
-#### 4.3 Random forest for yield predictions and diagnostics
 
 # 5. Outlier detections
 
