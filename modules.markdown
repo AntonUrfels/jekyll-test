@@ -3,12 +3,27 @@ layout: page
 title: Module Documentation
 permalink: /modules/
 description: Here's a detailed overview of the Landscape Crop Assessment Survey (LCAS) modules. 
+
 ---
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="/lcas/assets/bootstrap.min.css">
+
 <link rel="stylesheet" href="/lcas/assets/custom.css">
 
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
 
-### Introduction:
 
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        **Introduction**
+      </button></h2>
+
+<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 Key Identifier for question types
 
 The questions are available in various types:
@@ -35,13 +50,18 @@ For e.g.: Question: Enter your age?
 			 23
  Your age is ${age}. The value of age will change as per the response of the respondent and can be viewed during data collection.
 
-----------
-<br>
+</div>
+</div>
+</div>
 
-#### Modules
-
-**Survey Module:**
-
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        **Survey Module:**
+      </button></h2>
+<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 This module contains the meta data of the entire survey. These variable names include:
 
 1.	device_id (a): The id of the device used to collect the survey data.
@@ -54,9 +74,17 @@ This module contains the meta data of the entire survey. These variable names in
 Required: Yes, this is a mandatory field for the survey for continuing the survey
 Choices: Yes, No
 -------
-<br>
+</div></div></div>
 
-**Location Module**
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        **Location Module**
+      </button></h2>
+<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 This module contains the location details of the respondents. 
 
 1. country: Country of the respondent
@@ -82,12 +110,17 @@ This module contains the location details of the respondents.
         Type: This is a text type question. The enumerator is free to type the
         name of the village as per the respondent’s response. 
 
------
-<br>
+</div></div></div>
 
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        **Crop cut Module**
 
-**Crop cut Module**
-
+      </button></h2>
+<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 This module contains crop cut details of the farmers. There is a preceding question that the enumerator needs to ask. 
 
 <div class="alert-primary">cropcut_done (s): The crop cut details survey questions are only available if prior crop cut for the same survey season was done in the farmer’s field. </div>
@@ -128,11 +161,21 @@ district, fname, block, village, mobile, q1tagb, q1gweight, q1gmoist, q2tagb, q2
 Note: Pay attention to casing of the alphabets. 
 Remember if few of the columns are missing in the cropcutdata – the form will still work. 
 </div>
-<br>
-<hr></hr>
-<br>
 
-Respondent Module:
+</div></div></div>
+
+
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        **Respondent Module**
+      </button></h2>
+
+<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 
 This module contains the personal information of the respondents.
 
@@ -165,15 +208,18 @@ This module contains the personal information of the respondents.
 
 8.	harvest_year (s): select the year in which the crop was harvested. 
 
-<div class = "alert">The entire “Respondent” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface. 
-</div>
-<br>
-<hr></hr>
+<div class = "alert">The entire “Respondent” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface. </div>
 
-<br>
+</div></div></div>
 
-Land Unit and Ownership
-
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        **Land Unit and Ownership**
+      </button></h2>
+<div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 The module contains the details about the land unit used and land ownership details for a respondent.
 
 1.	llu (s): local land unit used by respondent referring to the largest plot 
@@ -206,13 +252,17 @@ The entire “Land Unit and Ownership” section has been designed to fit in one
 
 <br>
 <div class = 'important'>Note: The “Land Unit and Ownership” module is dependent on the Respondent module. The crop name (crop_name) that is displayed in the data collection app borrows the variable from the “Respondent module”. Make sure to also include the crop name question for the form to work. </div>
-
-<br>
-<hr></hr>
-<br>
+</div></div></div></div>
 
 
-Site characteristics and crop establishment 
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+        **Site characteristics and crop establishment**
+      </button></h2>
+<div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 
 This module contains questions about the survey plot and crop establishment
 
@@ -352,7 +402,8 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
 
 
 
-<div class = 'alert'>Note: The date for previous crop harvest is displayed for the enumerator to correctly select DSR date which should be after the harvest date of the previous crop </div>
+<div class = 'alert'>Note: The date for previous crop harvest is displayed for the enumerator to correctly select DSR date which should be after the harvest date of the previous crop 
+</div>
 <br>
 •	seedling_age (c): This is a calculate field and it calculate the seedling age by :
 
@@ -368,7 +419,8 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
                 Non availability of tillage equipment, Non availability of seed, 
                 No availability of fertilizers, Labor shortage, Lack of moisture at sowing, 
                 Lack of funds, No delay, Other
-<div class = 'important'>Note: Remember to change the “year” in the module to match the year in the relevant column.</div> 
+<div class = 'important'>Note: Remember to change the “year” in the module to match the year in the relevant column.
+</div> 
 
 <br>
 •	delay_reason_others (t): Enter other reason in delay of sowing this season
@@ -417,15 +469,20 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
                 Cooperative, Government / KVK / SAU
 
 <div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. </div>
+Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
+ </div>
 
-<br>
+</div></div></div>
 
-<hr></hr>
-<br>
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+        **Fertility Management**
+      </button></h2>
+<div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
  
-Fertility Management
-
 •	shc_recommendation (s): :Are soil health card recommendations available for the largest  ${surveyed_plot}__${llu} plot?
 
 	Choices: No, Yes and information used, Yes but information not used
@@ -456,11 +513,21 @@ Fertility Management
 
 
 <div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. </div>
- 
-<br><hr></hr><br>
+Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
+ </div>
 
-Detailed Fertility Management
+ </div></div></div>
+
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+        **Detailed Fertility Management**
+      </button></h2>
+<div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 
 
 - chem_fert_applied (m): Select the fertilizer(s) applied at planting (basal) for ${crop_name} 
@@ -518,6 +585,7 @@ Detailed Fertility Management
 - amt_other_chem_ferts (d): Total ${other_chem_ferts} applied in kg	
 
         Relevant: Only if other chemical fertilizer is selected as chemical fertilizer applied
+ 
 
 <b>First top dressing</b>
 
@@ -576,10 +644,6 @@ sowing/transplanting)
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
 
-
-<br>
-<hr> </hr><br>
-
 <b>Second top dressing </b>
 -	td2_fert_applied (m):	Select the fertilizer(s) applied at second top dressing for ${crop_name} 
 
@@ -630,8 +694,6 @@ sowing/transplanting)
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
 
-<br>
-<hr> </hr><br>
 
 <b>Third top dressing </b>
 -	td3_fert_applied (m):	Select the fertilizer(s) applied at third top dressing for ${crop_name} 
@@ -829,13 +891,20 @@ Note:  Multiple notes are shown for the enumerators to check all of their entrie
         Choices: 1 – 10 
 
 <div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. </div>
+Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
+ </div>
 
-<br>
-<hr></hr>
-<br>
+ </div></div></div>
 
-Irrigation Module
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+        **Irrigation Module**
+      </button></h2>
+<div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 
 •	access_to_irrgation (s): Do you have access to irrigation for the largest ${surveyed_plot}__${llu} plot of ${crop_name}?	
 
@@ -895,11 +964,20 @@ Irrigation Module
 
         Choices: Yes,No
 <div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. </div>
+Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+</div>
+</div></div></div>
 
-<br><hr></hr><br>
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+        **Production Constraint Module**
+      </button></h2>
+<div id="collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 
-Production Constraint Module
+
 
 •	face_drought (s) : Did your ${crop_name} crop face drought stress? (in ${surveyed_plot}__${llu})	
 
@@ -948,9 +1026,18 @@ Relevant: If faces drought
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
  
-<br><hr></hr><br>
+</div></div></div>
 
-Weed pest control Module
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTweleve" aria-expanded="false" aria-controls="collapseTweleve">
+        **Weed pest control Module**
+      </button></h2>
+<div id="collapseTweleve" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
+
 
 •	herbicide_applied (s): Did you apply herbicide for ${crop_name}?	
         
@@ -1017,12 +1104,18 @@ Weed pest control Module
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
-<br>
-<hr></hr></br>
 
 
+</div></div></div>
 
-<b> Harvest Module </b>
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+        **Harvest Module**
+      </button></h2>
+<div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
 
 •	harvest_date (d):  Harvest date of ${crop_name} in ${surveyed_plot}__${llu}	
 
@@ -1064,10 +1157,19 @@ Note: The harvest days are calculated and shown to the data collector to ensure 
 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. This module also requires “site_characterstic_crop_establishment” module. 
-</div><br>
-<hr></hr><nr>
+</div>
+</div></div></div>
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+        **Household economics and market Module**
+      </button></h2>
+<div id="collapse14" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
  
-Household economics and market Module
+
 •	total_members (s) : Number of household members (s) 
 
         Choices: 1,2,3,4,5,6,7,8,9,10,11,12
@@ -1096,11 +1198,21 @@ Household economics and market Module
 
 •	crop_avg_sellingprice (d) : Average selling price for ${crop_name} crop sold to market (Rs / quintal) (average over the last five years)	
 
-<div class = 'alert'>Note: The module  borrows the crop name (crop_name) variable from the “Respondent” module </div>
-<br>
-<hr></hr>
- <br>
-<b>Tracking technology change Module </b>
+<div class = 'alert'>Note: The module  borrows the crop name (crop_name) variable from the “Respondent” module 
+</div>
+</div></div></div>
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+        **Tracking technology change Module**
+      </button></h2>
+<div id="collapse15" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
+
+
 
 •	new_practices	 (m) : Did you use new practices for surveyed crop management this season? (Select all that apply)	
 
@@ -1110,10 +1222,17 @@ Household economics and market Module
 
         Choices: Yes,No
 
-<br>
-<hr></hr>
- <br>
-<b> Cost of Cultivation Module </b> <br>
+</div></div></div>
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+        **Cost of Cultivation Module**
+      </button></h2>
+<div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 
 •	amount_paid_labor_land_prep (d) : Amount paid to labors engaged in land preperation of your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
 
@@ -1261,13 +1380,22 @@ Household economics and market Module
 			       coalesce(${labor_cost_threshing},0) + 
 			       coalesce(${machine_cost_threshing},0)
 <div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation </div>
-<br>
-<hr></hr><br>
+Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation 
+</div>
+
+</div></div></div>
 
 
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+        **Tracking GHG Emission Module**
+      </button></h2>
+<div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
  
-<b>Tracking GHG Emission Module </b>
+
 
 •	flood_frequency (s) : What is the frequency of flooding of the largest [${surveyed_plot}__${llu}] ${crop_name} plot in a given season	
 
@@ -1320,19 +1448,28 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 •	rice_standing_water_grain_filling (d): For how many days was there standing water in the largest [${surveyed_plot}__${llu}] ${crop_name} plot during grain filling growth stage?
 
 <div class = 'alert'>
-This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. </div>
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module.
+ </div>
+</div></div></div>
 
-<br>
-<hr></hr>
- <br>
-<b> Geolocation Module </b>
+
+<div class = "accordion">
+<div class = "accordion-item">
+<h2 class = "accordion-header"> 
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+        **Geolocation Module**
+      </button></h2>
+<div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
 
 •	longitude_latitude (geopoint) : GPS from the center of the ${surveyed_plot}__${llu}  plot for ${crop_name}.
 
 <div class = 'alert'>
-This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. </div>
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. 
+</div>
+</div></div></div>
 
-      
 
 
 
