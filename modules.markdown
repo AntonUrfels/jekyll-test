@@ -365,24 +365,7 @@ This module contains questions about the survey plot and crop establishment
 19.	land_prep_method (m): Land preparation method in the largestplot (select all that apply)
 
         Choices: Puddling (Wet tillage), Tyne cultivator, Disc harrow,
-                4 wheel tractor rotavator, 2 wheel tractor rotavator, 
-                Bullock drawn plough, Puddling, Tyne cultivator, Disc harrow, 
-                4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough, 
-                Puddling, Tyne cultivator, Disc harrow,4 wheel tractor rotavator,
-                2 wheel tractor rotavator, Bullock drawn plough, Tyne cultivator, 
-                Disc harrow,4 wheel tractor rotavator,2 wheel tractor rotavator, 
-                Bullock drawn plough, Strip tillage, No tillage, Puddling, Tyne cultivator, 
-                Disc harrow, 4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough,
-                Puddling, Tyne cultivator, Disc harrow, 4 wheel tractor rotavator, 
-                2 wheel tractor rotavator, Bullock drawn plough, Tyne cultivator, Disc harrow,
-                4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough,
-                Strip tillage, Tyne cultivator, Disc harrow, 4 wheel tractor rotavator,
-                2 wheel tractor rotavator, Bullock drawn plough, Strip tillage, No tillage,
-                Tyne cultivator, Disc harrow, 4 wheel tractor rotavator, 2 wheel tractor rotavator, 
-                Bullock drawn plough, Strip tillage, Tyne cultivator, Disc harrow,
-                4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough,
-                Strip tillage, No tillage, Tyne cultivator, Disc harrow,
-                4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough, 
+                rotavator, 2 wheel tractor, 4 wheel tractor, Bullock drawn plough, 
                 Strip tillage, No tillage
 
 20.	rotavator_till_number_of_years (s): 	If tillage by rotavator, number of years of continuous use inplot
