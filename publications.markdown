@@ -6,6 +6,8 @@ description: Here's a detailed overview of the Landscape Crop Assessment Survey 
 
 ---
 
+# Publications
+
 ![](photo.jpg)
 
 

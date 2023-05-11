@@ -29,7 +29,7 @@ github_username: csisarep
 markdown: GFM
 
 # Build settings
-theme: minima 
+theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -48,7 +48,8 @@ header_pages:
   - modules.markdown
   - code.markdown
   - publications.markdown
-  
+
+color_scheme: foo    
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

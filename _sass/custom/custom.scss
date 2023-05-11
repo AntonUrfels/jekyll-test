@@ -1,0 +1,60 @@
+.side-bar {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $sidebar-color;
+
+  @include mq(md) {
+    flex-flow: column nowrap;
+    position: fixed;
+    width: $nav-width-md;
+    height: 100%;
+    border-right: $border $border-color;
+    align-items: flex-end;
+  }
+
+  @include mq(lg) {
+    width: calc((100% - #{$nav-width + $content-width}) / 5 + #{$nav-width});
+    min-width: $nav-width;
+  }
+}
+
+.site-header {
+  display: flex;
+  min-height: 150px;
+  align-items: left;
+
+  @include mq(md) {
+    height: $header-height;
+    max-height: $header-height;
+    border-bottom: $border $border-color;
+  }
+}
+
+
+
+.site-nav,
+.site-header,
+.site-footer {
+  width: 100%;
+
+  @include mq(lg) {
+    width: 350px;
+  }
+}
+
+.site-nav {
+  display: none;
+
+  &.nav-open {
+    display: block;
+  }
+
+  @include mq(md) {
+    display: block;
+    padding-top: $sp-8;
+    padding-bottom: $gutter-spacing-sm;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+}

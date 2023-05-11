@@ -7,10 +7,10 @@ description: Here's a detailed overview of the Landscape Crop Assessment Survey 
 
 ---
 
+# Welcome to the LCAS website!
+
 ![](photo.jpg)
 
-
-# Welcome!
 
 Thank you for visiting the LCAS website. This site provides an overview of key LCAS documentation and products. These resources are designed to helpy you deliver cost-effective landscape crop assessments for better decision-making. Do not hesitate to get in touch at xxxx@cgiar.org. We would love to hear from you.
 
