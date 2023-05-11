@@ -50,7 +50,7 @@ The questions are available in various types:
 
 For e.g.: Question: Enter your age? 
 			 23
- Your age is ${age}. The value of age will change as per the response of the respondent and can be viewed during data collection.
+ Your age is . The value of age will change as per the response of the respondent and can be viewed during data collection.
 
 </div>
 </div>
@@ -181,7 +181,7 @@ Remember if few of the columns are missing in the cropcutdata – the form will 
 
 This module contains the personal information of the respondents.
 
-1.	name (t): The name of the respondent ${farmer}
+1.	name (t): The name of the respondent 
 
 2.	sex (s): The gender of the respondent 
 
@@ -228,15 +228,15 @@ The module contains the details about the land unit used and land ownership deta
  		
         Choices: Acre, Bigha, Decimal, Dhur, Kattha, Guntha
 
-2.	local_to_acre (d): How many local land unit ${llu} are in 1 acre?
+2.	local_to_acre (d): How many local land unit  are in 1 acre?
 
-3.	total_cultivated_land (d): Total cultivated land (owned and leased) in this season in the local land unit ${llu}
+3.	total_cultivated_land (d): Total cultivated land (owned and leased) in this season in the local land unit 
 
-4.	total_crop_cult_area (d): Total crop ${crop_name} cultivated land ${total_cultivated_land} (owned and leased) in this season in local land unit. ${llu}
+4.	total_crop_cult_area (d): Total crop  cultivated land  (owned and leased) in this season in local land unit. 
 
         Constraint: The system checks to see if crop cultivated area is lesser than the total cultivated land
 
-5.	surveyed_plot (d): Largest ${crop_name} plot (owned or leased) in this season in ${llu}
+5.	surveyed_plot (d): Largest  plot (owned or leased) in this season in 
 
         Constraint: The system checks to see if the surveyed plot response is lesser than total crop cultivated area. 
 
@@ -245,7 +245,7 @@ The module contains the details about the land unit used and land ownership deta
         Calculation: surveyed plot / local to area (conversion unit). 
         The output is then rounded to 3 decimal digits
 
-7.	ownership(s): Type of ownership of the largest ${surveyed_plot} in local land unit. ${llu} ${crop_name} plot?
+7.	ownership(s): Type of ownership of the largest  in local land unit.   plot?
 
         Choices: Owned, Leased-in, Share Cropping
 
@@ -268,12 +268,12 @@ The entire “Land Unit and Ownership” section has been designed to fit in one
 
 This module contains questions about the survey plot and crop establishment
 
-•	soil_texture (s): Soil texture of the largest ${surveyed_plot} in local land unit ${llu} ${crop_name} plot
+1.	soil_texture (s): Soil texture of the largest  in local land unitplot
 
                 
         Choices: Light, Medium, Heavy
 
-•	dry_field (s): At the end of the Kharif season, when is your largest ${surveyed_plot} ${llu} plot dry enough to have access for Rabi crop?
+2.	dry_field (s): At the end of the Kharif season, when is your largestplot dry enough to have access for Rabi crop?
 
         Choices: Before 3rd week of October, 3rd week of October, 
         4th week of October,1st week of November, 2nd week of November, 
@@ -281,39 +281,39 @@ This module contains questions about the survey plot and crop establishment
         1st week of December, 2nd week of December, 3rd week of December,
         4th week of December, After 4th week of December
 
-•	dry_field_five_year_avg (s): Over the last five years, at the end of the Kharif season, when is your largest ${surveyed_plot} ${llu} plot dry enough to have access for Rabi crop?
+3.	dry_field_five_year_avg (s): Over the last five years, at the end of the Kharif season, when is your largestplot dry enough to have access for Rabi crop?
 
         Choices: Before 3rd week of October, 3rd week of October, 4th week of October,
                 1st week of November, 2nd week of November, 3rd week of November, 
                 4th week of November, 1st week of December, 2nd week of December, 
                 3rd week of December, 4th week of December, After 4th week of December
 
-•	recede_water (s):  After flooding/flood irrigation, how long does it take to recede water from your largest ${surveyed_plot} ${llu} plot? 
+3.	recede_water (s):  After flooding/flood irrigation, how long does it take to recede water from your largestplot? 
 
         Choices: 1 day, 2 days, 3 days, 4 days, 5 days, 6 days, 7 days, 
                 1 Week, 2 Weeks, 3 Weeks, 4 Weeks
 
-•	drainage_class	 (s): Drainage class of the largest ${surveyed_plot} ${llu} ${crop_name} plot.
+5.	drainage_class	 (s): Drainage class of the largestplot.
 
         Choices: Upland, Medium land, Low land
 
-•	soil_perception (s): Farmer’s perception of soil quality on the plot of ${surveyed_plot} ${llu} 
+6.	soil_perception (s): Farmer’s perception of soil quality on the plot of
 
         Choices: High, Medium, Low
  
 
-•	previous_crop (s): Previous major crop cultivated before ${crop_name} in ${surveyed_plot} ${llu} 
+7.	previous_crop (s): Previous major crop cultivated before  in
 
         Choices: Bajra, Banana, Blackgram, Caster, Chickpea (Gram), Chilli, 
                 Cotton, Fallow,Greengram,GreenManure,Groundnut,IndianMustard,Jowar,
                 Lentil, Maize,Mungbean,Other,PigeonPea,Pulses,Redgram,Rice,
                 Soybean,Sugarcane,Sunflower, Turmeric, Vegetables, Mentha, Wheat
 
-•	third_crop_yesno (s): Have you grown any third crop on ${surveyed_plot}__${llu} plot
+8.	third_crop_yesno (s): Have you grown any third crop on  plot
 
         Choices: Yes, No
 
-•	third_crop_name (s) : Select the third crop grown on ${surveyed_plot}__${llu} plot
+9.	third_crop_name (s) : Select the third crop grown on  plot
 
         Choices: Bajra, Banana, Blackgram, Caster, Chickpea (Gram), Chilli, 
                 Cotton, Fallow, Greengram,GreenManure,Groundnut,IndianMustard,Jowar,
@@ -321,36 +321,36 @@ This module contains questions about the survey plot and crop establishment
                 Soybean,Sugarcane,Sunflower, Turmeric, Vegetables, Mentha,
                 Wheat
 
-•	prev_crop_tillage (m) 	What was the tillage type for previous ${previous_crop} crop in ${surveyed_plot}__${llu} plot? (select all that apply)
+10.	prev_crop_tillage (m) 	What was the tillage type for previous  crop in  plot? (select all that apply)
 
         Choices: Puddling (wet tillage) (NOT applicable for Wheat), 
                 Disc harrow, Tyne cultivator, 4 wheel tractor rotavator,
                 2 wheel tractor rotavator,Bullock drawn plough, 
                 Strip tillage, No tillage, Other
 
-•	prev_crop_harvest_date (da)	Enter date of previous ${previous_crop} crop harvest in ${surveyed_plot}__${llu} plot
-•	prev_crop_harvest_method (s) : What was the method of previous crop harvesting?
+11.	prev_crop_harvest_date (da)	Enter date of previous  crop harvest in  plot
+12.	prev_crop_harvest_method (s) : What was the method of previous crop harvesting?
 
         Choices: Combine, Reaper, Manual
 
-•	prev_crop_residue (s):  ${previous_crop} crop residue was
+13.	prev_crop_residue (s):   crop residue was
 
         Choices: Removed from the field, Retained in the field, 
                 Burnt in the field
 
-•	variety_name (s):  Variety name of ${crop_name}
+14.	variety_name (s):  Variety name of 
 
         Choices: Lists out different varieties of the rice to choose from 
 
-•	variety_name_other (t): Enter name of other ${crop_name} variety
+15.	variety_name_other (t): Enter name of other  variety
 
         Relevant: If variety name is selected as “other” the enumerator gets 
                 to input the rice variety 
-•	variety_type (s): What is the variety type of ${crop_name}?
+16.	variety_type (s): What is the variety type of ?
 
         Choices: Improved, Hybrid, Other
 
-•	ce_method (s):  ${crop_name} establishment method in the largest ${surveyed_plot} ${llu} plot
+17.	ce_method (s):   establishment method in the largestplot
 
         Choices: Manual transplanted (Random), Manual transplanted in line, 
                 Directly sown by broadcast method, Directly sown by seed drill, 
@@ -358,11 +358,11 @@ This module contains questions about the survey plot and crop establishment
                 Line sowing after tillage, Broadcasting, Zero tillage, Broadcasting, 
                 Manual line sowing, Seed drill, Other
 
-•	ce_irrigation (s): Did you apply irrigation at the time of crop establishment in the largest ${surveyed_plot} ${llu} ${crop_name} plot?
+18.	ce_irrigation (s): Did you apply irrigation at the time of crop establishment in the largestplot?
 
         Choices: Yes, No
 
-•	land_prep_method (m): Land preparation method in the largest ${surveyed_plot} ${llu} ${crop_name} plot (select all that apply)
+19.	land_prep_method (m): Land preparation method in the largestplot (select all that apply)
 
         Choices: Puddling (Wet tillage), Tyne cultivator, Disc harrow,
                 4 wheel tractor rotavator, 2 wheel tractor rotavator, 
@@ -385,34 +385,36 @@ This module contains questions about the survey plot and crop establishment
                 4 wheel tractor rotavator, 2 wheel tractor rotavator, Bullock drawn plough, 
                 Strip tillage, No tillage
 
-•	rotavator_till_number_of_years (s): 	If tillage by rotavator, number of years of continuous use in ${surveyed_plot} ${llu} plot
+20.	rotavator_till_number_of_years (s): 	If tillage by rotavator, number of years of continuous use inplot
 
         Choices: 1,2,3,4,5,6,7,8,9,10
                 
         Relevant: If land preparation method  was Four Wheel Tractor Rotavator
                 or Two Wheel Tractor rotavator
 
-•	date_nursery_estd (da) : If rice transplanted, date of nursery establishment for ${surveyed_plot}__${llu} plot
+21.	date_nursery_estd (da) : If rice transplanted, date of nursery establishment
 
         Relevant: Question only shows up if the crop selected is rice, 
                            and the crop establishment method is Transplanted 
                 
         Constraint: The form does not accept any future dates 
 
-•	planting_date_dsr (da): Date of seeding / transplanting / direct sowing (if DSR rice) or
-sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
+22.	planting_date_dsr (da): Date of seeding / transplanting / direct sowing (if DSR rice) or
+sowing (wheat)
 
 
 
 <div class = 'alert'>Note: The date for previous crop harvest is displayed for the enumerator to correctly select DSR date which should be after the harvest date of the previous crop 
 </div>
 <br>
-•	seedling_age (c): This is a calculate field and it calculate the seedling age by :
+
+23.	seedling_age (c): This is a calculate field and it calculate the seedling age by :
 
 	Calculation: transplanting date – nursery establishment date
 
 <br>
-•	delay_reasons (m): If wheat planting was delayed past November 30 in this season, why? 
+
+24.	delay_reasons (m): If wheat planting was delayed past November 30 in this season, why? 
 
         Relevant: This question is displayed only for wheat and if the wheat 
                 sowing date is after November 30. 
@@ -425,11 +427,12 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
 </div> 
 
 <br>
-•	delay_reason_others (t): Enter other reason in delay of sowing this season
+
+25.	delay_reason_others (t): Enter other reason in delay of sowing this season
 
         Relevant: If delay reasons is selected as other
 
-•	delay_common_reason (m): If wheat planting is commonly delayed past November 30th in most years, why? (Select all that apply)
+26.	delay_common_reason (m): If wheat planting is commonly delayed past November 30th in most years, why? (Select all that apply)
 
         Relevant: This question is displayed only for wheat and if the wheat sowing 
                 date is after November 30. 
@@ -441,13 +444,13 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
                 Lack of funds, No Delay
 
 
-•	delay_common_reason_oth (t): Enter other reason if wheat planting is commonly delayed past Nov 30th in most year.
+27.	delay_common_reason_oth (t): Enter other reason if wheat planting is commonly delayed past Nov 30th in most year.
 
         Relevant: If common delay reasons is selected as other
 
 
 
-•	nursery_determining_factor   (m): What mostly determines the timing of rice nursery establishment? (Select all that apply)
+28.	nursery_determining_factor(m): What mostly determines the timing of rice nursery establishment? (Select all that apply)
 
         Relevant: Only for rice
 
@@ -455,17 +458,17 @@ sowing (wheat) in ${surveyed_plot} ${llu} plot for ${crop_name}
                 Irrigation water availability, Weather forecast information, 
                 Practices of neighboring farmers, Seed availability, Other
 
-•	timing_determing_factor (m):  What mostly determines the timing of rice planting in the largest ${surveyed_plot}__${llu} plot? (Select all that apply)
+29.	timing_determing_factor (m):  What mostly determines the timing of rice planting in the largest  plot? (Select all that apply)
 
         Relevant: Only for rice
 
         Choices: Calendar date, Seedling age, Arrival of rains, 
         Irrigation water availability, Labor availability
 
-•	seed_amount (d): ${crop_name} seed amount used for the largest ${surveyed_plot} ${llu} plot in kg
+30.	seed_amount (d):  seed amount used for the largestplot in kg
 
 
-•	seed_source (s): What is the source of seed for ${crop_name} used for the largest ${surveyed_plot}__${llu} plot?
+31.	seed_source (s): What is the source of seed for  used for the largest  plot?
 
         Choices: Self saved, Neighbor or Relative,Private seed dealer, 
                 Cooperative, Government / KVK / SAU
@@ -485,31 +488,31 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 <div class="accordion-body">
  
-•	shc_recommendation (s): :Are soil health card recommendations available for the largest  ${surveyed_plot}__${llu} plot?
+1.	shc_recommendation (s): :Are soil health card recommendations available for the largestplot?
 
 	Choices: No, Yes and information used, Yes but information not used
 
-•	fym_applied (s):  Was Farm Yard Manure (FYM) applied in the largest ${surveyed_plot}__${llu} plot in last one year?
+2.	fym_applied (s):  Was Farm Yard Manure (FYM) applied in the largest  plot in last one year?
 
         Choices: Yes, No
 
-•	fym_no_applied (s): If no, What is your reason for not using FYM?
+3.	fym_no_applied (s): If no, What is your reason for not using FYM?
 
         Choices: Not Available,Used for fuel,Sold
 
-•	fym_applied_qty (d):	How much FYM in quintal is applied during each application in the largest [${surveyed_plot}__${llu}] ${crop_name} plot?
+4.	fym_applied_qty (d):	How much FYM in quintal is applied during each application in the largest plot?
 
         Relevant: Only if FYM was applied
 
 
-•	fym_applied_avg_five_year_times (s): Over the last five years, how many times FYM was applied in the largest ${surveyed_plot}__${llu} plot?
+5.	fym_applied_avg_five_year_times (s): Over the last five years, how many times FYM was applied in the largest plot?
 
         Relevant: Only if FYM was applied
                 
         Choices: 0,1,2,3,4,5,6,7,8,9,10
 
 
-•	apply_minfert (s): Did you apply mineral fertilizer in the largest ${surveyed_plot} ${llu}] ${crop_name} plot?
+6.	apply_minfert (s): Did you apply mineral fertilizer in the largest plot?
 
         Choices: Yes, No
 
@@ -532,362 +535,308 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 
 
-- chem_fert_applied (m): Select the fertilizer(s) applied at planting (basal) for ${crop_name} 
+1. chem_fert_applied (m): Select the fertilizer(s) applied at planting (basal) for  
 
         Choices: DAP,NPK,Urea,NPKS,MoP,SSP,TSP,ZnSO4,Gypsum,
                  Boron,Other (e.g. Liquid fertilizers),None
 
-- amt_dap_basal (d): DAP at planting (basal) in kg	
+2. amt_dap_basal (d): DAP at planting (basal) in kg	
 		 
 	Relevant: Only if DAP is selected as chemical fertilizer applied
 
-- amt_npk_basal (d): NPK product (mixture fertilizer) at planting (basal) in kg	
+3. amt_npk_basal (d): NPK product (mixture fertilizer) at planting (basal) in kg	
 
 	Relevant: Only if NPK is selected as chemical fertilizer applied
 
 
-- amt_urea_basal (d): Urea at planting (basal) in kg	
+4. amt_urea_basal (d): Urea at planting (basal) in kg	
 
         Relevant: Only if Urea is selected as chemical fertilizer applied
 
-- amt_npks_basal (d): NPKS at planting (basal) in kg	
+5. amt_npks_basal (d): NPKS at planting (basal) in kg	
 
         Relevant: Only if NPKS is selected as chemical fertilizer applied
 
 
-- amt_mop_basal (d): MoP at planting (basal) in kg	
+6. amt_mop_basal (d): MoP at planting (basal) in kg	
 
         Relevant: Only if MOP is selected as chemical fertilizer applied
 
-- amt_ssp_basal (d): SSP at planting (basal) in kg
+7. amt_ssp_basal (d): SSP at planting (basal) in kg
 
         Relevant: Only if SSP is selected as chemical fertilizer applied
 	
-- amt_tsp_basal	(d): TSP at planting (basal) in kg
+8. amt_tsp_basal	(d): TSP at planting (basal) in kg
 
         Relevant: Only if TSP is selected as chemical fertilizer applied
 	
-- amt_znso4_basal (d): Zinc Sulphate at planting (basal) in kg
+9. amt_znso4_basal (d): Zinc Sulphate at planting (basal) in kg
 
         Relevant: Only if Zinc sulphate is selected as chemical fertilizer applied
 	
 
-- amt_gypsum_basal (d): Gypsum at planting (basal) in kg	
+10. amt_gypsum_basal (d): Gypsum at planting (basal) in kg	
 
         Relevant: Only if Gypsum is selected as chemical fertilizer applied
 
-- amt_boron_basal (d): Boron at planting (basal) in kg
+11. amt_boron_basal (d): Boron at planting (basal) in kg
 
         Relevant: Only if Boron is selected as chemical fertilizer applied
 	
-- other_chem_ferts (t): Enter name of other basal fertilizer applied	
+12. other_chem_ferts (t): Enter name of other basal fertilizer applied	
 
         Relevant: Only if other chemical fertilizer is selected as chemical fertilizer applied
 
-- amt_other_chem_ferts (d): Total ${other_chem_ferts} applied in kg	
+13. amt_other_chem_ferts (d): Total  applied in kg	
 
         Relevant: Only if other chemical fertilizer is selected as chemical fertilizer applied
  
 
 <b>First top dressing</b>
 
-- td1_fert_applied (m):	Select the fertilizer(s) applied at first top dressing for ${crop_name} 
+14. td1_fert_applied (m):	Select the fertilizer(s) applied at first top dressing for  
 
         Choices: DAP,NPK,Urea,NPKS,MoP,SSP,TSP,ZnSO4,Gypsum,Boron,
                  Other (e.g. Liquid fertilizers),None
 
 
-- td1_amt_dap (d) : Basal DAP applied: ${amt_dap_basal} kg\nEnter DAP amount applied at first top dressing in KG
+15. td1_amt_dap (d) : Basal DAP applied:  kg\nEnter DAP amount applied at first top dressing in KG
 
-- fert_dap_td1_das (i) : Timing of first DAP top dressing (in days after sowing/transplanting)
+16. fert_dap_td1_das (i) : Timing of first DAP top dressing (in days after sowing/transplanting)
 
 
--	td1_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
+17.	td1_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
 
--	fert_npk_td1_das (i):   Timing of first NPK top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
--	fert_urea_td1_das (i):   Timing of first UREA top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
--	fert_npks_td1_das (i):   Timing of first NPKS top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
--	fert_mop_td1_das (i):   Timing of first MOP top dressing (in days after 
-sowing/transplanting)
--	td1_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
--	fert_ssp_td1_das (i):   Timing of first SSP top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_tsp_td1_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
--	fert_znso4_td1_das (i):   Timing of first Zinc Sulphate top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
--	fert_gypsum_td1_das (i):   Timing of first GYPSUM top dressing (in days after 
-sowing/transplanting)
-
--	td1_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
--	fert_borom_td1_das (i):   Timing of first Boron top dressing (in days after 
-sowing/transplanting)
-
--	td1_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
--	td1_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_oth_td1_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
+18.	fert_npk_td1_das (i):   Timing of first NPK top dressing (in days after sowing/transplanting)
+19.	td1_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
+20.	fert_urea_td1_das (i):   Timing of first UREA top dressing (in days after sowing/transplanting)
+21.	td1_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
+22.	fert_npks_td1_das (i):   Timing of first NPKS top dressing (in days after sowing/transplanting)
+23.	td1_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
+24.	fert_mop_td1_das (i):   Timing of first MOP top dressing (in days after sowing/transplanting)
+25.	td1_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
+26.	fert_ssp_td1_das (i):   Timing of first SSP top dressing (in days after sowing/transplanting)
+27.	td1_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
+28.	fert_tsp_td1_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
+29.	td1_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
+30.	fert_znso4_td1_das (i):   Timing of first Zinc Sulphate top dressing (in days after sowingtransplanting)
+31.	td1_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
+32.	fert_gypsum_td1_das (i):   Timing of first GYPSUM top dressing (in days after sowing/transplanting)
+33.	td1_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
+34.	fert_borom_td1_das (i):   Timing of first Boron top dressing (in days after sowing/transplanting)
+35.	td1_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
+36.	td1_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
+37.	fert_oth_td1_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
 
 <b>Second top dressing </b>
--	td2_fert_applied (m):	Select the fertilizer(s) applied at second top dressing for ${crop_name} 
+
+38.	td2_fert_applied (m):	Select the fertilizer(s) applied at second top dressing for  
 
         Choices: DAP,NPK,Urea,NPKS,MoP,SSP,TSP,ZnSO4,Gypsum,Boron,Other (e.g. Liquid fertilizers),None
 
--	td2_amt_dap (d) :    Enter DAP amount applied at first top dressing in KG
--	fert_dap_td2_das:    Timing of first DAP top dressing (in days after sowing/transplanting)
+39.	td2_amt_dap (d) :    Enter DAP amount applied at first top dressing in KG
+40.	fert_dap_td2_das:    Timing of first DAP top dressing (in days after sowing/transplanting)
+41.	td2_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
+42.	fert_npk_td2_das (i):   Timing of first NPK top dressing (in days after sowing/transplanting)
+43.	td2_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
+44.	fert_urea_td2_das (i):   Timing of first UREA top dressing (in days after sowing/transplanting)
+45.	td2_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
+46.	fert_npks_td2_das (i):   Timing of first NPKS top dressing (in days after sowing/transplanting)
+47.	td2_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
+48.	fert_mop_td2_das (i):   Timing of first MOP top dressing (in days after sowing/transplanting)
+49.	td2_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
+50.	fert_ssp_td2_das (i):   Timing of first SSP top dressing (in days after sowing/transplanting)
+51.	td2_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
+52.	fert_tsp_td2_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
+53.	td2_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
+54.	fert_znso4_td2_das (i):   Timing of first Zinc Sulphate top dressing (in days after sowingtransplanting)
+55.	td2_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
+56.	fert_gypsum_td2_das (i):   Timing of first GYPSUM top dressing (in days after sowing/transplanting)
+57.	td2_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
+58.	fert_borom_td2_das (i):   Timing of first Boron top dressing (in days after sowing/transplanting)
+59.	td2_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
+60.	td2_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
+61.	fert_oth_td2_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
 
--	td2_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
--	fert_npk_td2_das (i):   Timing of first NPK top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
--	fert_urea_td2_das (i):   Timing of first UREA top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
--	fert_npks_td2_das (i):   Timing of first NPKS top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
--	fert_mop_td2_das (i):   Timing of first MOP top dressing (in days after 
-sowing/transplanting)
--	td2_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
--	fert_ssp_td2_das (i):   Timing of first SSP top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_tsp_td2_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
--	fert_znso4_td2_das (i):   Timing of first Zinc Sulphate top dressing (in days after 
-sowing/transplanting)
-
--	td2_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
--	fert_gypsum_td2_das (i):   Timing of first GYPSUM top dressing (in days after sowing/transplanting)
-
--	td2_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
--	fert_borom_td2_das (i):   Timing of first Boron top dressing (in days after 
-sowing/transplanting)
-
--	td2_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
--	td2_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_oth_td2_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
 
 
 <b>Third top dressing </b>
--	td3_fert_applied (m):	Select the fertilizer(s) applied at third top dressing for ${crop_name} 
+
+62.	td3_fert_applied (m):	Select the fertilizer(s) applied at third top dressing for  
 
         Choices: DAP,NPK,Urea,NPKS,MoP,SSP,TSP,ZnSO4,Gypsum,Boron,Other (e.g. Liquid fertilizers),None
 
--	td3_amt_dap (d) :    Enter DAP amount applied at first top dressing in KG
--	fert_dap_td3_das:    Timing of first DAP top dressing (in days after sowing/transplanting)
+63.	td3_amt_dap (d) :    Enter DAP amount applied at first top dressing in KG
+64.	fert_dap_td3_das:    Timing of first DAP top dressing (in days after sowing/transplanting)
+65.	td3_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
+66.	fert_npk_td3_das (i):   Timing of first NPK top dressing (in days after sowing/transplanting)
+67.	td3_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
+68.	fert_urea_td3_das (i):   Timing of first UREA top dressing (in days after sowing/transplanting)
+69.	td3_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
+70.	fert_npks_td3_das (i):   Timing of first NPKS top dressing (in days after sowing/transplanting)
+71.	td3_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
+72.	fert_mop_td3_das (i):   Timing of first MOP top dressing (in days after sowing/transplanting)
+73.	td3_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
+74.	fert_ssp_td3_das (i):   Timing of first SSP top dressing (in days after sowing/transplanting)
+75.	td3_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
+76.	fert_tsp_td3_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
+77.	td3_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
+78.	fert_znso4_td3_das (i):   Timing of first Zinc Sulphate top dressing (in days after sowingtransplanting)
+79.	td3_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
+80.	fert_gypsum_td3_das (i):   Timing of first GYPSUM top dressing (in days after sowing/transplanting)
+81.	td3_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
+82.	fert_borom_td3_das (i):   Timing of first Boron top dressing (in days after sowing/transplanting)
+83.	td3_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
+84.	td3_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
+85.	fert_oth_td3_das (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
+86.	total_dap_applied (a):Total DAP applied by the farmer ( All the application amount in each stageadded )
 
--	td3_amt_npk (d) :    Enter NPK amount applied at first top dressing in KG
--	fert_npk_td3_das (i):   Timing of first NPK top dressing (in days after 
-sowing/transplanting)
+        Calculation : coalesce(,0)+coalesce(${td1_amt_dap},0)+coalesce(${td2_amt_dap},0)+coalesce(${td3_amt_dap},0)
 
--	td3_amt_urea (d) :    Enter UREA amount applied at first top dressing in KG
--	fert_urea_td3_das (i):   Timing of first UREA top dressing (in days after 
-sowing/transplanting)
+87.	total_npk_applied (a) : Total NPK applied:
 
+        Calculation: coalesce(,0)+coalesce(${td1_amt_npk},0)+coalesce(${td2_amt_npk},0)+coalesce(${td3_amt_npk},0)
 
--	td3_amt_npks (d) :    Enter NPKS amount applied at first top dressing in KG
--	fert_npks_td3_das (i):   Timing of first NPKS top dressing (in days after 
-sowing/transplanting)
+88.	total_urea_applied (a) : Total Urea applied
 
--	td3_amt_mop (d) :    Enter MOP amount applied at first top dressing in KG
--	fert_mop_td3_das (i):   Timing of first MOP top dressing (in days after 
-sowing/transplanting)
--	td3_amt_ssp (d) :    Enter SSP amount applied at first top dressing in KG
--	fert_ssp_td3_das (i):   Timing of first SSP top dressing (in days after 
-sowing/transplanting)
+        Calculation: coalesce(,0)+coalesce(${td1_amt_urea},0)+coalesce(${td2_amt_urea},0)+coalesce(${td3_amt_npk},0)
 
--	td3_amt_tsp (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_tsp_td3_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
-
--	td3_amt_znso4 (d) :    Enter Zinc Sulphate amount applied at first top dressing in KG
--	fert_znso4_td3_das (i):   Timing of first Zinc Sulphate top dressing (in days after 
-sowing/transplanting)
-
--	td3_amt_gypsum (d) :    Enter GYPSUM amount applied at first top dressing in KG
--	fert_gypsum_td3_das (i):   Timing of first GYPSUM top dressing (in days after 
-sowing/transplanting)
-
--	td3_amt_boron (d) :    Enter Boron amount applied at first top dressing in KG
--	fert_borom_td3_das (i):   Timing of first Boron top dressing (in days after 
-sowing/transplanting)
-
--	td3_oth_name : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
--	td3_amt_oth (d) :    Enter TSP amount applied at first top dressing in KG
--	fert_oth_td3_das (i):   Timing of first TSP top dressing (in days after 
-sowing/transplanting)
-
--	total_dap_applied (a) : Total DAP applied by the farmer ( All the application amount in each stage is added )
-
-        Calculation : coalesce(${amt_dap_basal},0)+coalesce(${td1_amt_dap},0)+coalesce(${td2_amt_dap},0)+coalesce(${td3_amt_dap},0)
-
--	total_npk_applied (a) : Total NPK applied:
-
-        Calculation: coalesce(${amt_npk_basal},0)+coalesce(${td1_amt_npk},0)+coalesce(${td2_amt_npk},0)+coalesce(${td3_amt_npk},0)
-
--	total_urea_applied (a) : Total Urea applied
-
-        Calculation: coalesce(${amt_urea_basal},0)+coalesce(${td1_amt_urea},0)+coalesce(${td2_amt_urea},0)+coalesce(${td3_amt_npk},0)
-
--	total_npks_applied (a): Total NPKS applied
+89.	total_npks_applied (a): Total NPKS applied
         
-        Calculation : coalesce(${amt_npks_basal},0)+coalesce(${td1_amt_npks},0)+coalesce(${td2_amt_npks},0)+coalesce(${td3_amt_npks},0)
+        Calculation : coalesce(,0)+coalesce(${td1_amt_npks},0)+coalesce(${td2_amt_npks},0)+coalesce(${td3_amt_npks},0)
 
--	total_mop_applied
+90.	total_mop_applied
 
-        Calculation: coalesce(${amt_mop_basal},0)+coalesce(${td1_amt_mop},0)+coalesce(${td2_amt_mop},0)+coalesce(${td3_amt_mop},0)
--	total_ssp_applied
+        Calculation: coalesce(,0)+coalesce(${td1_amt_mop},0)+coalesce(${td2_amt_mop},0)+coalesce(${td3_amt_mop},0)
+91.	total_ssp_applied
 
-        Calculation: coalesce(${amt_ssp_basal},0)+coalesce(${td1_amt_ssp},0)+coalesce(${td2_amt_ssp},0)+coalesce(${td3_amt_ssp},0)
+        Calculation: coalesce(,0)+coalesce(${td1_amt_ssp},0)+coalesce(${td2_amt_ssp},0)+coalesce(${td3_amt_ssp},0)
 
--	total_tsp_applied
+92.	total_tsp_applied
 
-        Calculation : coalesce(${amt_tsp_basal},0)+coalesce(${td1_amt_tsp},0)+coalesce(${td2_amt_tsp},0)+coalesce(${td3_amt_tsp},0)
+        Calculation : coalesce(,0)+coalesce(${td1_amt_tsp},0)+coalesce(${td2_amt_tsp},0)+coalesce(${td3_amt_tsp},0)
 
--	total_znso4_applied
+93.	total_znso4_applied
 
         Calculation: coalesce(${amt_znso4_basal},0)+coalesce(${td1_amt_znso4},0)+coalesce(${td2_amt_znso4},0)+coalesce(${td3_amt_znso4},0)
 
--	total_gypsum_applied
+94.	total_gypsum_applied
 
-        Calculation: coalesce(${amt_gypsum_basal},0)+coalesce(${td1_amt_gypsum},0)+coalesce(${td2_amt_gypsum},0)+coalesce(${td3_amt_gypsum},0)
+        Calculation: coalesce(,0)+coalesce(${td1_amt_gypsum},0)+coalesce(${td2_amt_gypsum},0)+coalesce(${td3_amt_gypsum},0)
 
--	total_boron_applied
+95.	total_boron_applied
 
-        Calculation: coalesce(${amt_boron_basal},0)+coalesce(${td1_amt_boron},0)+coalesce(${td2_amt_boron},0)+coalesce(${td3_amt_boron},0)
+        Calculation: coalesce(,0)+coalesce(${td1_amt_boron},0)+coalesce(${td2_amt_boron},0)+coalesce(${td3_amt_boron},0)
 
-•	grade_N (d): Select the grade of Nitrogen in NPK/NPKS mixture applied in ${surveyed_plot}__${llu} plot in KG
+96.	grade_N (d): Select the grade of Nitrogen in NPK/NPKS mixture applied in  plot in KG
 
-•	grade_P	Select the grade of Phosphorous in NPK/NPKS mixture applied in 
-${surveyed_plot}__${llu} plot in KG
+97.	grade_P	Select the grade of Phosphorous in NPK/NPKS mixture applied in 
+ plot in KG
 
-•	grade_K: Select the grade of Potassium in NPK/NPKS mixture applied in ${surveyed_plot}__${llu} plot in KG
+98.	grade_K: Select the grade of Potassium in NPK/NPKS mixture applied in  plot in KG
 
-•	grade_S: Select the grade of Sulphur in NPK/NPKS mixture applied in ${surveyed_plot}__${llu} plot in KG
+99.	grade_S: Select the grade of Sulphur in NPK/NPKS mixture applied in  plot in KG
 
 <div class = 'alert'>
 Note:  Multiple notes are shown for the enumerators to check all of their entries to verify if the entries are correct. All the application from basal, TD1, TD2, TD3 and the total amount applied for the fertilizers are displayed on the screen for the enumerators to recheck their entries and ensure all the entries are correct. 
 </div>
 
-•	n_rate(a) : Nitrogen rate calculated based on the input data 
+1.	n_rate(a) : Nitrogen rate calculated based on the input data 
 
-        Calculate: round((((coalesce(${total_dap_applied},0) * (.18)) + (coalesce(${total_urea_applied},0) * (.46)) + ((coalesce(${total_npk_applied},0) + coalesce(${total_npks_applied},0))* (coalesce(${grade_N},0) div 100))) div (${cropLarestAreaAcre})) * 2.5,0)
+        Calculate: round((((coalesce(,0) * (.18)) + (coalesce(,0) * (.46)) + ((coalesce(,0) + coalesce(,0))* (coalesce(${grade_N},0) div 100))) div (${cropLarestAreaAcre})) * 2.5,0)
  
 
-•	p_rate	(a): P rate calculated based on the input data 
+2.	p_rate	(a): P rate calculated based on the input data 
 
         Calculate: 	
-        round((((coalesce(${total_dap_applied},0)* (.46)) + (coalesce(${total_ssp_applied},0)* (.16)) + ((coalesce(${total_npk_applied},0)+  coalesce(${total_npks_applied},0))* (coalesce(${grade_P},0) div 100)) +  (coalesce(${total_tsp_applied},0) * (.45))) div (${cropLarestAreaAcre}))* 2.5,0)
+        round((((coalesce(,0)* (.46)) + (coalesce(,0)* (.16)) + ((coalesce(,0)+  coalesce(,0))* (coalesce(${grade_P},0) div 100)) +  (coalesce(,0) * (.45))) div (${cropLarestAreaAcre}))* 2.5,0)
 
-•	k_rate (a) : K Rate calculated based on the input data		
+3.	k_rate (a) : K Rate calculated based on the input data		
 
-        Calculate: round((((coalesce(${total_mop_applied},0)*(.60)) + ((coalesce(${total_npk_applied},0)+ coalesce(${total_npks_applied},0)) * (coalesce(${grade_K},0) div 100))) div (${cropLarestAreaAcre}))* 2.5,0)
+        Calculate: round((((coalesce(,0)*(.60)) + ((coalesce(,0)+ coalesce(,0)) * (coalesce(${grade_K},0) div 100))) div (${cropLarestAreaAcre}))* 2.5,0)
 
-•	dap_price (d) : DAP price per kg
+4.	dap_price (d) : DAP price per kg
 
         Relevant : If the fertilizers are selected in any of the application , and country is Nepal
-•	npk_price (d) : NPK price per kg
+5.	npk_price (d) : NPK price per kg
 
         Relevant : If the fertilizers are selected in any of the application and country is Nepal
 
-•	urea_price (d): Urea price per kg
+6.	urea_price (d): Urea price per kg
 
         Relevant : If the fertilizers are selected in any of the application and country is Nepal
 
-•	mop_price (d) : Price of Mop per kg
+7.	mop_price (d) : Price of Mop per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
 
-•	znso4_price (d) : Zinc sulphate price per kg
+8.	znso4_price (d) : Zinc sulphate price per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
 
-•	gypsum_price (d) : Gypsum price per kg
+9.	gypsum_price (d) : Gypsum price per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
 
 
-•	boron_price (d) : Boron price per kg
+10.	boron_price (d) : Boron price per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
 
-•	npks_price (d): Price of NPKS per kg
+11.	npks_price (d): Price of NPKS per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
  
-•	ssp_price (d) : Price of SSP per kg
+12.	ssp_price (d) : Price of SSP per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal
 
-•	tsp_price (d): Price of TSP per kg
+13.	tsp_price (d): Price of TSP per kg
 
         Relevant : If the fertilizers are selected in any of the application, and country is Nepal 
 
-•	fert_info_source (m) : What is your source of information on fertilizer/micronutrient use
+14.	fert_info_source (m) : What is your source of information on fertilizer/micronutrient use
 
         choices:        
 
-•	source_dap(s) : Source of purchase of DAP
+15.	source_dap(s) : Source of purchase of DAP
 
         Choices: Input Dealer/Village level shop,Cooperative,India for Nepal
         Relevant : If the fertilizers are selected in any of the application 
 
-•	source_npk(s) : Source of purchase of NPK product
+16.	source_npk(s) : Source of purchase of NPK product
 
         Choices: Input Dealer/Village level shop,Cooperative,India for Nepal
         Relevant : If the fertilizers are selected in any of the application 
 
 
 
-•	source_urea (s): Source of purchase of Urea
+17.	source_urea (s): Source of purchase of Urea
 
         Choices: Input Dealer/Village level shop,Cooperative,India for Nepal
         Relevant : If the fertilizers are selected in any of the application 
 
-•	source_znso4(s) Source of purchase of Gypsum
+18.	source_znso4(s) Source of purchase of Gypsum
 
         Choices: Input Dealer/Village level shop,Cooperative,India for Nepal
         Relevant : If the fertilizers are selected in any of the application 
 
-•	source_boron (s): Source of purchase of Boron
+19.	source_boron (s): Source of purchase of Boron
 
         Choices: Input Dealer/Village level shop,Cooperative,India for Nepal
         Relevant : If the fertilizers are selected in any of the application 
 
-•	fert_timely_available(s): Is fertilizer/micronutrients generally available on time
+20.	fert_timely_available(s): Is fertilizer/micronutrients generally available on time
 
         Choices: Yes, No
 
-•	avg_delay_chem_fert (s): If ‘no’ Average delay in fertilizer availability in weeks 
+21.	avg_delay_chem_fert (s): If ‘no’ Average delay in fertilizer availability in weeks 
 
         Relevant : If no, fert_timely_available
         Choices: 1 – 10 
@@ -908,61 +857,61 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class="accordion-body">
 
 
-•	access_to_irrgation (s): Do you have access to irrigation for the largest ${surveyed_plot}__${llu} plot of ${crop_name}?	
+1.	access_to_irrgation (s): Do you have access to irrigation for the largest  plot of ?	
 
         Choices: Yes, No
 
-•	irrigation_done (s)	Did you irrigate your largest [${surveyed_plot}__${llu}] ${crop_name} plot?	
+2.	irrigation_done (s)	Did you irrigate your largest  plot?	
 
         Choices: Yes, No
 
-•	source_of_irrigation (m): Source of irrigation for ${surveyed_plot}__${llu} plot for ${crop_name} (Select all that apply)	
+3.	source_of_irrigation (m): Source of irrigation for  (Select all that apply)	
 
         Choices: River,Canal,Pond/Tank,Shallow TubeWell,Deep TubeWell
         Relevant : If irrigation_done was Yes. 
 
-•	application_stage (m)	At what stage was irrigation applied in ${surveyed_plot}__${llu} plot for ${crop_name}? (Select all that apply)
+4.	application_stage (m)	At what stage was irrigation applied in? (Select all that apply)
 	
         Choices: Early Vegetative,Mid Vegetative,Flowering,Grain Filling
         Relevant : If irrigation_done was Yes. 
 
-•	irrigation_times (s) : Number of irrigations applied after crop establishment in ${surveyed_plot}__${llu} plot for ${crop_name} (Select one)	
+5.	irrigation_times (s) : Number of irrigations applied after crop establishment (Select one)	
 
         Choices: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,
         29,30
         Relevant : If irrigation_done was Yes, and source_of_irrigation was not canal. 
 
-•	irrigation_decision_factor (m): How do you decide when to irrigate the ${surveyed_plot}__${llu}  for ${crop_name}? (Select all that apply)
+6.	irrigation_decision_factor (m): How do you decide when to irrigate? (Select all that apply)
 
         Relevant : If the number of irrigation done was more than 0
         Choices: Crop Growth Stages, Soil dryness/cracking,Disappearance of flood water,Visible crop stress
 		
-•	constraint_factor (m): If ${crop_name} was not irrigated when required, why? (Select all that apply)	
+7.	constraint_factor (m): If  was not irrigated when required, why? (Select all that apply)	
 
         Choices: Expensive,Sufficient Rainfall,Irrigation not required,Water not available
         when required,Pump/Tubewell not available when required,Other
         Relevant : If irrigation_done was no
 
-•	tubewell_depth (d) : Depth of tubewell in FEET used to irrigate ${surveyed_plot}__${llu}  plot
+8.	tubewell_depth (d) : Depth of tubewell in FEET used to irrigate
 
         Relevant: if source_of_irrigation was ShallowTubeWell or source_of_irrigation was DeepTubeWell
 	
-•	pump_use (s)	Did ${name} use pump to irrigate ${surveyed_plot}__${llu}  plot?	
+9.	pump_use (s)	Did  use pump to irrigate?	
 
         Choices: Yes,No
         Relevant: If irrigation_done was yes
 
-•	pump_energy_src (s): Energy source for the pump	
+10.	pump_energy_src (s): Energy source for the pump	
 
         Choices: Electricity,Diesel,Both electricity and diesel
         Relevant: If pump_use was yes
 
-•	pump_hp (s): Select the Horsepower of the pump	
+11.	pump_hp (s): Select the Horsepower of the pump	
 
         Choices: 0 to 1 HP,>1 to 2 HP,>2 to 5 HP,5-10 HP,10-20 HP,20-30 HP,30-40 HP,>40 HP
         Relevant: If pump_use was yes
 
-•	lay_flat_pipe (s) : Did you use lay ‚Äì flat pipe to irrigate the ${surveyed_plot}__${llu}  plot?	
+12.	lay_flat_pipe (s) : Did you use lay flat pipe to irrigate?	
 
         Choices: Yes,No
 <div class = 'alert'>
@@ -981,47 +930,47 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 
 
-•	face_drought (s) : Did your ${crop_name} crop face drought stress? (in ${surveyed_plot}__${llu})	
+1.	face_drought (s) : Did your  crop face drought stress?	
 
         Choices: Yes,No
 
-•	drought_growth_stage (m): In which growth stage(s) did drought affect the crop? (in ${surveyed_plot}__${llu}) (Select all that apply)	
+2.	drought_growth_stage (m): In which growth stage(s) did drought affect the crop?  (Select all that apply)	
 
 Choices: Early Vegetative,Mid Vegetative,Flowering,Grain Filling
 Relevant: If faces drought 
 
-•	flood_stress(s):  Did your ${crop_name} crop face flood stress? (in ${surveyed_plot}__${llu})
+2.	flood_stress(s):  Did your  crop face flood stress? 
 
         Choices: Yes,No
 
-•	flood_growth_stage (m):  In which growth stage(s) did flood affect the crop? (in ${surveyed_plot}__${llu}) (Select all that apply)	
+3.	flood_growth_stage (m):  In which growth stage(s) did flood affect the crop?  (Select all that apply)	
 
         Choices: Early Vegetative,Mid Vegetative,Flowering,Grain Filling
         Relevant: if flood stress was yes
 
-•	insecticide_applied(s): Were insecticides applied in the largest [${surveyed_plot}__${llu}] ${crop_name}?
+4.	insecticide_applied(s): Were insecticides applied in the largest  ?
 
         Choices: Yes,No
 
-•	insecticide_name (t)	: If yes, name of insecticides	
+5.	insecticide_name (t)	: If yes, name of insecticides	
 
         Relevant: If insectice_applied was yes
 
-•	insecticide_app_method (m) : Method of Insecticide application	
+6.	insecticide_app_method (m) : Method of Insecticide application	
 
         Choices: Irrigation Applied,Soil Applied,Canopy Applied (Foiler spray)
 
-•	pesticide_applied (s): Were pesticides applied in ${surveyed_plot}__${llu} for disease control for ${crop_name}?	
+7.	pesticide_applied (s): Were pesticides applied in  for disease control for ?	
 
         Choices: Yes,No
 
-•	pesticide_name (t): If yes, name of pesticides	
+8.	pesticide_name (t): If yes, name of pesticides	
 
-•	pesticide_app_method (m): Method of Pesticide application	
+9.	pesticide_app_method (m): Method of Pesticide application	
 
         Choices: Seed Treatment,Soil Applied,Canopy Applied (Foiler spray)
 
-•	lodging_perc	Percentage of crop that lodged (%) in ${surveyed_plot}__${llu}	
+10.	lodging_perc	Percentage of crop that lodged (%) in 	
 
         Choices: 0,5,10,20,30,40,50,60,70,80,90,100
 <div class = 'alert' >
@@ -1041,67 +990,67 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 
 
-•	herbicide_applied (s): Did you apply herbicide for ${crop_name}?	
+1.	herbicide_applied (s): Did you apply herbicide for ?	
         
         Choices: Yes,No
 
-•	herbicide_times_applied	How many times did you apply herbicide in ${surveyed_plot}__${llu}?	
+2.	herbicide_times_applied	How many times did you apply herbicide in ?	
 
         Choices: 1,2,3
         Relevant: herbicide_applied is yes
 
-•	herbicide_type (s): Type of herbicide applied for ${crop_name}	
+3.	herbicide_type (s): Type of herbicide applied for 	
 
         Choices: Pre-emergence,Post-emergence,Both
         Relevant: herbicide_applied is yes
 
-•	herbicide_name.1 (t)	Name of herbicide for first application in ${surveyed_plot}__${llu} plot	
+4.	herbicide_name.1 (t)	Name of herbicide for first application in  plot	
 
-•	herbicide_timing_das.1 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot	
+5.	herbicide_timing_das.1 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot	
         
         Relevant: If herbicide applied times is more than 0
 
-•	herbicide_name.2 (t)	Name of herbicide for first application in ${surveyed_plot}__${llu} plot	(t)
+6.	herbicide_name.2 (t)	Name of herbicide for first application in  plot	(t)
 
-•	herbicide_timing_das.2 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot	
+7.	herbicide_timing_das.2 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot	
         
         Relevant: If herbicide applied times is more than 0
 
-•	herbicide_name.3 (t)	Name of herbicide for first application in ${surveyed_plot}__${llu} plot	
+8.	herbicide_name.3 (t)	Name of herbicide for first application in  plot	
 
-•	herbicide_timing_das.3 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot
+9.	herbicide_timing_das.3 (d)	Timing of first herbicide application (in days after sowing/transplanting) plot
 	
         Relevant: If herbicide applied times is more than 0
 
-•	manual_weeding_times (s): How many times did you do manual weeding in ${surveyed_plot}__${llu}?	
+10.	manual_weeding_times (s): How many times did you do manual weeding in ?	
 
         Choices: 0,1,2,3
 
-•	manual_weeding_das.1 (i)	Time of first manual weeding ( days after crop establishment / sowing in ${surveyed_plot}__${llu} plot)	
+11.	manual_weeding_das.1 (i)	Time of first manual weeding ( days after crop establishment / sowing in  plot)	
 
         Relevant: Manual weeding times is 1
 
-•	manual_weeding_das.2 (i)	Time of first manual weeding ( days after crop establishment / sowing in ${surveyed_plot}__${llu} plot)
+12.	manual_weeding_das.2 (i)	Time of first manual weeding ( days after crop establishment / sowing in  plot)
 
         Relevant: Manual weeding times is 2
 
-•	manual_weeding_das.3 (i)	Time of first manual weeding ( days after crop establishment / sowing in ${surveyed_plot}__${llu} plot)	
+13.	manual_weeding_das.3 (i)	Time of first manual weeding ( days after crop establishment / sowing in  plot)	
 
         Relevant: Manual weeding times is 3
 
-•	all_weeds (m): 	Identify top ten weeds for surveyed crop in the largest plot based on severity, occurrence and damage in ${surveyed_plot}__${llu} 
+14.	all_weeds (m): 	Identify top ten weeds for surveyed crop in the largest plot based on severity, occurrence and damage in  
 	
 	Chocies: List of weeds
 
-•	severity_1_weed (s): Rank the first weed based on severity of damage in ${surveyed_plot}__${llu}
+15.	severity_1_weed (s): Rank the first weed based on severity of damage in 
 
-•	severity_2_weed(s): Rank the second weed based on severity of damage in ${surveyed_plot}__${llu}
+16.	severity_2_weed(s): Rank the second weed based on severity of damage in 
 
-•	severity_3_weed(s) : Rank the third weed based on severity of damage in ${surveyed_plot}__${llu}
+17.	severity_3_weed(s) : Rank the third weed based on severity of damage in 
 
-•	severity_4_weed (s): Rank the fourth weed based on severity of damage in ${surveyed_plot}__${llu}
+18.	severity_4_weed (s): Rank the fourth weed based on severity of damage in 
 
-•	severity_5_weed (s): : Rank the fifth weed based on severity of damage in ${surveyed_plot}__${llu}
+19.	severity_5_weed (s): : Rank the fifth weed based on severity of damage in 
 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
@@ -1119,38 +1068,38 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 
-•	harvest_date (d):  Harvest date of ${crop_name} in ${surveyed_plot}__${llu}	
+1.	harvest_date (d):  Harvest date of  in 	
 
-•	harvest_days (a) : Harvest days calculated
+2.	harvest_days (a) : Harvest days calculated
 
-        Calculation : date(${harvest_date_calc}) - date(${seeding_sowing_trans_date})	
+        Calculation : date() - date()	
 
-•	harvest_method (s) : Harvesting method of ${crop_name} in ${surveyed_plot}__${llu}	
+3.	harvest_method (s) : Harvesting method of  in 	
 
         Choices: Combine, Reaper, Manual
 
-•	crop_residue (s):  ${crop_name} crop residue was-	
+4.	crop_residue (s):   crop residue was-	
 
         Choices: Removed from the field, Retained in the field,B urnt in the field
 
-•	threshing_method (s) : If reaper or manual, threshing method in ${surveyed_plot}__${llu}	
+5.	threshing_method (s) : If reaper or manual, threshing method in 	
 
         Choices: Manual,Machine
         Relevant: if reaper or manual threshing  in harvest method
 
-•	total_production_lp (d): 	Total ${crop_name} yield from ${surveyed_plot}__${llu} in QUINTAL (self reported)
+6.	total_production_lp (d): 	Total  yield from  in QUINTAL (self reported)
 	
-•	qunital_per_acre (a) :	Qunital per acre calculated based on previous entries
+7.	qunital_per_acre (a) :	Qunital per acre calculated based on previous entries
 
-        Calculation: round(${total_production_lp} div ${cropLarestAreaAcre}, 2)
+        Calculation: round( div ${cropLarestAreaAcre}, 2)
 
-•	ton_per_hc (a):
+8.	ton_per_hc (a):
 
-	Calculation: round((${qunital_per_acre} * 2.5) div 10, 2)
+	Calculation: round(( * 2.5) div 10, 2)
 	
-•	avg_farm_gate_price (d): What was the farm gate price per quintal for ${crop_name} at the time of harvest? (Rs / Taka per quintal)	
+9.	avg_farm_gate_price (d): What was the farm gate price per quintal for  at the time of harvest? (Rs / Taka per quintal)	
 
-•	production_compare_5_years (s) : How is the production compared of ${crop_name} to the last five years?	
+10.	production_compare_5_years (s) : How is the production compared of  to the last five years?	
 
         Choices: Higher than average,Average,Below average
 
@@ -1172,33 +1121,33 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class="accordion-body">
  
 
-•	total_members (s) : Number of household members (s) 
+1.	total_members (s) : Number of household members (s) 
 
         Choices: 1,2,3,4,5,6,7,8,9,10,11,12
 
-•	members_in_ag (s): Number of household members engaged in agriculture		
+2.	members_in_ag (s): Number of household members engaged in agriculture		
 
         Choices: 1,2,3,4,5,6,7,8,9,10,11,12
 
-•	ruminants (s): How many ruminants (Cow(s) / Buffalo(es) ) are maintained by you?	
+3.	ruminants (s): How many ruminants (Cow(s) / Buffalo(es) ) are maintained by you?	
 
         Choices: 0,1,2,3,4,5,6,7,8,9,10,11,12
 
-•	market_sale_share (s) : Share of total ${crop_name} crop production sold to market (%)	
+4.	market_sale_share (s) : Share of total  crop production sold to market (%)	
 
         Choices: 0,5,10,20,30,40,50,60,70,80,90,100
 
-•	agri_income_importance (s) : How important is agriculture to your household income?	
+5.	agri_income_importance (s) : How important is agriculture to your household income?	
 
         Choices: Low,Medium,High
 
-•	crop_income_importance (s) : How important is ${crop_name} crop to your household income?	
+6.	crop_income_importance (s) : How important is  crop to your household income?	
 
         Choices: Low,Medium,High
 
-•	current_crop_sellingprice (d) : Current selling price for ${crop_name} crop sold to market? (Rs/ quintal)	
+7.	current_crop_sellingprice (d) : Current selling price for  crop sold to market? (Rs/ quintal)	
 
-•	crop_avg_sellingprice (d) : Average selling price for ${crop_name} crop sold to market (Rs / quintal) (average over the last five years)	
+8.	crop_avg_sellingprice (d) : Average selling price for  crop sold to market (Rs / quintal) (average over the last five years)	
 
 <div class = 'alert'>Note: The module  borrows the crop name (crop_name) variable from the “Respondent” module 
 </div>
@@ -1216,13 +1165,11 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 
 
-•	new_practices	 (m) : Did you use new practices for surveyed crop management this season? (Select all that apply)	
+1.	new_practices	 (m) : Did you use new practices for surveyed crop management this season? (Select all that apply)	
 
         Choices: Nutrient Management,Crop establishment,Variety replacement,Irrigation management,Weed management,Other,None
 
-•	coc_consent	Would you like to share details for cost of cultivation?	
 
-        Choices: Yes,No
 
 </div></div></div>
 
@@ -1235,152 +1182,155 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 
+1.      coc_consent     Would you like to share details for cost of cultivation?        
 
-•	amount_paid_labor_land_prep (d) : Amount paid to labors engaged in land preperation of your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+        Choices: Yes,No
 
-•	amount_paid_hiring_machine_land_prep (d):  Amount paid/incurred for hiring/using machine in land preperation of your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+2.	amount_paid_labor_land_prep (d) : Amount paid to labors engaged in land preperation of yourplot
 
-•	land_prep_cost_calc	(a):  Land preparation cost calculated by the system
+3.	amount_paid_hiring_machine_land_prep (d):  Amount paid/incurred for hiring/using machine in land preperation of yourplot
 
-        Calculation : coalesce(${amount_paid_labor_land_prep},0)+ coalesce(${amount_paid_hiring_machine_land_prep},0)
+4.	land_prep_cost_calc	(a):  Land preparation cost calculated by the system
 
-•	cost_of_seed (d): Cost of seed for your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+        Calculation : coalesce(,0)+ coalesce(,0)
 
-•	amount_paid_broadcasting (d): Amount paid to labors for broadcasting seed on your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+5.	cost_of_seed (d): Cost of seed for yourplot
 
-•	amunt_paid_machine_seeing (d) : Amount paid/incurred for hiring/using machine for seeding on your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+6.	amount_paid_broadcasting (d): Amount paid to labors for broadcasting seed on yourplot
 
-•	cost_raising_buying_nursery (d): Cost incurred for raising/buying nursery for your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+7.	amunt_paid_machine_seeing (d) : Amount paid/incurred for hiring/using machine for seeding on yourplot
 
-•	total_cost_seedling_trasnplanting (d): Total labor/machine cost incurred for seedling transplanting on your ${surveyed_plot}__${llu}  plot for ${crop_name} plot
+8.	cost_raising_buying_nursery (d): Cost incurred for raising/buying nursery for yourplot
+
+9.	total_cost_seedling_trasnplanting (d): Total labor/machine cost incurred for seedling transplanting on yourplot
 
 
-•	crop_estab_cost_calc	(a): Crop establishment cost calculated
+10.	crop_estab_cost_calc	(a): Crop establishment cost calculated
 
-        Calculation : coalesce(${cost_of_seed},0) +coalesce(${amount_paid_broadcasting},0) + coalesce(${amunt_paid_machine_seeing},0)+ coalesce(${cost_raising_buying_nursery},0) + coalesce(${total_cost_seedling_trasnplanting},0)
+        Calculation : coalesce(,0) +coalesce(,0) + coalesce(,0)+ coalesce(,0) + coalesce(,0)
 
-•	fym_price_quintal (d):  FYM price per quintal
+11.	fym_price_quintal (d):  FYM price per quintal
 
-•	dap_price_kg (d): DAP price per kg
+12.	dap_price_kg (d): DAP price per kg
 
-•	npk_price_kg (d): NPK price per kg
+13.	npk_price_kg (d): NPK price per kg
 
-•	urea_price_kg (d): Urea price per kg
+14.	urea_price_kg (d): Urea price per kg
 
-•	mop_price_kg	 (d) : MoP price per kg
+15.	mop_price_kg	 (d) : MoP price per kg
 
-•	znso4_price_kg (d):	Zinc Sulphate price per kg
+16.	znso4_price_kg (d):	Zinc Sulphate price per kg
 
-•	gypsum_price_kg (d): 	Gypsum price per kg
+17.	gypsum_price_kg (d): 	Gypsum price per kg
 
-•	boron_price_kg (d): 	Boron price per kg
+18.	boron_price_kg (d): 	Boron price per kg
 
-•	npks_price_kg (d) : NPKS price per kg
+19.	npks_price_kg (d) : NPKS price per kg
 
-•	ssp_price_kg (d) : SSP price per kg
+20.	ssp_price_kg (d) : SSP price per kg
 
-•	tsp_price_kg (d) : TSP price per kg
+21.	tsp_price_kg (d) : TSP price per kg
 
-•	other_chem_fert_price_kg (d): 	Total Cost for Other Fertilizer
+22.	other_chem_fert_price_kg (d): 	Total Cost for Other Fertilizer
 
-•	labor_cost_basal_fert_app (d):  Labor cost incurred for basal fertilizer application on your ${surveyed_plot}__${llu}  plot for ${crop_name}
+23.	labor_cost_basal_fert_app (d):  Labor cost incurred for basal fertilizer application
 
         Relevant: If mineral fertilizer (apply_minfert) was applied and chemical fertilizer (chem_fert_applied) from fertilizer section was applied
 
-•	labor_cost_td1 (d) : Labor cost incurred for first top dressing on your ${surveyed_plot}__${llu}  plot for ${crop_name}
+24.	labor_cost_td1 (d) : Labor cost incurred for first top dressing
 
         Relevant: If mineral fertilizer (apply_minfert) was applied and top dress 1 (td1_fert_applied) from fertilizer section was applied
 
-•	labor_cost_td2 (d):  Labor cost incurred for second top dressing on your ${surveyed_plot}__${llu}  plot for ${crop_name}
+25.	labor_cost_td2 (d):  Labor cost incurred for second top dressing
 
         Relevant: If mineral fertilizer (apply_minfert) was applied and top dress 2 (td2_fert_applied) from fertilizer section was applied
 
 
-•	labor_cost_td3 (d):  Labor cost incurred for third top dressing on your ${surveyed_plot}__${llu}  plot for ${crop_name}
+26.	labor_cost_td3 (d):  Labor cost incurred for third top dressing
 
         Relevant: If mineral fertilizer (apply_minfert) was applied and top dress 3 (td3_fert_applied) from fertilizer section was applied
 
-•	total_fertilizer_cost_calc (a) : Total cost of fertilizer application (labor  cost+ fertilizer price * amount of fertilizer applied) 
+27.	total_fertilizer_cost_calc (a) : Total cost of fertilizer application (labor  cost+ fertilizer price * amount of fertilizer applied) 
 
         Calculation : 
-        ((coalesce(${fym_price_quintal},0) * coalesce(${fym_applied_qty},0)) + (coalesce(${urea_price_kg},0) * coalesce(${total_urea_applied},0)) + (coalesce(${dap_price_kg},0) * coalesce(${total_dap_applied},0))  + (coalesce(${mop_price_kg},0) * coalesce(${total_mop_applied},0)) +  (coalesce(${npk_price_kg},0) * coalesce(${total_npk_applied},0) ) +  (coalesce(${znso4_price_kg},0) * coalesce(${total_znso4_applied},0))+ (coalesce(${gypsum_price_kg},0) * coalesce(${total_gypsum_applied},0)) + (coalesce(${boron_price_kg},0) * coalesce(${total_boron_applied},0)) + (coalesce(${npks_price_kg},0) * coalesce(${total_npks_applied},0)) + (coalesce(${ssp_price_kg},0) * coalesce(${total_ssp_applied},0)) + (coalesce(${tsp_price_kg},0) * coalesce(${total_tsp_applied},0)) + coalesce(${labor_cost_basal_fert_app},0) + coalesce(${labor_cost_td1},0) + coalesce(${labor_cost_td2},0)+ coalesce(${labor_cost_td3},0) + coalesce(${other_chem_fert_price_kg},0))
+        ((coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0))  + (coalesce(,0) * coalesce(,0)) +  (coalesce(,0) * coalesce(,0) ) +  (coalesce(${znso4_price_kg},0) * coalesce(${total_znso4_applied},0))+ (coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0)) + (coalesce(,0) * coalesce(,0)) + coalesce(,0) + coalesce(${labor_cost_td1},0) + coalesce(${labor_cost_td2},0)+ coalesce(${labor_cost_td3},0) + coalesce(,0))
  
 
-•	avg_one_irrigation_cost (d) : Average cost incurred for applying one irrigation in your ${surveyed_plot}__${llu}  plot for ${crop_name}
+28.	avg_one_irrigation_cost (d) : Average cost incurred for applying one irrigation in your
 
-•	irrigation_cost_calc (a) : Irrigation Expenses calculated irrigation times * irrigation cost
+29.	irrigation_cost_calc (a) : Irrigation Expenses calculated irrigation times * irrigation cost
 
-	Calculation: round((coalesce(${irrigation_times},0) * 			 
-		         coalesce(${avg_one_irrigation_cost},0)), 
+	Calculation: round((coalesce(,0) * 			 
+		         coalesce(,0)), 
 
-•	cost_manual_weeding (d): Cost incurred in manual weeding(s) for your ${surveyed_plot}__${llu}  plot for ${crop_name}
+30.	cost_manual_weeding (d): Cost incurred in manual weeding(s) for your
 
 	Relevant: If manual weeding is more than 0
 
-•	cost_herbicide_purchased (d):Cost of herbicide(s) purchased for your ${surveyed_plot}__${llu}  plot for ${crop_name}
+31.	cost_herbicide_purchased (d):Cost of herbicide(s) purchased for your
 
 	Relevant: If herbicide applied times is greater than 0
 
 	
-•	cost_herbicide_first_spray(d):  Sparying cost for first spray of herbicide in your ${surveyed_plot}__${llu}  plot for ${crop_name}
+32.	cost_herbicide_first_spray(d):  Sparying cost for first spray of herbicide in your
 
 	Relevant: If herbicide applied times is 1
 
 
-•	cost_herbicide_second_spray (d):  Sparying cost for second spray of herbicide in your ${surveyed_plot}__${llu}  plot for ${crop_name}
+33.	cost_herbicide_second_spray (d):  Sparying cost for second spray of herbicide in your
 
 	Relevant: If herbicide applied times is 2
 
 	
-•	cost_herbicide_third_spray (d): Sparying cost for third spray of herbicide in your ${surveyed_plot}__${llu}  plot for ${crop_name}
+34.	cost_herbicide_third_spray (d): Sparying cost for third spray of herbicide in your
 
 	Relevant: If herbicide applied times is 3
 
 
-•	weeding_cost_calc (a):  Cost of manual weeding + cost of herbicide and sum of cost of all herbicide sprays
+35.	weeding_cost_calc (a):  Cost of manual weeding + cost of herbicide and sum of cost of all herbicide sprays
 
-	Calculation : coalesce(${cost_manual_weeding},0)+ 			
-		          coalesce(${cost_herbicide_purchased},0) + 			  	
-		          coalesce(${cost_herbicide_first_spray},0) + 
-		         coalesce(${cost_herbicide_second_spray},0) + 
-		         coalesce(${cost_herbicide_third_spray},0)
+	Calculation : coalesce(,0)+ 			
+		          coalesce(,0) + 			  	
+		          coalesce(,0) + 
+		         coalesce(,0) + 
+		         coalesce(,0)
 
 
-•	cost_pesticide(d) : Cost of pesticide(s) purchased for your ${surveyed_plot}__${llu}  plot for ${crop_name}
+36.	cost_pesticide(d) : Cost of pesticide(s) purchased for your
 	
 	Relevant: If pesticide is applied
 
-•	cost_spraying_pesticide (d) :	Total sparying cost of pesticide(s) in your ${surveyed_plot}__${llu}  plot for ${crop_name}
+37.	cost_spraying_pesticide (d) :	Total sparying cost of pesticide(s) in your
 
 	Relevant: If pesticide is applied
 
-•	pest_mgmt_cost_calc (a): Cost of pest management (Cost of pesticide + cost of spraying pesticide) 
+38.	pest_mgmt_cost_calc (a): Cost of pest management (Cost of pesticide + cost of spraying pesticide) 
 
-		Calculation: coalesce(${cost_pesticide},0)+ 
-			         coalesce(${cost_spraying_pesticide},0)
+		Calculation: coalesce(,0)+ 
+			         coalesce(,0)
 
-•	labor_cost_harvesting (d):  Total labour cost for harvesting of ${crop_name} in your  ${surveyed_plot}__${llu} plot
+39.	labor_cost_harvesting (d):  Total labour cost for harvesting of  in yourplot
 
 	Relevant:  If harvest method is manual or reaper
 
-•	machine_cost_harvesting (d):  Total machine cost for harvesting of ${crop_name} in your  ${surveyed_plot}__${llu} plot
+40.	machine_cost_harvesting (d):  Total machine cost for harvesting of  in yourplot
 
 	Relevant: If harvesting method is Combine
 
-•	labor_cost_threshing (d) : Total labour cost for threshing of ${crop_name} harvested from your  ${surveyed_plot}__${llu} plot
+41.	labor_cost_threshing (d) : Total labour cost for threshing of  harvested from yourplot
 
 	Relevant: If threshing method is manual
 
-•	machine_cost_threshing (d)  : Total machine cost for threshing of ${crop_name} harvested from your  ${surveyed_plot}__${llu} plot
+42.	machine_cost_threshing (d)  : Total machine cost for threshing of  harvested from yourplot
 
 	Relevant: If threshing method is machine
 
-•	harvest_cost_calc (a):  Total harvesting cost – sum of labor cost of harvesting, machine cost of harvesting, labor cost of thresthing ,machin cost of threshing)
+43.	harvest_cost_calc (a):  Total harvesting cost – sum of labor cost of harvesting, machine cost of harvesting, labor cost of thresthing ,machin cost of threshing)
 
-	Calculation: coalesce(${labor_cost_harvesting},0)+ 
-			        coalesce(${machine_cost_harvesting},0)+ 
-			       coalesce(${labor_cost_threshing},0) + 
-			       coalesce(${machine_cost_threshing},0)
+	Calculation: coalesce(,0)+ 
+			        coalesce(,0)+ 
+			       coalesce(,0) + 
+			       coalesce(,0)
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation 
 </div>
@@ -1399,55 +1349,55 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
  
 
 
-•	flood_frequency (s) : What is the frequency of flooding of the largest [${surveyed_plot}__${llu}] ${crop_name} plot in a given season	
+1.	flood_frequency (s) : What is the frequency of flooding of the largest plot in a given season	
 
 	Choices: 1 day,2 days,3 days,4 days,5 days,6 days,7 days,1 Week,2 Weeks,
 		3 Weeks,4 Weeks
 
-•	number_passespuddling (s):	What is the average number of passes for Puddling?	
+2.	number_passespuddling (s): What is the average number of passes for Puddling?	
 
 	Choices : 1,2,3,4,5
 
-•	number_passestyne (s): What is the average number of passes for Tyne Cultivator?	
+3.	number_passestyne (s): What is the average number of passes for Tyne Cultivator?	
 
 	Choices: 1,2,3,4,5
 
-•	number_passesdisc (s): What is the average number of passes for Disc Harrow?	
+4.	number_passesdisc (s): What is the average number of passes for Disc Harrow?	
 
 	Chocies: 1,2,3,4,5
 
-•	number_passes4wt (s): What is the average number of passes for Four Wheel Tractor Rotavator?	
+5.	number_passes4wt (s): What is the average number of passes for Four Wheel Tractor Rotavator?	
 
 	Choices: 1,2,3,4,5
 
-•	number_passes2wt (s):What is the average number of passes for Two Wheel Tractor Rotavator?	
+6.	number_passes2wt (s):What is the average number of passes for Two Wheel Tractor Rotavator?	
 
 	Choices: 1,2,3,4,5
 
-•	number_passesbullock (s): What is the average number of passes for Bullock drawn plough?	
+7.	number_passesbullock (s): What is the average number of passes for Bullock drawn plough?	
 
 	Choices: 1,2,3,4,5
 
-•	perc_residue_removed (s): 	What is the percentage of residue removed by tyne cultivation?	
+8.	perc_residue_removed (s): 	What is the percentage of residue removed by tyne cultivation?	
 
 	Choices: 0,5,10,20,30,40,50,60,70,80,90,100
 
-•	fym_used_how (m):  : How is FYM used on your farm?	
+9.	fym_used_how (m):  : How is FYM used on your farm?	
 
 	Choices: Soil Amendment,Fuel,Sale,Waste,Other
 
-•	perc_soil_amendement (s):	What percentage of your FYM is used as a soil amendment?	
+10.	perc_soil_amendement (s):	What percentage of your FYM is used as a soil amendment?	
 
 	Choices:  0,5,10,20,30,40,50,60,70,80,90,100
 
-•	rice_standing_water_early_growth (d): For how many days was there standing water in the largest [${surveyed_plot}__${llu}] ${crop_name} plot during early vegetative growth stage?	
+11.	rice_standing_water_early_growth (d): For how many days was there standing water in the largestplot during early vegetative growth stage?	
 
-•	rice_standing_water_mid_growth (d):  For how many days was there standing water in the largest [${surveyed_plot}__${llu}] ${crop_name} plot during mid-vegetative growth stage?	
+12.	rice_standing_water_mid_growth (d):  For how many days was there standing water in the largestplot during mid-vegetative growth stage?	
 
 
-•	rice_standing_water_flowering (d): 	For how many days was there standing water in the largest [${surveyed_plot}__${llu}] ${crop_name} plot during  flowering growth stage?	
+13.	rice_standing_water_flowering (d): 	For how many days was there standing water in the largestplot during  flowering growth stage?	
 
-•	rice_standing_water_grain_filling (d): For how many days was there standing water in the largest [${surveyed_plot}__${llu}] ${crop_name} plot during grain filling growth stage?
+14.	rice_standing_water_grain_filling (d): For how many days was there standing water in the largestplot during grain filling growth stage?
 
 <div class = 'alert'>
 This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module.
@@ -1465,7 +1415,7 @@ This module is dependent on the “Land Unit and Ownership” modules. It borrow
 <div class="accordion-body">
 
 
-•	longitude_latitude (geopoint) : GPS from the center of the ${surveyed_plot}__${llu}  plot for ${crop_name}.
+1.	longitude_latitude (geopoint) : GPS from the center of the.
 
 <div class = 'alert'>
 This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. 
