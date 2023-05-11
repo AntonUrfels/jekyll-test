@@ -1391,10 +1391,10 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class = "accordion">
 <div class = "accordion-item">
 <h2 class = "accordion-header"> 
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
         **Tracking GHG Emission Module**
       </button></h2>
-<div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div id="collapse17" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 <div class="accordion-body">
  
 
@@ -1458,10 +1458,10 @@ This module is dependent on the “Land Unit and Ownership” modules. It borrow
 <div class = "accordion">
 <div class = "accordion-item">
 <h2 class = "accordion-header"> 
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
         **Geolocation Module**
       </button></h2>
-<div id="collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+<div id="collapse18" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 
 
