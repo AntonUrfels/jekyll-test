@@ -33,6 +33,14 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - _plugins/accordion.rb
+  - _plugins/collapsible.rb
+
+
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
