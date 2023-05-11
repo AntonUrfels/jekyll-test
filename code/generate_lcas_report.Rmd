@@ -1,19 +1,21 @@
 ---
-title: "Landscape Crop Assessment Survey (LCAS) Report"
+title: "LCAS Report"
 author: "LCAS team"
 date: "`r Sys.Date()`"
 output: html_document
+keep_md: true
 knit: (function(inputFile, encoding) { 
       rmarkdown::render(inputFile,
                         encoding=encoding, 
-                        output_file='../outputs/reports/LCAS_Report.html') })
+                        output_file='../_includes/LCAS_Report.html') })
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+knitr::opts_chunk$set(warning = TRUE, echo = FALSE)
 base_col <- "#78b766"
 ```
 
+<br><br>
 This document provides a sample report for automated insights into drivers and
 outcomes of crop prodcution systems at landscape level as part of the LCAS system.
 
@@ -27,15 +29,7 @@ f <- "../data/india_rice_17_18.csv"
 df <- read.csv(f)
 ```
 
-We can then produce some key statistics to provide and overview of the dataset.
-
-The dataset contains data from the following countries: **`r unique(df$country)`** from the years **`r unique(df$Year)`** for **`r unique(df$Crop)`**.
-
-The average landholding size was **`r format(mean(df$total_cultivated_land/df$local_to_acre/2.471,na.rm=T),digits=3)`** ha and the average size of the largest plot was **`r format(mean(df$cropLarestAreaAcre,na.rm=T)/2.471,digits=3)`** ha.
-
-Data has been collected in the following states/provinces: **`r unique(df$adm_1)`**.
-
-The dataset contains **`r format(nrow(df),big.mark=",")`** samples. And the following distribution of samples across the sample provinces/states: 
+We can then produce some key statistics to provide and overview of the dataset. The dataset contains data from the following countries: **`r unique(df$country)`** from the years **`r unique(df$Year)`** for **`r unique(df$Crop)`**. The average landholding size was **`r format(mean(df$total_cultivated_land/df$local_to_acre/2.471,na.rm=T),digits=3)`** ha and the average size of the largest plot was **`r format(mean(df$cropLarestAreaAcre,na.rm=T)/2.471,digits=3)`** ha. Data has been collected in the following states/provinces: **`r unique(df$adm_1)`**. The dataset contains **`r format(nrow(df),big.mark=",")`** samples. And the following distribution of samples across the sample provinces/states: 
 
 ```{r echo=FALSE}
 library(knitr)
