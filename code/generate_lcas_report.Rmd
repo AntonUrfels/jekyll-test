@@ -15,7 +15,7 @@ base_col <- "#78b766"
 ```
 
 This document provides a sample report for automated insights into drivers and
-outcomes of crop prodcution systems at landscape level as part of the LCAS system.
+outcomes of crop prodution systems at landscape level as part of the LCAS system.
 
 
 ## Initial overview
