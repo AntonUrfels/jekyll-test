@@ -8,6 +8,9 @@ description: Here's a detailed overview of the Landscape Crop Assessment Survey 
 
 This page provides an overview of the different LCAS modules. Each modules aims to elicit key information about key drivers and outcomes of  the surveyed agricultural system.
 
+ [Download the Survey templaets (with all modules) xlsxform](Modules/Standard%20Template.xlsx)
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="/lcas/assets/bootstrap.min.css">
@@ -73,9 +76,12 @@ This module contains the meta data of the entire survey. These variable names in
 5.	wc (n): This note is for the enumerators to read out aloud to the respondents. It contains the information about the survey.
 6.	consentDisclaimer (n): This note is for the enumerators to read out aloud to the respondents so that they are made aware of the use of the data of the survey and data privacy details.
 7.	consent (s): This is a yes/no question to get the consent of the respondent to take part in the survey. 
-Required: Yes, this is a mandatory field for the survey for continuing the survey
-Choices: Yes, No
--------
+                Required: Yes, this is a mandatory field for the survey for continuing the survey
+                Choices: Yes, No
+
+ [Download the Module xlsxform](Modules/df_survey.xlsx)
+
+
 </div></div></div>
 
 <div class = "accordion">
@@ -111,7 +117,7 @@ This module contains the location details of the respondents.
 
         Type: This is a text type question. The enumerator is free to type the
         name of the village as per the respondent’s response. 
-
+ [Download the Module xlsxform](Modules/df_location.xlsx)
 </div></div></div>
 
 <div class = "accordion">
@@ -164,6 +170,7 @@ Note: Pay attention to casing of the alphabets.
 Remember if few of the columns are missing in the cropcutdata – the form will still work. 
 </div>
 
+[Download the Module xlsxform](Modules/df_cropcut.xlsx)
 </div></div></div>
 
 
@@ -212,6 +219,7 @@ This module contains the personal information of the respondents.
 
 <div class = "alert">The entire “Respondent” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface. </div>
 
+[Download the Module xlsxform](Modules/df_respondent.xlsx)
 </div></div></div>
 
 <div class = "accordion">
@@ -254,6 +262,9 @@ The entire “Land Unit and Ownership” section has been designed to fit in one
 
 <br>
 <div class = 'important'>Note: The “Land Unit and Ownership” module is dependent on the Respondent module. The crop name (crop_name) that is displayed in the data collection app borrows the variable from the “Respondent module”. Make sure to also include the crop name question for the form to work. </div>
+
+[Download the Module xlsxform](Modules/df_landunit.xlsx)
+
 </div></div></div></div>
 
 
@@ -460,6 +471,9 @@ sowing (wheat)
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
  </div>
 
+ [Download the Module xlsxform](Modules/df_site_char.xlsx)
+
+
 </div></div></div>
 
 <div class = "accordion">
@@ -503,6 +517,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
  </div>
+
+ [Download the Module xlsxform](Modules/df_fert_mgmt.xlsx)
+
 
  </div></div></div>
 
@@ -828,6 +845,9 @@ Note:  Multiple notes are shown for the enumerators to check all of their entrie
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
  </div>
 
+  [Download the Module xlsxform](Modules/df_detail_fert.xlsx)
+
+
  </div></div></div>
 
 <div class = "accordion">
@@ -900,6 +920,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
+
+ [Download the Module xlsxform](Modules/irri_mgmt.xlsx)
+
 </div></div></div>
 
 <div class = "accordion">
@@ -959,6 +982,9 @@ Relevant: If faces drought
 <div class = 'alert' >
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
+
+ [Download the Module xlsxform](Modules/df_prod_constraint.xlsx)
+
  
 </div></div></div>
 
@@ -1025,6 +1051,8 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 	
 	Chocies: List of weeds
 
+## Weed Identification module
+
 15.	severity_1_weed (s): Rank the first weed based on severity of damage in 
 
 16.	severity_2_weed(s): Rank the second weed based on severity of damage in 
@@ -1038,6 +1066,12 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
 </div>
+
+ [Download the Weed-Pest Module xlsxform](Modules/df_weed_pest.xlsx)
+
+ [Download the Weed-identification Module xlsxform](Modules/df_weed_iden.xlsx)
+
+
 
 
 </div></div></div>
@@ -1092,6 +1126,9 @@ Note: The harvest days are calculated and shown to the data collector to ensure 
 <div class = 'alert'>
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. This module also requires “site_characterstic_crop_establishment” module. 
 </div>
+
+ [Download the Module xlsxform](Modules/df_harvest.xlsx)
+
 </div></div></div>
 
 <div class = "accordion">
@@ -1134,6 +1171,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 <div class = 'alert'>Note: The module  borrows the crop name (crop_name) variable from the “Respondent” module 
 </div>
+
+ [Download the Module xlsxform](Modules/df_household_econ.xlsx)
+
 </div></div></div>
 
 <div class = "accordion">
@@ -1152,6 +1192,7 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
         Choices: Nutrient Management,Crop establishment,Variety replacement,Irrigation management,Weed management,Other,None
 
+ [Download the Module xlsxform](Modules/df_tracking_tech.xlsx)
 
 
 </div></div></div>
@@ -1318,6 +1359,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation 
 </div>
 
+ [Download the Module xlsxform](Modules/df_cost_cult.xlsx)
+
+
 </div></div></div>
 
 
@@ -1385,6 +1429,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 <div class = 'alert'>
 This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module.
  </div>
+
+  [Download the Module xlsxform](Modules/df_ghg.xlsx)
+
 </div></div></div>
 
 
@@ -1403,6 +1450,9 @@ This module is dependent on the “Land Unit and Ownership” modules. It borrow
 <div class = 'alert'>
 This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. 
 </div>
+
+ [Download the Module xlsxform](Modules/df_geo.xlsx)
+
 </div></div></div>
 
 
