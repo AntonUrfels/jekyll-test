@@ -82,7 +82,7 @@ write.csv(df,"outputs/lcas_renamed.csv")
 
 For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
 
-Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman's 'geodata' package in R as well as the World Bank's Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file [add_secondary_lcas.R](code/add_secondary_lcas.R).
+Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman's 'geodata' package in R as well as the World Bank's Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file <a href="https://github.com/AntonUrfels/lcas/blob/gh-pages/code/add_secondary_lcas.R" target="_blank">add_secondary_lcas.R</a>.
 
 
 ```R
