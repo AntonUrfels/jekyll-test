@@ -26,7 +26,7 @@ The current list of modules includes:
 - Harvesting and yield
 
 
-More modules are under development and will be added soon.
+More modules are under development and will be added here soon.
 
 # LCAS ecosystem
 
