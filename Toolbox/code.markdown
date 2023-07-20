@@ -1,15 +1,18 @@
 ---
 layout: page
 title: Toolbox
+has_children: true
 permalink: /toolbox/
 description: Here's an overview of different tools that help you working with LCAS datasets. Tools are written in R. Templates and deployment are generally done with Kobo toolbox.
 
 ---
 
+# R Scripts for data management and analysis
+
 ![](photo.jpg)
 
 
-# R Scripts for data management and analysis
+
 
 The LCAS is designed to provide rapid insights through efficiently collected surveys. In this page, we provide an overview of key workflows and analysis pipelines. The general steps in the workflow are as follows:
 

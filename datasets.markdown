@@ -6,9 +6,11 @@ description: Here's a detailed overview of the Landscape Crop Assessment Survey 
 
 ---
 
+# Datasets
+
 ![](photo.jpg)
 
-# Harmonized datasets
+#### Harmonized datasets
 
 The LCAS systems has been deployed numerous times across South Asia in India, Nepal, and Bangladesh. Most of these have been published on dataverse. Please follow the links below to access the individual surveys. For convenience, we host a harmonized dataset. 
 
@@ -16,7 +18,7 @@ The LCAS systems has been deployed numerous times across South Asia in India, Ne
 > > - [Harmonized dataset of all LCAS surveys >>> Initially only India 17 and 18 rice data avialable](data/india_rice_17_18.csv)
 
 
-# Inidvidual dataset links
+#### Inidvidual dataset links
 
 - [**Ajay et al. (2022).** Large-scale data of crop production practices applied by farmers on their largest rice plot during 2018 in eight Indian states.](https://hdl.handle.net/11529/10548656)
 - [**Paudel et al. (2021).** Data on identifying sustainable wheat productivity drivers in Nepal’s Terai.](https://hdl.handle.net/11529/10548615)

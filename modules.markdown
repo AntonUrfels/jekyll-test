@@ -6,7 +6,9 @@ description: Here's a detailed overview of the Landscape Crop Assessment Survey 
 
 ---
 
-This page provides an overview of the different LCAS modules. Each modules aims to elicit key information about key drivers and outcomes of  the surveyed agricultural system.
+# Module Documentation
+
+This page provides an overview of the different LCAS modules. Each modules aims to elicit key information about drivers and outcomes of the surveyed agricultural system.
 
  [Download the Survey templaets (with all modules) xlsxform](Modules/Standard%20Template.xlsx)
 
