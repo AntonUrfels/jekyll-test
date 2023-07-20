@@ -44,12 +44,11 @@ plugins:
 #  parse_block_html: true
 
 
-header_pages:
-  - about.markdown
-  - datasets.markdown
-  - modules.markdown
-  - code.markdown
-  - publications.markdown
+#header_pages:
+##  - about.markdown
+ # - datasets.markdown
+ # - code.markdown
+ # - publications.markdown
 
 color_scheme: foo    
 # Exclude from processing.
