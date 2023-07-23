@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 6. Land unit and ownership module
+title: 06. Land unit and ownership module
 parent: Modules
 nav_order: 1
 ---

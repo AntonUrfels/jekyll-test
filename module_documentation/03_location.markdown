@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 3. Location module
+title: 03. Location module
 parent: Modules
 nav_order: 1
 ---

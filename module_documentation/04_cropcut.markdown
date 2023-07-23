@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 4. Cropcut module
+title: 04. Cropcut module
 parent: Modules
 nav_order: 1
 ---
