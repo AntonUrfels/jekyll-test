@@ -1,10 +1,10 @@
 ---
 layout: default
-title: LCAS Report
+title: 07. LCAS Sample Report
 parent: Toolbox
 nav_order: 1
 ---
 
 
 
-{% include LCAS_Report.html %}
+{% include {{base.url}}/outputs/reports/LCAS_Report.html %}

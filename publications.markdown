@@ -8,16 +8,12 @@ nav_order: 5
 
 # Publications
 
-![](photo.jpg)
-
-
+Multiple publications have been produced about LCAS and based on LCAS data. A list of key publications can be found below. Here we provide non-peer reviewed and documentation products.
 
 ## Documentation
 
-Multiple publications have been produced about LCAS and based on LCAS data. A list of key publications can be found below. Here we provide non-peer reviewed and documentation products.
-
-
 - **Singh et al. (2020)** New Frontiers in Agricultural Extension - Volume II. [Download](pubs/singh2020.pdf)
+
 
 ## Peer-reviewed data papers
 

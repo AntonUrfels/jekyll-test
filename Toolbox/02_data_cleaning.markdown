@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2. Data cleaning
+title: 02. Data cleaning
 parent: Toolbox
 nav_order: 1
 ---
@@ -12,7 +12,7 @@ nav_order: 1
 Data cleaning and anonymization is crucial for secure data storage and effective analytics.
 
 
-#### 2.1 Renaming the column headers to standard variable names
+## 2.1 Renaming the column headers to standard variable names
 
 To work with several datasets, it is important to rename all variable names into the same, standard variables. Ideally, standard variable names are used in the ODK tools so that the recorded data can easily be analyzed. If during data collection it was decided to change variable names - or older surveys are added - then this section provides support for renaming variable names.
 
@@ -37,7 +37,7 @@ write.csv(df,"outputs/lcas_renamed.csv")
 ```
 
 
-#### 2.2 Adding secondary data (e.g. climate,soil) requiring specific geo-locations
+## 2.2 Adding secondary data (e.g. climate,soil) requiring specific geo-locations
 
 For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
 
@@ -57,7 +57,7 @@ write.csv(df,"lcas_secondary.csv")
 ```
 
 
-#### 2.3 Anonymization
+## 2.3 Anonymization
 Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father's name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
 
 Importantly, the variable names have to be standardized for the functions to work. The R code for anonymizing raw LCAS data can be found in [anonymize_lcas.R](code/anonomyze_lcas.R).
