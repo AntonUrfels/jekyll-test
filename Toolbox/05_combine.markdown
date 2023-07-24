@@ -5,7 +5,7 @@ parent: Toolbox
 nav_order: 1
 ---
 
-5. Combine different LCAS datasets
+# 5. Combine different LCAS datasets
 
 
 Sometimes one may wish to combine different surveys (e.g. all rice surveys in India; all crop surveys in South Asia etc.). For this we provide the following convenience script. 

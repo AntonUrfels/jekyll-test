@@ -5,7 +5,7 @@ parent: Toolbox
 nav_order: 1
 ---
 
-6. Generate simple report
+# 6. Generate simple report
 
 
 After collecting the data, one of the powerful functions of the LCAS system is to provide automated and quick insights into key drivers and outcomes of agricultural systems at landscape level.
