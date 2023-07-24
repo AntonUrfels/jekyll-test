@@ -4,7 +4,7 @@ title: Toolbox
 has_children: true
 permalink: /toolbox/
 description: Here's an overview of different tools that help you working with LCAS datasets. Tools are written in R. Templates and deployment are generally done with Kobo toolbox.
-nav_order: 3
+nav_order: 5
 ---
 
 # R Scripts for data management and analysis

@@ -3,7 +3,7 @@ layout: page
 title: Publications
 permalink: /publications/
 description: Here's a detailed overview of the Landscape Crop Assessment Survey (LCAS), it's modules and how it helps to collect big data that support sustainability transitions in agriculture. 
-nav_order: 5
+nav_order: 6
 ---
 
 # Publications

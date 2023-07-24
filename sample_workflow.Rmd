@@ -1,0 +1,53 @@
+---
+title: "Sample Workflow"
+author: "Saral, Anton, Robert"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sample Workflow
+
+This documents provides and overview of a sample workflow.
+
+Start by importing data from Kobo or anotherweb directory. You may skip this if you already have the data downloaded.
+
+```{r Data Import}
+
+# setting api link 
+f <- "kobo_form_id"
+user <- "your_username"
+passowrd <- "your_password"
+
+#retrieve data
+source("code/data_import.R")
+df <- api_call(f,user,password)
+
+#write data to file for future use
+write.csv(df,"outputs/lcas_raw.csv")
+
+```
+
+## Rename variables
+
+
+
+```{r p}
+
+#load dictionary
+f1 <- "dictionary.csv"
+dict <- read.csv(f1)
+
+#load survey data
+df <- read.csv(lcas_raw.csv)
+df <- rename_lcas(dict, df)
+
+#write the data with standard variable names
+write.csv(df,"outputs/lcas_renamed.csv")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
