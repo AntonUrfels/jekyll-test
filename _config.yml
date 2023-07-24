@@ -26,7 +26,7 @@ baseurl: "/lcas/" # the subpath of your site, e.g. /blog
 url: "https://antonurfels.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: CSISAProject 
 github_username: csisarep
-markdown: GFM
+#markdown: GFM
 
 # Build settings
 #theme: just-the-docs
@@ -39,9 +39,9 @@ plugins:
   - _plugins/collapsible.rb
 
 
-#markdown: kramdown
-#kramdown:
-#  parse_block_html: true
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 
 
 header_pages:
