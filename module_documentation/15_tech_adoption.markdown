@@ -9,7 +9,8 @@ nav_order: 1
 
 This module asks about new agricultural practices.
 
-[Download the Technology Change Module xlsxform](../Modules/df_tracking_tech.xlsx)
+
+<a href="../Modules/df_tracking_tech.xlsx" download> Download the Technology Change Module xlsxform </a>
 
 
 1.  **new_practices**    (m) : Did you use new practices for surveyed crop management this season? (Select all that apply)  

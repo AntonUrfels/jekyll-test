@@ -9,7 +9,13 @@ nav_order: 1
 
 This module contains information about weed and pest control and specifically asks about idenification of key weeds.
 
+
+<a href="../Modules/df_weed_pest.xlsx" download> Download the Weed-Pest Module xlsxform </a>
+
 [Download the Weed-Pest Module xlsxform](../Modules/df_weed_pest.xlsx)
+
+
+<a href="../Modules/df_weed_iden.xlsx" download> Download the Weed-identification Module xlsxform </a>
 
 [Download the Weed-identification Module xlsxform](../Modules/df_weed_iden.xlsx)
 

@@ -7,7 +7,7 @@ nav_order: 1
 
 # Harvest module
 
-his module contains questions about harvest activities. 
+This module contains questions about harvest activities. 
 
 [Download the Harvest Module xlsxform](../Modules/df_harvest.xlsx)
 

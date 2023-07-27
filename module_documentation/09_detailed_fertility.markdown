@@ -9,7 +9,10 @@ nav_order: 1
 
 This module contains information about the general fertility management practices on the largest plot.
 
-[Download the Detailed Fertility Management Module xlsxform](../Modules/df_detail_fert.xlsx)
+
+<a href="../Modules/df_detail_fert.xlsx" download> Download the Detailed Fertility Management Module xlsxform </a>
+
+
 
 
 1. **chem_fert_applied** (m): Select the fertilizer(s) applied at planting (basal) for  

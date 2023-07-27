@@ -9,7 +9,9 @@ nav_order: 1
 
 This module contains information about the general fertility management practices of the largest plot.
 
- [Download the General Fertility Management Module xlsxform](../Modules/df_fert_mgmt.xlsx)
+
+<a href="../Modules/df_fert_mgmt.xlsx" download> Download the General Fertility Management Module xlsxform </a>
+
 
  
 1.  **shc_recommendation** (s): :Are soil health card recommendations available for the largestplot?
