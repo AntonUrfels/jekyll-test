@@ -12,13 +12,15 @@ Multiple publications have been produced about LCAS and based on LCAS data. A li
 
 ## Documentation
 
-- **Singh et al. (2029)** New Frontiers in Agricultural Extension - Volume I. [Download](pubs/Singh2019.pdf)
+- **Singh et al. (2019)** New Frontiers in Agricultural Extension - Volume I. [Download](pubs/Singh2019.pdf)
   
 - **Singh et al. (2020)** New Frontiers in Agricultural Extension - Volume II. [Download](pubs/singh2020.pdf)
 
 
 ## Peer-reviewed data papers
 
+- **Open Data Journal for Agricultural Research. Ajay et al. (2021).** Landscape diagnostic survey data of wheat production practices and yield in eastern India. [Download](pubs/ajay2021.pdf)
+  
 - **Data in Brief. Ajay et al. (2022).** Large survey dataset of rice production practices applied by farmers on their largest farm plot during 2018 in India. [Download](pubs/ajay2022.pdf)
 
 
