@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains crop cut details of the farmers. There is a preceding question that the enumerator needs to ask.
 
-[Download the Crop Cut Module xlsxform](Modules/df_cropcut.xlsx) 
+[Download the Crop Cut Module xlsxform](../Modules/df_cropcut.xlsx) 
 
 cropcut_done (s): The crop cut details survey questions are only available if prior crop cut for the same survey season was done in the farmer’s field.
 

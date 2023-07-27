@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains information to track GHG emissions.
 
-[Download the GHG Emissions Module xlsxform](Modules/df_ghg.xlsx)
+[Download the GHG Emissions Module xlsxform](../Modules/df_ghg.xlsx)
 
 
 

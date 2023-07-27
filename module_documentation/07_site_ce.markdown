@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains questions about the survey plot and crop establishment
 
-[Download the Site Characteristics and Crop Establishment Module xlsxform](Modules/df_site_char.xlsx)
+[Download the Site Characteristics and Crop Establishment Module xlsxform](../Modules/df_site_char.xlsx)
 
 
 1.  **soil_texture** (s): Soil texture of the largest  in local land unitplot

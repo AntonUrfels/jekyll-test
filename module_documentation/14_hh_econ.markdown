@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains information about household economics and markets dynamics.
 
-[Download the Household Economics Module xlsxform](Modules/df_household_econ.xlsx)
+[Download the Household Economics Module xlsxform](../Modules/df_household_econ.xlsx)
 
 
 

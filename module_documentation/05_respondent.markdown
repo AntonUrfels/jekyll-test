@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains the personal information of the respondents.
 
-[Download the Module xlsxform](Modules/df_respondent.xlsx)
+[Download the Module xlsxform](../Modules/df_respondent.xlsx)
 
 1.  **name** (t): The name of the respondent 
 

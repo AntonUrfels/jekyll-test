@@ -9,9 +9,9 @@ nav_order: 1
 
 This module contains information about weed and pest control and specifically asks about idenification of key weeds.
 
-[Download the Weed-Pest Module xlsxform](Modules/df_weed_pest.xlsx)
+[Download the Weed-Pest Module xlsxform](../Modules/df_weed_pest.xlsx)
 
-[Download the Weed-identification Module xlsxform](Modules/df_weed_iden.xlsx)
+[Download the Weed-identification Module xlsxform](../Modules/df_weed_iden.xlsx)
 
 
 1.  **herbicide_applied** (s): Did you apply herbicide for ?    

@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains the GPS location of the largest plot.
 
-[Download the Geolocation Module xlsxform](Modules/df_geo.xlsx)
+[Download the Geolocation Module xlsxform](../Modules/df_geo.xlsx)
 
 1.  **longitude_latitude** (geopoint) : GPS from the center of the.
 

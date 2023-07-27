@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains the location details of the respondents. 
 
- [Download the Location Module xlsxform](Modules/df_location.xlsx)
+ [Download the Location Module xlsxform](../Modules/df_location.xlsx)
 
 1. **country**: Country of the respondent
 2. **ADM1**: The highest administrative division of the country (State in India)

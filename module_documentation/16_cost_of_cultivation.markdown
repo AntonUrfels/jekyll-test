@@ -10,7 +10,7 @@ nav_order: 1
 This module contains the cost of cultivation data. These variable names include:
 
 
-[Download the Cost of Cultivation Module xlsxform](Modules/df_cost_cult.xlsx)
+[Download the Cost of Cultivation Module xlsxform](../Modules/df_cost_cult.xlsx)
 
 
 1.      **coc_consent**     Would you like to share details for cost of cultivation?        

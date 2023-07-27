@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains information about the general irrigation practices of the household on it's largest plot.
 
-[Download the Irrigation Module xlsxform](Modules/irri_mgmt.xlsx)
+[Download the Irrigation Module xlsxform](../Modules/irri_mgmt.xlsx)
 
 1.  **access_to_irrgation** (s): Do you have access to irrigation for the largest  plot of ?    
 

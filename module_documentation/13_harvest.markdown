@@ -9,7 +9,7 @@ nav_order: 1
 
 his module contains questions about harvest activities. 
 
-[Download the Harvest Module xlsxform](Modules/df_harvest.xlsx)
+[Download the Harvest Module xlsxform](../Modules/df_harvest.xlsx)
 
 
 1.  **harvest_date** (d):  Harvest date of  in  
