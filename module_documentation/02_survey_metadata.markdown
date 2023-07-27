@@ -9,7 +9,7 @@ nav_order: 1
 
 This module contains the meta data of the entire survey. These variable names include:
 
-[Download the Meta-Survey Module xlsxform](../Modules/df_survey.xlsx)
+<a href="../Modules/df_survey.xlsx" download> Download the Meta-Survey Module xlsxform </a>
 
 
 1.	**device_id** (a): The id of the device used to collect the survey data.
