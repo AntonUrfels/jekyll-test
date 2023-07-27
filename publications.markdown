@@ -12,6 +12,8 @@ Multiple publications have been produced about LCAS and based on LCAS data. A li
 
 ## Documentation
 
+- **Singh et al. (2020)** New Frontiers in Agricultural Extension - Volume II. [Download](pubs/Singh2019.pdf)
+- 
 - **Singh et al. (2020)** New Frontiers in Agricultural Extension - Volume II. [Download](pubs/singh2020.pdf)
 
 
