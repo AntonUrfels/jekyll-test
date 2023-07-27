@@ -12,28 +12,28 @@ The module contains the details about the land unit used and land ownership deta
 [Download the Land Units and Land Ownership Module xlsxform](Modules/df_landunit.xlsx)
 
 
-1.  llu (s): local land unit used by respondent referring to the largest plot 
+1.  **llu** (s): local land unit used by respondent referring to the largest plot 
         
         Choices: Acre, Bigha, Decimal, Dhur, Kattha, Guntha
 
-2.  local_to_acre (d): How many local land unit  are in 1 acre?
+2.  **local_to_acre** (d): How many local land unit  are in 1 acre?
 
-3.  total_cultivated_land (d): Total cultivated land (owned and leased) in this season in the local land unit 
+3.  **total_cultivated_land** (d): Total cultivated land (owned and leased) in this season in the local land unit 
 
-4.  total_crop_cult_area (d): Total crop  cultivated land  (owned and leased) in this season in local land unit. 
+4.  **total_crop_cult_area** (d): Total crop  cultivated land  (owned and leased) in this season in local land unit. 
 
         Constraint: The system checks to see if crop cultivated area is lesser than the total cultivated land
 
-5.  surveyed_plot (d): Largest  plot (owned or leased) in this season in 
+5.  **surveyed_plot** (d): Largest  plot (owned or leased) in this season in 
 
         Constraint: The system checks to see if the surveyed plot response is lesser than total crop cultivated area. 
 
-6.  cropLarestAreaAcre (a): This field calculates and converts the surveyed plot to acre as per the local to acre conversion. This data in the field is not shown anywhere and need to be displayed using a note. 
+6.  **cropLarestAreaAcre** (a): This field calculates and converts the surveyed plot to acre as per the local to acre conversion. This data in the field is not shown anywhere and need to be displayed using a note. 
 
         Calculation: surveyed plot / local to area (conversion unit). 
         The output is then rounded to 3 decimal digits
 
-7.  ownership(s): Type of ownership of the largest  in local land unit.   plot?
+7.  **ownership**(s): Type of ownership of the largest  in local land unit.   plot?
 
         Choices: Owned, Leased-in, Share Cropping
 
