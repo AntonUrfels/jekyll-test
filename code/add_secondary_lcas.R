@@ -15,10 +15,8 @@ library(geodata)
 
 add_secondary_lcas <- function (df) {
   # Remove duplicates and NAs in geo-coordinates
-  df=subset(df,!(duplicated(df$longitude)))
-  df=subset(df,!(duplicated(df$longitude)))
-  df=subset(df,!(is.na(df$longitude)))
-  df=subset(df,!(is.na(df$longitude)))
+#  df=subset(df,!(duplicated(df$longitude)))
+#  df=subset(df,!(duplicated(df$longitude)))
   df_sp= SpatialPointsDataFrame(cbind(df$longitude,df$latitude),data=df,proj4string=CRS("+proj=longlat +datum=WGS84"))
   df_sf=st_as_sf(df_sp)
   population=population(2020,05,path=tempdir())
@@ -29,7 +27,7 @@ add_secondary_lcas <- function (df) {
   # Merge all soils and population
   geodata_df <- list(population_geodata,elevation_geodata)
   geodata_df=Reduce(function(x, y) merge(x, y, all=TRUE),geodata_df)
-  
-  write.csv(geodata_df,paste0("outputs/temp/geovariables",".csv"))
+  return(geodata_df)
+  #write.csv(geodata_df,paste0("outputs/temp/geovariables",".csv"))
 }
 

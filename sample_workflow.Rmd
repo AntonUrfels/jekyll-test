@@ -20,11 +20,11 @@ Start by importing data from Kobo or anotherweb directory. You may skip this if 
 # setting api link 
 f <- "kobo_form_id"
 user <- "your_username"
-passowrd <- "your_password"
+password <- "your_password"
 
 #retrieve data
 source("code/data_import.R")
-df <- api_call(f,user,password)
+df <- api_call_kobo(f,user, password)
 
 #write data to file for future use
 write.csv(df,"outputs/lcas_raw.csv")
@@ -33,16 +33,26 @@ write.csv(df,"outputs/lcas_raw.csv")
 
 ## Rename variables
 
+The first important step is to rename variables towards the LCAS convention.
+For this, we provide a dictionary. If you use the LCAS templates, all variable
+names should already align with the standard variable names. If you specified
+your own variable names for data collection, then you can map these to the LCAS
+standard inside the dictiorary.csv file. Afterward you can use this script 
+to rename the variables.
 
 
 ```{r p}
 
 #load dictionary
-f1 <- "dictionary.csv"
+f1 <- "data/dictionary_with_questions.csv"
 dict <- read.csv(f1)
 
 #load survey data
-df <- read.csv(lcas_raw.csv)
+f2 <- "data/india_rice_17_18.csv"
+df <- read.csv(f2)
+
+#rename variables
+source("code/rename_lcas.R")
 df <- rename_lcas(dict, df)
 
 #write the data with standard variable names
@@ -50,4 +60,150 @@ write.csv(df,"outputs/lcas_renamed.csv")
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Adding secondary data (e.g. climate,soil) requiring specific geo-locations
+
+For many analyses it is useful to add secondary data including socio-economic and bio-physical variables such as climate, population density, distance to markets and many more. Since this requires precise GPS locations, it is best to run this script before anonymizing the data. But since many variable do not vary in space across small distances such as the anonomyzing offset, it may also be run afterwards.
+
+Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman’s ‘geodata’ package in R as well as the World Bank’s Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file add_secondary_lcas.R.
+
+
+```{r p}
+
+#load LCAS with standard variable names
+f <- "outputs/lcas_renamed.csv"
+df <- read.csv(f)
+
+#remove any erroneous data with no lat-lon
+df=subset(df,!(is.na(df$longitude)))
+df=subset(df,!(is.na(df$longitude)))
+
+# add secondary data
+source("code/add_secondary_lcas.R")
+geocols <- add_secondary_lcas(df)
+df <- cbind(df,geocols)
+#write secondary data  to csv.
+write.csv(df,"outputs/lcas_secondary.csv")
+
+```
+
+
+## Anonymization 
+
+Raw LCAS data are not safe to share as it endagers the privacy of the respondendts. To anonymize the data we (i)remove the unique ID columns incl. name, father’s name, mobile number, and national ID number and (ii) offset the locations of the GPS datapoints. Offsetting (instead of dropping) the GPS coordinates has the benefit that the data can still be used for spatial analytics, but without identifying specific farmers or fields.
+
+Importantly, the variable names have to be standardized for the functions to work. The R code for anonymizing raw LCAS data can be found in anonymize_lcas.R.
+
+
+``` {r }
+#load LCAS with standard variable names
+f <- "outputs/lcas_secondary.csv"
+df <- read.csv(f)
+
+#anonymize the data
+df <- anonymize_lcas(df)
+
+#write anonymized data to csv.
+write.csv(df,"outputs/lcas_anonymized.csv")
+
+```
+
+
+# Local land unit (LLU) conversions
+
+Since most farmers use LLUs - the raw data is collected in these with addition to a LLU conversion factor. Since most application require ha for land units - we provide a function that converts all variables collected in LLU towards ha.
+
+The script can be found at code/calc_llu_to_ha.R
+
+```{r }
+
+#read anoymous lcas dataset
+f <- "outputs/lcas_anonymized.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+source("code/calc_llu_to_ha.R")
+df <- calc_llu_to_ha(df)
+
+write.csv(df,"outputs/lcas_ha.csv")
+
+```
+
+
+
+## 3.2 Yield per ha
+
+Most application are intested in yield outcomes. Yields are generally calculated by dividing a farms total production of a crop in that season through the area on which this crop was calculated.
+
+
+The script can be found at [code/calc_yield.R](code/calc_yield.R)
+
+```{r }
+#read anoymous lcas dataset
+f <- "outputs/lcas_ha.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+source("code/calc_yield.R")
+df <- calc_yield(df)
+
+write.csv(df,"outputs/lcas_yield.R")
+
+
+```
+
+
+
+## 3.3 Fertilizer Rates
+
+Fertilizer application rates are calculated by summing the fertilizer inputs (basal application + top dressings) and multplying each fertilizer input with the percentage of N, P, or K contained in the fertilizer. The total nutrient inputs are then normalized by the area of the field towards a per ha basis.
+
+Specifically we use the following nutrient concentrations (N-P-K):
+
+- Urea: (46-0-0)
+- NPK: (12-32-16)
+- DAP: (18-46-0)
+- TSP: (0-45-0)
+
+
+The script can be found at [code/calc_fert_rate.R](code/calc_fert_rate.R)
+
+```{r }
+#read anoymous lcas dataset
+f <- "outputs/lcas_yield.R"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+source("code/calc_fert_rate.R")
+df <- calc_fert_rate(df)
+
+write.csv(df,"outputs/lcas_fert.csv")
+
+```
+
+
+## 3.4 Convert dates to day of year and days since 1980-01-01
+
+Most application require that dates are saved in a numeric format. Although some functions and packages can handle variables formatted as dates, it is often required to use simple numeric fomats. The most straightforward way is to convert dates into days per year. However, when an anlaysis stretches across one calendar year then the re-starting of the counting at 1 can cause issues. For this purpose we provide both the day of the year and the days since 1980-01-01 - a standard practice.
+
+Most importantly, we are looking for planting and harvesting dates. 
+
+
+The script can be found at [code/calc_dates.R](code/calc_dates.R)
+
+
+```{r }
+#read anoymous lcas dataset
+f <- "outputs/lcas_fert.csv"
+df <- read.csv(f)
+
+#calculate fertilizer rates
+source("code/calc_dates.R")
+df <- calc_dates(df)
+
+#write full data to csv.
+write.csv(df,"lcas_full_vars.csv")
+
+```
+
