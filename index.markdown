@@ -23,64 +23,37 @@ On this website you:
 
 We thank all collaborators that contributed to the LCAS system and the Bill and Melinda Gates Foundation (BMGF) and United States Agency for International Development (USAID) for their support.
 
-<br> <br>
+<br> 
 
-Developed by: 
+**Developed by:**
 {: .text-center }
 
-![](csisa.png)
-{: .text-center}
+
+![](csisa.png){:width="150px"}
+{: .text-center }
 
 <br>
+
+
+**Funded by:**
+{: .text-center }
+
+
+| ![](https://csisa.org/wp-content/uploads/sites/2/2021/04/BMGF_logo_csisa_web.png){:width="200px"} | ![](https://csisa.org/wp-content/uploads/sites/2/2021/04/USAID_logo_csisa_web.png){:width="200px"} | 
+{: .text-center }
+
 <br>
 
-<p style="text-align: center;">Developed by:</p>
-
-<p style="text-align:center;">
-<a align="center" href="https://www.csisa.org/" target="_blank" rel="noreferrer noopener">
-<img align="center" style="width: 100px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/Website_logo_header_2021-150x150.png" alt=""></a></p>
+**Partners:**
+{: .text-center }
 
 
-<p style="text-align: center;">Funded by:</p>
+|![](cimmyt.png){:width="250px"}| ![](irri.png){:width="250px"} |
+|![](https://csisa.org/wp-content/uploads/sites/2/2021/04/ifpri_logo_csisa_web.png){:width="150px"}| ![](https://csisa.org/wp-content/uploads/sites/2/2021/04/IWMI_logo_csisa_web.png){:width="250px"} | 
+{: .text-center }
+![](cornell.png){:width="250px"}
+{: .text-center }
 
-<table style="width:100%; border:none;border-collapse: collapse;">
-<tbody style="border:none;">
-<tr style="border:none;">
-<td style="border:none;">
-<a href="https://www.usaid.gov/" target="_blank" rel="noreferrer noopener">
-<img class="wp-image-4869" style="width: 200px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/USAID_logo_csisa_web.png" alt="">
-</a>
-</td>
-<td style="border:none; align=right;">
-<a href="https://www.gatesfoundation.org/" target="_blank" rel="noreferrer noopener">
-<img align="right" class="wp-image-4871" style="align-items: right; width: 200px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/BMGF_logo_csisa_web.png" alt="">
-</a>
-</td>
-</tr>
-</tbody>
-</table>
 
-<p style="text-align: center;">Partners:</p>
 
-<table style="width:100%; border:none;border-collapse: collapse;">
-	<tbody style="border:none;">
-		<tr style="border:none;">
-			<td style="border:none;">
-				<a href="https://www.cimmyt.org/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4873" style="width: 200px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/CIMMYT_logo_csisa_web.png" alt=""></a>
-			</td>
-			<td style="border:none;">
-				<a href="https://www.ifpri.org/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4870" style="width: 100px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/ifpri_logo_csisa_web.png" alt=""></a>
-			</td>
-			<td style="border:none;">
-				<a href="https://www.irri.org/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4872" style="width: 150px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/IRRI_logo_csisa_web.png" alt=""></a>
-			</td>
-			<td style="border:none;">
-				<a href="https://www.iwmi.cgiar.org/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4868" style="width: 200px;" src="https://csisa.org/wp-content/uploads/sites/2/2021/04/IWMI_logo_csisa_web.png" alt=""></a>
-			</td>
-			<td style="border:none;">
-				<a href="https://cornell.edu/" target="_blank" rel="noreferrer noopener"><img class="wp-image-4868" style="width: 200px;" src="cornell.png" alt=""></a>
-			</td>
-		</tr>
-	</tbody>
-</table>
 

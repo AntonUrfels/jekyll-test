@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 05. Reshape dataframe
+title: 05. Combine LCAS datasets
 parent: Toolbox
 permalink: toolbox/combine
 nav_order: 1
