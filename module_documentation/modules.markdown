@@ -8,6 +8,7 @@ nav_order: 3
 has_toc: true
 ---
 
+
 # Module Documentation
 
 This section provides an overview of the different LCAS modules. Please click on each module to see how it is structured. **Variables** of the modules are highlighted in **bold**. 
