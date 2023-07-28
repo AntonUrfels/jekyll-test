@@ -2,7 +2,7 @@
 layout: default
 title: 16. Cost of cultivation module
 parent: Modules
-nav_order: 1
+nav_order: 16
 ---
 
 # Cost of cultivation module
@@ -162,7 +162,7 @@ This module contains the cost of cultivation data. These variable names include:
                     coalesce(,0)+ 
                    coalesce(,0) + 
                    coalesce(,0)
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation 
-</div>
+
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. This module also uses site charactestic and crop establishment module. Additionally, it uses Fertility Management, Detailed fertility management, Irrigation management, Production constraint, Weed and Pest control, weed identification, Harvest modules as well for calculation 
 

@@ -2,6 +2,7 @@
 layout: default
 title: 02. Data cleaning
 parent: Toolbox
+permalink: toolbox/data_cleaning
 nav_order: 1
 ---
 
@@ -18,7 +19,7 @@ To work with several datasets, it is important to rename all variable names into
 
 Variable naming for LCAS is done through a dictionary where any surveys variables can be mapped to the standard variable names. This helps to save time and simplify the process.
 
-We provide a [standard variable name dictionary](dict.csv). To add you own survey, just add an additional column that contains the variable names of the survey that you want to add in the rows of the corresponding standard variable name.
+We provide a [standard variable name dictionary](../dict.csv). To add you own survey, just add an additional column that contains the variable names of the survey that you want to add in the rows of the corresponding standard variable name.
 
 You can find the function for renaming survey datasets into standard LCAS variable names in the [rename_lcas.R](code/rename_lcas.R) file. 
 

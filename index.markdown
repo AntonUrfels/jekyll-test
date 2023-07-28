@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: Home
 description: Here's a detailed overview of the Landscape Crop Assessment Survey (LCAS), it's modules and how it helps to collect big data that support sustainability transitions in agriculture. 
 nav_order: 1
 ---
@@ -21,6 +22,14 @@ On this website you:
 
 
 We thank all collaborators that contributed to the LCAS system and the Bill and Melinda Gates Foundation (BMGF) and United States Agency for International Development (USAID) for their support.
+
+<br> <br>
+
+Developed by: 
+{: .text-center }
+
+![](csisa.png)
+{: .text-center}
 
 <br>
 <br>

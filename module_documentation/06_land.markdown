@@ -2,7 +2,7 @@
 layout: default
 title: 06. Land unit and ownership module
 parent: Modules
-nav_order: 1
+nav_order: 6
 ---
 
 # Land unit and ownership module
@@ -40,11 +40,13 @@ The module contains the details about the land unit used and land ownership deta
 
         Choices: Owned, Leased-in, Share Cropping
 
-<div class = 'alert'>
-The entire “Land Unit and Ownership” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface </div>
-
-<br>
-<div class = 'important'>Note: The “Land Unit and Ownership” module is dependent on the Respondent module. The crop name (crop_name) that is displayed in the data collection app borrows the variable from the “Respondent module”. Make sure to also include the crop name question for the form to work. </div>
+{: .note }
+The entire “Land Unit and Ownership” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface 
 
 
-</div>
+
+{: .note}
+The “Land Unit and Ownership” module is dependent on the Respondent module. The crop name (crop_name) that is displayed in the data collection app borrows the variable from the “Respondent module”. Make sure to also include the crop name question for the form to work. 
+
+
+

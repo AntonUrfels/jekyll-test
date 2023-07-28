@@ -2,7 +2,7 @@
 layout: default
 title: 03. Location module
 parent: Modules
-nav_order: 1
+nav_order: 3
 ---
 
 # Location Module

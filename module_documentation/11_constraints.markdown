@@ -2,7 +2,7 @@
 layout: default
 title: 11. Production constraints module
 parent: Modules
-nav_order: 1
+nav_order: 11
 ---
 
 # Production constraints module
@@ -55,6 +55,7 @@ Relevant: If faces drought
 10. **lodging_perc**    Percentage of crop that lodged (%) in   
 
         Choices: 0,5,10,20,30,40,50,60,70,80,90,100
-<div class = 'alert' >
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
-</div>
+
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+

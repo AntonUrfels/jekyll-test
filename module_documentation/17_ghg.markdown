@@ -2,13 +2,12 @@
 layout: default
 title: 17. Greenhouse gas tracking module
 parent: Modules
-nav_order: 1
+nav_order: 17
 ---
 
 # Greenhouse gas tracking module
 
 This module contains information to track GHG emissions.
-
 
 
 <a href="../Modules/df_ghg.xlsx" download> Download the GHG Emissions Module xlsxform </a>
@@ -65,6 +64,6 @@ This module contains information to track GHG emissions.
 
 14. **rice_standing_water_grain_filling** (d): For how many days was there standing water in the largestplot during grain filling growth stage?
 
-<div class = 'alert'>
+{: .note}
 This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module.
- </div>
+

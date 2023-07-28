@@ -2,7 +2,7 @@
 layout: default
 title: 09. Detailed fertility management module
 parent: Modules
-nav_order: 1
+nav_order: 9
 ---
 
 # Detailed fertility management module
@@ -107,9 +107,10 @@ This module contains information about the general fertility management practice
 35. **td1_oth_name** : If other is selected in fertilizers Top dress 1, Enter other fertilizer name applied 
 36. **td1_amt_oth** (d) :    Enter TSP amount applied at first top dressing in KG
 37. **fert_oth_td1_das** (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
-</div>
+
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+
 
 <b>Second top dressing </b>
 
@@ -141,9 +142,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 60. **td2_amt_oth** (d) :    Enter TSP amount applied at first top dressing in KG
 61. **fert_oth_td2_das** (i):   Timing of first TSP top dressing (in days after sowing/transplanting)
 
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
-</div>
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+
 
 
 <b>Third top dressing </b>
@@ -223,9 +224,9 @@ Note: This module is dependent on the “Land Unit and Ownership” modules. It 
 
 99. **grade_S**: Select the grade of Sulphur in NPK/NPKS mixture applied in  plot in KG
 
-<div class = 'alert'>
-Note:  Multiple notes are shown for the enumerators to check all of their entries to verify if the entries are correct. All the application from basal, TD1, TD2, TD3 and the total amount applied for the fertilizers are displayed on the screen for the enumerators to recheck their entries and ensure all the entries are correct. 
-</div>
+{: .note}
+Multiple notes are shown for the enumerators to check all of their entries to verify if the entries are correct. All the application from basal, TD1, TD2, TD3 and the total amount applied for the fertilizers are displayed on the screen for the enumerators to recheck their entries and ensure all the entries are correct. 
+
 
 1.  **n_rate**(a) : Nitrogen rate calculated based on the input data 
 
@@ -321,6 +322,6 @@ Note:  Multiple notes are shown for the enumerators to check all of their entrie
         Relevant : If no, fert_timely_available
         Choices: 1 – 10 
 
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
- </div>
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables.
+

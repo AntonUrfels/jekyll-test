@@ -2,7 +2,7 @@
 layout: default
 title: 02. Survey metadata module
 parent: Modules
-nav_order: 1
+nav_order: 2
 ---
 
 # Survey metadata

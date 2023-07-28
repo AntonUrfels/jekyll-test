@@ -2,7 +2,7 @@
 layout: default
 title: 12. Weed and pest control module
 parent: Modules
-nav_order: 1
+nav_order: 12
 ---
 
 # Weed and pest control
@@ -84,6 +84,6 @@ This module contains information about weed and pest control and specifically as
 
 19. **severity_5_weed** (s): : Rank the fifth weed based on severity of damage in 
 
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
-</div>
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+

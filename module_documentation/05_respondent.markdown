@@ -2,7 +2,7 @@
 layout: default
 title: 05. Respondent module
 parent: Modules
-nav_order: 1
+nav_order: 5
 ---
 
 # Respondent module
@@ -42,4 +42,6 @@ This module contains the personal information of the respondents.
 
 8.  **harvest_year** (s): select the year in which the crop was harvested. 
 
-<div class = "alert">The entire “Respondent” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface. </div>
+{: .note } 
+The entire “Respondent” section has been designed to fit in one page during data collection using phones or tablets. The “field-list” appearance has been used to get the desired user interface.
+

@@ -2,6 +2,7 @@
 layout: default
 title: 05. Reshape dataframe
 parent: Toolbox
+permalink: toolbox/combine
 nav_order: 1
 ---
 

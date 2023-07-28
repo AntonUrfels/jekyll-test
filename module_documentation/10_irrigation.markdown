@@ -2,7 +2,7 @@
 layout: default
 title: 10. Irrigation module
 parent: Modules
-nav_order: 1
+nav_order: 10
 ---
 
 # Irrigation module
@@ -69,7 +69,8 @@ This module contains information about the general irrigation practices of the h
 12. **lay_flat_pipe** (s) : Did you use lay flat pipe to irrigate?  
 
         Choices: Yes,No
-<div class = 'alert'>
-Note: This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
-</div>
+
+{: .note}
+This module is dependent on the “Land Unit and Ownership” modules. It borrows values from surveyed plot size, local land unit, from the Land Unit and ownership module. And it also borrows the crop name (crop_name) variable from the “Respondent” module. Make sure to include the three dependent variables. 
+
 

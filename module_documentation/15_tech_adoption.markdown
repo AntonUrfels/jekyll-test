@@ -2,7 +2,7 @@
 layout: default
 title: 15. Technology adoption module
 parent: Modules
-nav_order: 1
+nav_order: 15
 ---
 
 # Technology adoption module

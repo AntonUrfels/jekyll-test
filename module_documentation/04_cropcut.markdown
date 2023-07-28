@@ -2,14 +2,14 @@
 layout: default
 title: 04. Cropcut module
 parent: Modules
-nav_order: 1
+nav_order: 4
 ---
 
 # Cropcut module
 
 This module contains crop cut details of the farmers. There is a preceding question that the enumerator needs to ask.
 
-<a href="../Modules/df_cropcut.xlsx" download> DDownload the Crop Cut Module xlsxform </a>
+<a href="../Modules/df_cropcut.xlsx" download> Download the Crop Cut Module xlsxform </a>
 
 
 
@@ -40,14 +40,14 @@ This section uses crop cut data available in a separate excel file to auto popul
 16. **grainYield_tonPerHa** (a): The calculated crop cut grain yield based on the existing dataset. 
 17. **ccCheck**  (n): Note for the enumerators to verify if they have pulled the right farmers information. 
 
-<div class="alert">
 
-**Requirements for the preloaded dataset:**
+{: .note-title }
 
-In order to pull (auto populate) the crop cut dataset the excel sheet that contains the crop cut dataset should be named “cropcutdata”. And it needs to have these columns headings:
-
-district, fname, block, village, mobile, q1tagb, q1gweight, q1gmoist, q2tagb, q2gweight, q2gmoist, q3tagb, q3gweight, q3gmoist, grainYld_tonPerHa
-
-Note: Pay attention to casing of the alphabets. 
-Remember if few of the columns are missing in the cropcutdata – the form will still work. 
-</div>
+>Requirements for the preloaded dataset:
+>
+>In order to pull (auto populate) the crop cut dataset the excel sheet that contains the crop cut dataset should be named “cropcutdata”. And it needs to have these columns headings:
+>
+>district, fname, block, village, mobile, q1tagb, q1gweight, q1gmoist, q2tagb, q2gweight, q2gmoist, q3tagb, q3gweight, q3gmoist, grainYld_tonPerHa
+>
+>Note: Pay attention to casing of the alphabets. 
+>Remember if few of the columns are missing in the cropcutdata – the form will still work. 

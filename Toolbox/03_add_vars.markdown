@@ -2,6 +2,7 @@
 layout: default
 title: 03. Add calculated variables and geodata
 parent: Toolbox
+permalink: toolbox/add_vars
 nav_order: 1
 ---
 

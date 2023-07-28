@@ -2,7 +2,7 @@
 layout: default
 title: 14. Household economics and markets module
 parent: Modules
-nav_order: 1
+nav_order: 14
 ---
 
 # Household economics and market module
@@ -10,7 +10,6 @@ nav_order: 1
 This module contains information about household economics and markets dynamics.
 
 <a href="../Modules/df_household_econ.xlsx" download> Download the Household Economics Module xlsxform </a>
-
 
 
 
@@ -42,5 +41,5 @@ This module contains information about household economics and markets dynamics.
 
 8.  **crop_avg_sellingprice** (d) : Average selling price for  crop sold to market (Rs / quintal) (average over the last five years)    
 
-<div class = 'alert'>Note: The module  borrows the crop name (crop_name) variable from the “Respondent” module 
-</div>
+{: .note}
+The module  borrows the crop name (crop_name) variable from the “Respondent” module 
