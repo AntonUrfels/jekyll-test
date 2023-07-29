@@ -16,7 +16,7 @@ LCAS has been co-developed by CSISA, ICAR, and many others. The developmet benef
 ## Leadership team
 
 | ![](people/ajm.jpg) | **Andrew J McDonald**. LCAS lead coordinator and Assitant Professor at Cornell University. | ![](people/pc.jpg) | **Peter Craufurd**. LCAS coordinator and CSISA Project Leader (India) at CIMMYT/CGIAR. |
-| ![](people/rkm.jpg) | **Ram K. Malik**. LCAS coordinator and CSISA India Country Coordinator at CIMMYT/CGIAR. | ![](people/vk.jpg) | **Virender Kumar**. LCAS coordinator Research Leader for Climate-adaptive Agronomy & Mechanization at IRR/CGIAR |
+| ![](people/rkm.jpg) | **Ram K. Malik**. LCAS coordinator and CSISA India Country Coordinator at CIMMYT/CGIAR. | ![](people/vk.jpg) | **Virender Kumar**. LCAS coordinator and Research Leader for Climate-adaptive Agronomy & Mechanization at IRR/CGIAR |
 
 #TODO - Who to name here? How to include ICAR/AK Singh, H Pathak? Sudanshu?
 

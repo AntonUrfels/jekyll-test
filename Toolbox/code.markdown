@@ -10,12 +10,8 @@ has_toc: false
 
 # R Scripts for data management and analysis
 
-![](photo.jpg)
-
-
-
-
 The LCAS is designed to provide rapid insights through efficiently collected surveys. In this page, we provide an overview of key workflows and analysis pipelines. The general steps in the workflow are as follows:
+
 
 0. Data collection (see [survey deployment section](deployment/))
 1. Importing data into the analysis envrionment (see [data import section](../toolbox/data_import))
@@ -29,5 +25,6 @@ To get started, you may clone the LCAS github repo. It contains all the scripts 
 [![](../Workflow_analysis.png)](../Workflow_analysis.png)
 
 
-
-
+{:style="list-style-type: none;"}
+1. One
+2. Two
