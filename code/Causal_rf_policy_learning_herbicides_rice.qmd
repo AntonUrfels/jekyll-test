@@ -1,6 +1,8 @@
 ---
 title: "Causal Random Forest and Policy Learning: Targeting Weed Management Options in Rice Example"
-format: html
+format: gfm
+#format: html
+#minimal: true
 self-contained: true
 author: LCAS Team
 editor: visual
