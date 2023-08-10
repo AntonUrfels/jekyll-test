@@ -24,7 +24,3 @@ To get started, you may clone the LCAS github repo. It contains all the scripts 
 
 [![](../Workflow_analysis.png)](../Workflow_analysis.png)
 
-
-{:style="list-style-type: none;"}
-1. One
-2. Two
