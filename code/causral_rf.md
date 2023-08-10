@@ -1,16 +1,17 @@
 ---
-title: "Causal Random Forest and Policy Learning: Targeting Weed Management Options in Rice Example"
-format: gfm
+title: "Causal RF"
+output: 
+  html_document: 
+    toc: yes
+    number_sections: yes
+    code_folding_show: yes
+    keep_md: yes
 #format: html
 #minimal: true
 #self-contained: true
 author: LCAS Team
 editor: visual
-toc: true
 #toc-location: left
-number-sections: true
-project:
-output-dir: outputs/reports
 ---
 
 # Introduction
@@ -25,7 +26,8 @@ We use weed management as an exemplar on how to use causal random forest estimat
 
 We first load the data
 
-```{r,warning=FALSE, message=FALSE}
+
+```r
 # RICE -------------------------------------------------------------------------
 ## Load packages ---------------------------------------------------------------
 library(raster)
@@ -68,19 +70,44 @@ table_herbicide=sort(xtabs(~Rice2018_LDS_herb$herbicide_name_1_revised))
 
 ## 
 table(Rice2018_LDS_herb$herbicide_times_applied)
+```
 
+```
+## 
+##    0    1    2    3 
+## 8512 6353  309   16
+```
+
+```r
 Rice2018_LDS_herb$herbicide_times_applied_dum[Rice2018_LDS_herb$herbicide_times_applied%in%c(1,2,3)]=1
 
 Rice2018_LDS_herb$herbicide_times_applied_dum[Rice2018_LDS_herb$herbicide_times_applied%in%c(0)]=0
 
 table(Rice2018_LDS_herb$manual_weeding_times)
+```
 
+```
+## 
+##    0    1    2    3 
+## 1750 9234 3833  393
+```
+
+```r
 Rice2018_LDS_herb$manual_weeding_times_dum[Rice2018_LDS_herb$manual_weeding_times%in%c(1,2,3)]=1
 
 Rice2018_LDS_herb$manual_weeding_times_dum[Rice2018_LDS_herb$manual_weeding_times%in%c(0)]=0
 
 table(Rice2018_LDS_herb$manual_weeding_times_dum,Rice2018_LDS_herb$herbicide_times_applied_dum)
+```
 
+```
+##    
+##        0    1
+##   0  403 1347
+##   1 8109 5330
+```
+
+```r
 Rice2018_LDS_herb$manual_weeding_times_dum_cat[Rice2018_LDS_herb$manual_weeding_times_dum==1]="Manual"
 Rice2018_LDS_herb$manual_weeding_times_dum_cat[Rice2018_LDS_herb$manual_weeding_times_dum==0]="No manual"
 
@@ -95,8 +122,27 @@ Rice2018_LDS_herb$herb_manual_treatment=paste(Rice2018_LDS_herb$manual_weeding_t
 Rice2018_LDS_herb=subset(Rice2018_LDS_herb,!(Rice2018_LDS_herb$herb_manual_treatment%in%c("NA_Bispyribac Sodium","NA_No herbicide","No manual_Bispyribac sodium  Oxadiargyl","No manual_Oxadiargyl","No manual_Pyrazosulfuron")))
 
 table(Rice2018_LDS_herb$herb_manual_treatment)
+```
 
+```
+## 
+##                           Manual_24D             Manual_Bispyribac Sodium 
+##                                  663                                 1355 
+## Manual_Bispyribac sodium  Oxadiargyl                     Manual_Butachlor 
+##                                  413                                  603 
+##                  Manual_No herbicide                    Manual_Oxadiargyl 
+##                                 8153                                  147 
+##                  Manual_Pretilachlor                Manual_Pyrazosulfuron 
+##                                 1315                                  290 
+##                        No manual_24D          No manual_Bispyribac Sodium 
+##                                  255                                  640 
+##                  No manual_Butachlor               No manual_No herbicide 
+##                                  196                                  382 
+##               No manual_Pretilachlor 
+##                                  167
+```
 
+```r
 # Compute control variables
 Rice2018_LDS_herb$weed_density_num[Rice2018_LDS_herb$weed_density=="None"]=1
 Rice2018_LDS_herb$weed_density_num[Rice2018_LDS_herb$weed_density=="Low"]=2
@@ -122,14 +168,12 @@ Rice2018_LDS_herb$drought_severity_num[Rice2018_LDS_herb$drought_severity=="None
 Rice2018_LDS_herb$drought_severity_num[Rice2018_LDS_herb$drought_severity=="Low"]=2
 Rice2018_LDS_herb$drought_severity_num[Rice2018_LDS_herb$drought_severity=="Medium"]=3
 Rice2018_LDS_herb$drought_severity_num[Rice2018_LDS_herb$drought_severity=="High"]=4
-
-
 ```
 
 # Descriptive statistics and graphics
 
-```{r,warning=FALSE, message=FALSE}
 
+```r
 # Table 1 descriptives table
 
 library(fBasics)
@@ -142,13 +186,31 @@ summ_stats <- summ_stats[c("Mean", "Stdev", "Minimum", "1. Quartile", "Median", 
   rename("Lower quartile" = '1. Quartile', "Upper quartile"= "3. Quartile")
 
 summ_stats
+```
 
-
+```
+##                                  Mean     Stdev Minimum Lower quartile Median
+## ton_per_hc                   4.350074  1.402342   0.380          3.310  4.300
+## irrigation_times             5.278619  4.270767   0.000          3.000  4.000
+## herbicide_times_applied_dum  0.416884  0.493060   0.000          0.000  0.000
+## manual_weeding_times_dum     0.887509  0.315980   0.000          1.000  1.000
+## market_distance              5.413543 15.440894   0.000          2.000  3.500
+## longitude                   84.429503  2.852180  75.632         83.500 84.940
+## latitude                    24.556512  3.245571  10.310         23.638 25.312
+##                             Upper quartile  Maximum
+## ton_per_hc                           5.100   11.260
+## irrigation_times                     7.000   30.000
+## herbicide_times_applied_dum          1.000    1.000
+## manual_weeding_times_dum             1.000    1.000
+## market_distance                      6.000 1250.000
+## longitude                           86.326   89.799
+## latitude                            26.303   30.672
 ```
 
 To understand the extent of herbicide use, the figure show the number of farmers using different weed management practices.
 
-```{r,warning=FALSE, message=FALSE}
+
+```r
 # Bar graphs showing percentage of farmers adopting these practices
 
 library(tidyverse)
@@ -166,16 +228,20 @@ bar_chart=function(dat,var){
 
 herb_plot=bar_chart(Rice2018_LDS_herb,herb_manual_treatment)+labs(y="herb_manual_treatment")
 herb_plot
+```
 
+![](causral_rf_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+```r
 #ggsave("figures/herb_plot.png",dpi=300)
-
 ```
 
 ## Mean comparisons
 
 Before diving into the causal random forest model, one needs to conduct the conventional mean comparison.
 
-```{r,warning=FALSE, message=FALSE}
+
+```r
 library(ggpubr)
 Herb_Options_Errorplot=
   Rice2018_LDS_herb%>% 
@@ -185,16 +251,20 @@ Herb_Options_Errorplot=
   theme_minimal(base_size = 16)+coord_flip()
 
 Herb_Options_Errorplot
+```
+
+![](causral_rf_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+```r
 #ggsave("figures/Herb_Options_Errorplot.png",dpi=300)
-
-
 ```
 
 # Causal Random Forest and Policy Learning
 
 ## Causal random forest
 
-```{r,warning=FALSE, message=FALSE}
+
+```r
 library(grf)
 library(policytree)
 
@@ -234,6 +304,18 @@ Y.multi_herb.forest <- regression_forest(X_cf_herb, Y_cf_herb,
 )
 
 print(Y.multi_herb.forest)
+```
+
+```
+## GRF forest object of type regression_forest 
+## Number of trees: 2000 
+## Number of training samples: 9286 
+## Variable importance: 
+##     1     2     3     4     5     6     7     8     9 
+## 0.098 0.006 0.003 0.002 0.003 0.014 0.375 0.352 0.147
+```
+
+```r
 varimp.multi_herb <- variable_importance(Y.multi_herb.forest)
 Y.hat.multi.all_herb <- predict(Y.multi_herb.forest, estimate.variance = TRUE)$predictions
 
@@ -246,7 +328,32 @@ varimp.multi_herb_cf <- variable_importance(multi_herb.forest)
 
 multi_herb_ate=average_treatment_effect(multi_herb.forest, method="AIPW")
 multi_herb_ate
+```
 
+```
+##                                                               estimate
+## Manual_Bispyribac Sodium - Manual_No herbicide             -0.15631365
+## Manual_Bispyribac sodium  Oxadiargyl - Manual_No herbicide  0.24548420
+## Manual_Oxadiargyl - Manual_No herbicide                    -0.01928893
+## Manual_Pretilachlor - Manual_No herbicide                   0.20093332
+##                                                               std.err
+## Manual_Bispyribac Sodium - Manual_No herbicide             0.21385985
+## Manual_Bispyribac sodium  Oxadiargyl - Manual_No herbicide 0.09035959
+## Manual_Oxadiargyl - Manual_No herbicide                    0.01491479
+## Manual_Pretilachlor - Manual_No herbicide                  0.13187461
+##                                                                                                              contrast
+## Manual_Bispyribac Sodium - Manual_No herbicide                         Manual_Bispyribac Sodium - Manual_No herbicide
+## Manual_Bispyribac sodium  Oxadiargyl - Manual_No herbicide Manual_Bispyribac sodium  Oxadiargyl - Manual_No herbicide
+## Manual_Oxadiargyl - Manual_No herbicide                                       Manual_Oxadiargyl - Manual_No herbicide
+## Manual_Pretilachlor - Manual_No herbicide                                   Manual_Pretilachlor - Manual_No herbicide
+##                                                            outcome
+## Manual_Bispyribac Sodium - Manual_No herbicide                 Y.1
+## Manual_Bispyribac sodium  Oxadiargyl - Manual_No herbicide     Y.1
+## Manual_Oxadiargyl - Manual_No herbicide                        Y.1
+## Manual_Pretilachlor - Manual_No herbicide                      Y.1
+```
+
+```r
 varimp.multi_herb_cf <- variable_importance(multi_herb.forest)
 vars_herb=c("irrigation_times","market_distance","weed_density_num","insect_severity_num","flood_severity_num","drought_severity_num","longitude","latitude")
 
@@ -261,39 +368,160 @@ varimpplotRF_herb=ggplot(varimpvars_herb,aes(x=reorder(vars_herb,Variableimporta
    labs(x="Variables",y="Variable importance")
  previous_theme <- theme_set(theme_bw(base_size = 16))
  varimpplotRF_herb
- #ggsave("figures/varimpplotRF_herb.png",dpi=300)
+```
 
- 
- 
+![](causral_rf_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
+ #ggsave("figures/varimpplotRF_herb.png",dpi=300)
 ```
 
 ## Policy learning
 
-```{r, warning=FALSE, message=FALSE}
+
+```r
 # Policy tree --------------------------------------
 DR.scores_herb <- double_robust_scores(multi_herb.forest)
 
 tr_herb <- policy_tree(X_cf_herb, DR.scores_herb, depth = 2) 
 tr_herb
-plot(tr_herb)
+```
+
+```
+## policy_tree object 
+## Tree depth:  2 
+## Actions:  1: Manual_No herbicide 2: Manual_Bispyribac Sodium 3: Manual_Bispyribac sodium  Oxadiargyl 4: Manual_Oxadiargyl 5: Manual_Pretilachlor 
+## Variable splits: 
+## (1) split_variable: market_distance  split_value: 7.5 
+##   (2) split_variable: longitude  split_value: 87.029 
+##     (4) * action: 5 
+##     (5) * action: 2 
+##   (3) split_variable: market_distance  split_value: 10 
+##     (6) * action: 3 
+##     (7) * action: 5
+```
+
+```r
+tr1.plot <- plot(tr_herb)
 
 
 tr_herb3 <- hybrid_policy_tree(X_cf_herb, DR.scores_herb, depth = 3) 
 tr_herb3
-plot(tr_herb3)
+```
+
+```
+## policy_tree object 
+## Tree depth:  3 
+## Actions:  1: Manual_No herbicide 2: Manual_Bispyribac Sodium 3: Manual_Bispyribac sodium  Oxadiargyl 4: Manual_Oxadiargyl 5: Manual_Pretilachlor 
+## Variable splits: 
+## (1) split_variable: market_distance  split_value: 7.5 
+##   (2) split_variable: longitude  split_value: 86.18 
+##     (4) split_variable: longitude  split_value: 85.338 
+##       (8) * action: 5 
+##       (9) * action: 2 
+##     (5) split_variable: longitude  split_value: 87.029 
+##       (10) * action: 5 
+##       (11) * action: 2 
+##   (3) split_variable: longitude  split_value: 84.46 
+##     (6) split_variable: drought_severity_num  split_value: 2 
+##       (12) * action: 5 
+##       (13) * action: 3 
+##     (7) split_variable: longitude  split_value: 85.829 
+##       (14) * action: 2 
+##       (15) * action: 5
+```
+
+```r
+tr3.plot <- plot(tr_herb3)
 
 tr_herb4 <- hybrid_policy_tree(X_cf_herb, DR.scores_herb, depth = 4) 
 tr_herb4
-plot(tr_herb4)
+```
+
+```
+## policy_tree object 
+## Tree depth:  4 
+## Actions:  1: Manual_No herbicide 2: Manual_Bispyribac Sodium 3: Manual_Bispyribac sodium  Oxadiargyl 4: Manual_Oxadiargyl 5: Manual_Pretilachlor 
+## Variable splits: 
+## (1) split_variable: market_distance  split_value: 7.5 
+##   (2) split_variable: longitude  split_value: 86.18 
+##     (4) split_variable: longitude  split_value: 85.338 
+##       (8) split_variable: market_distance  split_value: 6 
+##         (16) * action: 5 
+##         (17) * action: 2 
+##       (9) split_variable: drought_severity_num  split_value: 3 
+##         (18) * action: 2 
+##         (19) * action: 5 
+##     (5) split_variable: longitude  split_value: 87.44 
+##       (10) split_variable: longitude  split_value: 87.029 
+##         (20) * action: 5 
+##         (21) * action: 2 
+##       (11) split_variable: irrigation_times  split_value: 13 
+##         (22) * action: 5 
+##         (23) * action: 3 
+##   (3) split_variable: longitude  split_value: 84.46 
+##     (6) split_variable: longitude  split_value: 83.5 
+##       (12) split_variable: irrigation_times  split_value: 9 
+##         (24) * action: 5 
+##         (25) * action: 3 
+##       (13) split_variable: longitude  split_value: 83.85 
+##         (26) * action: 2 
+##         (27) * action: 1 
+##     (7) split_variable: longitude  split_value: 85.666 
+##       (14) split_variable: market_distance  split_value: 12 
+##         (28) * action: 2 
+##         (29) * action: 5 
+##       (15) split_variable: insect_severity_num  split_value: 1 
+##         (30) * action: 3 
+##         (31) * action: 5
+```
+
+```r
+tr4.plot <- plot(tr_herb4)
 
 tr_assignment_herb=Rice2018_LDS_herb
 
 tr_assignment_herb$depth2 <- predict(tr_herb, X_cf_herb)
 table(tr_assignment_herb$depth2)
-tr_assignment_herb$depth3 <- predict(tr_herb3, X_cf_herb)
-table(tr_assignment_herb$depth3)
-tr_assignment_herb$depth4 <- predict(tr_herb4, X_cf_herb)
-table(tr_assignment_herb$depth4)
-
+```
 
 ```
+## 
+##    2    3    5 
+##  922  914 7450
+```
+
+```r
+tr_assignment_herb$depth3 <- predict(tr_herb3, X_cf_herb)
+table(tr_assignment_herb$depth3)
+```
+
+```
+## 
+##    2    3    5 
+## 2428  253 6605
+```
+
+```r
+tr_assignment_herb$depth4 <- predict(tr_herb4, X_cf_herb)
+table(tr_assignment_herb$depth4)
+```
+
+```
+## 
+##    1    2    3    5 
+##  172 1817  463 6834
+```
+
+```r
+# Saving a plot in a vectorized SVG format can be done with the `DiagrammeRsvg` package. install.packages("DiagrammeRsvg")
+
+cat(DiagrammeRsvg::export_svg(tr1.plot), file = 'plot1.svg')
+cat(DiagrammeRsvg::export_svg(tr3.plot), file = 'plot2.svg')
+cat(DiagrammeRsvg::export_svg(tr4.plot), file = 'plot3.svg')
+```
+
+![](plot1.svg)
+![](plot2.svg)
+![](plot3.svg)
+[![](plot3.svg)](plot3.svg)

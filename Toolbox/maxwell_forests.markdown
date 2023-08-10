@@ -9,4 +9,4 @@ permalink: Toolbox/show_causal_report
 
 # Maxs Forests
 
-{% include Causal_rf_policy_learning_herbicides_rice.md %}
+{% include causral_rf.html %}

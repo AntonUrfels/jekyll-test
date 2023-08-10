@@ -1,16 +1,17 @@
 ---
-title: "Causal Random Forest and Policy Learning: Targeting Weed Management Options in Rice Example"
-format: gfm
+title: "Causal RF"
+output: 
+  html_document: 
+    toc: yes
+    number_sections: yes
+    code_folding_show: yes
+    keep_md: yes
 #format: html
 #minimal: true
 #self-contained: true
 author: LCAS Team
 editor: visual
-toc: true
 #toc-location: left
-number-sections: true
-project:
-output-dir: outputs/reports
 ---
 
 # Introduction
@@ -275,16 +276,16 @@ DR.scores_herb <- double_robust_scores(multi_herb.forest)
 
 tr_herb <- policy_tree(X_cf_herb, DR.scores_herb, depth = 2) 
 tr_herb
-plot(tr_herb)
+tr1.plot <- plot(tr_herb)
 
 
 tr_herb3 <- hybrid_policy_tree(X_cf_herb, DR.scores_herb, depth = 3) 
 tr_herb3
-plot(tr_herb3)
+tr3.plot <- plot(tr_herb3)
 
 tr_herb4 <- hybrid_policy_tree(X_cf_herb, DR.scores_herb, depth = 4) 
 tr_herb4
-plot(tr_herb4)
+tr4.plot <- plot(tr_herb4)
 
 tr_assignment_herb=Rice2018_LDS_herb
 
@@ -296,4 +297,15 @@ tr_assignment_herb$depth4 <- predict(tr_herb4, X_cf_herb)
 table(tr_assignment_herb$depth4)
 
 
+
+# Saving a plot in a vectorized SVG format can be done with the `DiagrammeRsvg` package. install.packages("DiagrammeRsvg")
+
+cat(DiagrammeRsvg::export_svg(tr1.plot), file = 'plot1.svg')
+cat(DiagrammeRsvg::export_svg(tr3.plot), file = 'plot2.svg')
+cat(DiagrammeRsvg::export_svg(tr4.plot), file = 'plot3.svg')
 ```
+
+![](plot1.svg)
+![](plot2.svg)
+![](plot3.svg)
+[![](plot3.svg)](plot3.svg)
