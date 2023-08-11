@@ -15,7 +15,7 @@ This documents provides and overview of a sample workflow.
 
 Start by importing data from Kobo or anotherweb directory. You may skip this if you already have the data downloaded.
 
-```{r Data Import}
+```{r Data Import, eval=FALSE, include=FALSE}
 
 # setting api link 
 f <- "kobo_form_id"
@@ -69,7 +69,7 @@ For many analyses it is useful to add secondary data including socio-economic an
 Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman’s ‘geodata’ package in R as well as the World Bank’s Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file add_secondary_lcas.R.
 
 
-```{r p}
+```{r}
 
 #load LCAS with standard variable names
 f <- "outputs/lcas_renamed.csv"
@@ -102,6 +102,7 @@ f <- "outputs/lcas_secondary.csv"
 df <- read.csv(f)
 
 #anonymize the data
+source("code/anonymize_lcas.R")
 df <- anonymize_lcas(df)
 
 #write anonymized data to csv.
@@ -217,7 +218,7 @@ The standard data format for LCAS is therefore the wide format. For convenience,
 
 The code is stored in <a href="https://github.com/AntonUrfels/lcas/blob/gh-pages/code/data_shaping.R" target="_blank">data_shaping.R</a>.
 
-```{R }
+```{R eval=FALSE, include=FALSE}
 # Read in dataset with standard variable names. Sample code  -----------------
 f <- "data/india_rice_17_18.csv"
 f <- "outputs/lcas_full_vars.csv"
