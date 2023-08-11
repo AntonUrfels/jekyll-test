@@ -1,6 +1,6 @@
 ---
-title: "Sample Workflow"
-author: "Saral, Anton, Robert"
+title: "LCAS Cleaning Workflow"
+author: "LCAS Team"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Sample Workflow
+
 
 This documents provides and overview of a sample workflow.
 
@@ -69,7 +69,7 @@ For many analyses it is useful to add secondary data including socio-economic an
 Other existing households surveys routinely do this and several R packages exist to download and add secondary data to vector data. Here we primarily rely on Robert Heijman’s ‘geodata’ package in R as well as the World Bank’s Living Standards Measurement Survey (LSMS). The functions for adding these additional features are described in the R script file add_secondary_lcas.R.
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 #load LCAS with standard variable names
 f <- "outputs/lcas_renamed.csv"
@@ -111,7 +111,7 @@ write.csv(df,"outputs/lcas_anonymized.csv")
 ```
 
 
-# Local land unit (LLU) conversions
+## Local land unit (LLU) conversions
 
 Since most farmers use LLUs - the raw data is collected in these with addition to a LLU conversion factor. Since most application require ha for land units - we provide a function that converts all variables collected in LLU towards ha.
 
@@ -133,7 +133,7 @@ write.csv(df,"outputs/lcas_ha.csv")
 
 
 
-## 3.2 Yield per ha
+## Yield per ha
 
 Most application are intested in yield outcomes. Yields are generally calculated by dividing a farms total production of a crop in that season through the area on which this crop was calculated.
 
@@ -156,7 +156,7 @@ write.csv(df,"outputs/lcas_yield.R")
 
 
 
-## 3.3 Fertilizer Rates
+## Fertilizer Rates
 
 Fertilizer application rates are calculated by summing the fertilizer inputs (basal application + top dressings) and multplying each fertilizer input with the percentage of N, P, or K contained in the fertilizer. The total nutrient inputs are then normalized by the area of the field towards a per ha basis.
 
@@ -184,7 +184,7 @@ write.csv(df,"outputs/lcas_fert.csv")
 ```
 
 
-## 3.4 Convert dates to day of year and days since 1980-01-01
+## Convert dates to day of year and days since 1980-01-01
 
 Most application require that dates are saved in a numeric format. Although some functions and packages can handle variables formatted as dates, it is often required to use simple numeric fomats. The most straightforward way is to convert dates into days per year. However, when an anlaysis stretches across one calendar year then the re-starting of the counting at 1 can cause issues. For this purpose we provide both the day of the year and the days since 1980-01-01 - a standard practice.
 
@@ -210,7 +210,7 @@ write.csv(df,"outputs/lcas_full_vars.csv")
 
 
 
-## 4.1 Reshape wide dataframe to long
+## Reshape wide dataframe to long
 
 Many surveys such as LSMS and DHS store their datasets in long format and per modules. One of the advantages of the LCAS is that it is relatively simple. It normally only surveys one plot (the largest one) per household. This makes it easy to use for analyses workflow that normally require data in wide format. It is also easier to handle for researchers with less experience in handling complicated and relational databases.
 
