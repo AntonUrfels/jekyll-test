@@ -110,3 +110,16 @@ full_date_harvest <- format(as.Date(mean_ydays,origin="1980-01-01"),format="%e. 
 ```
 
 On average, rice crops have been (trans)planted or directly sown on **`r full_date_sow`** and harvested on **`r full_date_harvest`** with **`r round(mean(df$irrigation_times,na.rm=T),2)`** irrigation events and a total of **`r round(mean(df$total_urea_applied,na.rm=T),2)`** kg urea and **`r round(mean(df$total_npk_applied,na.rm=T),2)`** kg npk applied per plot.
+
+
+
+# Add additional info including (do the report for rice, subset to Bihar+UP):
+- Yield
+- N Rates (distributions)
+- P Rates (distributions
+- Irrigation numbers
+- Time of establishment (DOY)
+- Received farm gate price
+- Share of income from Ag
+- Histrogram of each + maps of each (e.g. heatmap, district average map)
+- Add a yield predcition CART + VarImp plot. showcasing possibilities for ML application.
