@@ -13,15 +13,10 @@ nav_order: 1
 LCAS has been co-developed by CSISA, ICAR, and many others. The developmet benefits from the contributions of many people and contributors. This website lists the LCAS coordinators and core development team.
 
 
-## Leadership team
+
 
 | ![](people/ajm.jpg) | **Andrew J McDonald**. LCAS lead coordinator and Assitant Professor at Cornell University. | ![](people/pc.jpg) | **Peter Craufurd**. LCAS coordinator and CSISA Project Leader (India) at CIMMYT/CGIAR. |
 | ![](people/rkm.jpg) | **Ram K. Malik**. LCAS coordinator and CSISA India Country Coordinator at CIMMYT/CGIAR. | ![](people/vk.jpg) | **Virender Kumar**. LCAS coordinator and Research Leader for Climate-adaptive Agronomy & Mechanization at IRR/CGIAR |
-
-#TODO - Who to name here? How to include ICAR/AK Singh, H Pathak? Sudanshu?
-
-## Development team
-
 | ![](people/aa.jpg) | **Anurag Ajay**. Monitoring and Evaluation Specialist at CIMMYT/CGIAR. | ![](people/as.jpg) | **Arindam Samaddar**. Social Sceintist at IRRI/CGIAR. |
 | ![](people/sk.jpg) | **Saral Karki**. Data Specialist at CIMMYT/CGIAR. | ![](people/gp.jpg) | **Gokul Paudel**. Socioeconomist at CIMMYT/CGIAR. |
 | ![](people/sp.jpg) | **Shishpal Poonia**. Socioeconomist at CIMMYT/CGIAR. | ![](people/sm.jpg) | **Sugandha Munshi**. Lead Specialist at IRRI/CGIAR. |
@@ -31,4 +26,4 @@ LCAS has been co-developed by CSISA, ICAR, and many others. The developmet benef
 
 
 #TODO - Who else to name here? ICAR?
-
+#TODO - Who to name here? How to include ICAR/AK Singh, H Pathak? Sudanshu?
