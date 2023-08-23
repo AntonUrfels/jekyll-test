@@ -114,6 +114,7 @@ On average, rice crops have been (trans)planted or directly sown on **`r full_da
 
 
 # Add additional info including (do the report for rice, subset to Bihar+UP):
+- Initial map of locations of all data points
 - Yield
 - N Rates (distributions)
 - P Rates (distributions
@@ -121,5 +122,5 @@ On average, rice crops have been (trans)planted or directly sown on **`r full_da
 - Time of establishment (DOY)
 - Received farm gate price
 - Share of income from Ag
-- Histrogram of each + maps of each (e.g. heatmap, district average map)
+- Histrogram of each + maps of each (e.g. district average map)
 - Add a yield predcition CART + VarImp plot. showcasing possibilities for ML application.
