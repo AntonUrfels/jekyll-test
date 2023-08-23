@@ -122,5 +122,5 @@ On average, rice crops have been (trans)planted or directly sown on **`r full_da
 - Time of establishment (DOY)
 - Received farm gate price
 - Share of income from Ag
-- Histrogram of each + maps of each (e.g. district average map)
+- Histrogram of each + maps of each (e.g. district average map). Print mean (sd) for each district as a label.
 - Add a yield predcition CART + VarImp plot. showcasing possibilities for ML application.
