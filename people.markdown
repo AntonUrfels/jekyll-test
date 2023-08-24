@@ -15,8 +15,8 @@ LCAS has been co-developed by CSISA, ICAR, and many others. The developmet benef
 
 
 
-| ![](people/ajm.jpg) | **Andrew J McDonald**. LCAS lead coordinator and Assitant Professor at Cornell University. | ![](people/pc.jpg) | **Peter Craufurd**. LCAS coordinator and CSISA Project Leader (India) at CIMMYT/CGIAR. |
-| ![](people/rkm.jpg) | **Ram K. Malik**. LCAS coordinator and CSISA India Country Coordinator at CIMMYT/CGIAR. | ![](people/vk.jpg) | **Virender Kumar**. LCAS coordinator and Research Leader for Climate-adaptive Agronomy & Mechanization at IRR/CGIAR |
+| ![](people/ajm.jpg) | **Andrew J McDonald**. Professor at Cornell University. | ![](people/pc.jpg) | **Peter Craufurd**. LCAS coordinator and CSISA Project Leader (India) at CIMMYT/CGIAR. |
+| ![](people/rkm.jpg) | **Ram K. Malik**. CSISA India Country Coordinator at CIMMYT/CGIAR. | ![](people/vk.jpg) | **Virender Kumar**. Research Leader for Climate-adaptive Agronomy & Mechanization at IRR/CGIAR |
 | ![](people/aa.jpg) | **Anurag Ajay**. Monitoring and Evaluation Specialist at CIMMYT/CGIAR. | ![](people/as.jpg) | **Arindam Samaddar**. Social Sceintist at IRRI/CGIAR. |
 | ![](people/sk.jpg) | **Saral Karki**. Data Specialist at CIMMYT/CGIAR. | ![](people/gp.jpg) | **Gokul Paudel**. Socioeconomist at CIMMYT/CGIAR. |
 | ![](people/sp.jpg) | **Shishpal Poonia**. Socioeconomist at CIMMYT/CGIAR. | ![](people/sm.jpg) | **Sugandha Munshi**. Lead Specialist at IRRI/CGIAR. |
