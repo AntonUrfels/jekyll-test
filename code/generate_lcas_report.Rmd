@@ -11,7 +11,7 @@ knit: (function(inputFile, encoding) {
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = TRUE, echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
 base_col <- "#78b766"
 library(geodata)
 ```
@@ -64,7 +64,7 @@ mapshot(m1,"../outputs/m1.html",selfcontained = FALSE)
 
 ```
 
-<iframe src="../outputs/m1.html" data-external="1"></iframe>
+<iframe src="../outputs/m1.html"height="400px" width="75%" style="border:none;" data-external="1" ></iframe>
 
 ## Yield and crop variety patterns
 
