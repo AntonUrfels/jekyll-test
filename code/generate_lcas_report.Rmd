@@ -13,6 +13,7 @@ knit: (function(inputFile, encoding) {
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = TRUE, echo = FALSE)
 base_col <- "#78b766"
+library(geodata)
 ```
 
 <br><br>
@@ -27,6 +28,13 @@ Make sure it has been cleaned properly using the cleaning files.
 ```{r}
 f <- "../data/india_rice_17_18.csv"
 df <- read.csv(f)
+df <- df[df$adm_1=="Bihar" | df$adm_1=="UttarPradesh",]
+
+india <- gadm("India",level = 2,"../outputs/India_GADM/")
+aoi <- india[india$NAME_1 == "Bihar" | india$NAME_1 == "Uttar Pradesh",]
+
+
+
 ```
 
 We can then produce some key statistics to provide and overview of the dataset. The dataset contains data from the following countries: **`r unique(df$country)`** from the years **`r unique(df$Year)`** for **`r unique(df$Crop)`**. The average landholding size was **`r format(mean(df$total_cultivated_land/df$local_to_acre/2.471,na.rm=T),digits=3)`** ha and the average size of the largest plot was **`r format(mean(df$cropLarestAreaAcre,na.rm=T)/2.471,digits=3)`** ha. Data has been collected in the following states/provinces: **`r unique(df$adm_1)`**. The dataset contains **`r format(nrow(df),big.mark=",")`** samples. And the following distribution of samples across the sample provinces/states: 
@@ -39,6 +47,20 @@ dt <- setorder(dt, cols = -"N")
 knitr::kable(dt,digits = 2,col.names = c("State/Province","% of samples"))
 ```
 
+Showing the sample locations
+
+```{r}
+library(mapview)
+library(sf)
+
+sf <- st_as_sf(df,coords = c("longitude","latitude"),crs=4326)
+sf_aoi <- st_as_sf(aoi)
+sf <- st_crop(sf,sf_aoi)
+#mapview(sf)
+mapview(sf["harvest_year"],alpha.regions = 0.3,cex=0.1,legend=F)
+```
+
+
 
 ## Yield and crop variety patterns
 
@@ -46,14 +68,36 @@ The average yield across the dataset is **`r format(mean(df$ton_per_hc,na.rm=T),
 
 The yield distribution looks as follows:
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(ggpubr)
-ggplot(df)+
+  ggplot(df)+
   geom_histogram(aes(x=ton_per_hc),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="Yield in ton per ha")+
   theme_classic2()
-  
+```  
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$ton_per_hc,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["ton_per_hc"],cex=0.5,alpha=0.01,legend=F)+
+  mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(4, "YlGn")
+          )
+
+
 ```
 
 The mean yield and standard deviation per state/province in descending order:
