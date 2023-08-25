@@ -25,5 +25,3 @@ LCAS has been co-developed by CSISA, ICAR, and many others. The developmet benef
 | ![](people/mm.jpg) | **Maxwell Mkondiwa**. Spatial Economist at CIMMYT/CGIAR. | ![](people/hsn.jpg) | **Hari Sankar Nayak**. Postdoctoral Associate at Cornell University and IRRI/CGIAR. |
 
 
-#TODO - Who else to name here? ICAR?
-#TODO - Who to name here? How to include ICAR/AK Singh, H Pathak? Sudanshu?
