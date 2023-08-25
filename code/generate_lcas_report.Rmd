@@ -52,15 +52,19 @@ Showing the sample locations
 ```{r}
 library(mapview)
 library(sf)
+library(htmlwidgets)
 
 sf <- st_as_sf(df,coords = c("longitude","latitude"),crs=4326)
 sf_aoi <- st_as_sf(aoi)
 sf <- st_crop(sf,sf_aoi)
 #mapview(sf)
-mapview(sf["harvest_year"],alpha.regions = 0.3,cex=0.1,legend=F)
+
+m1 <- mapview(sf["harvest_year"],alpha.regions = 0.3,cex=0.1,legend=F)
+mapshot(m1,"../outputs/m1.html",selfcontained = FALSE)
+
 ```
 
-
+<iframe src="../outputs/m1.html" data-external="1"></iframe>
 
 ## Yield and crop variety patterns
 
