@@ -10,9 +10,19 @@ knit: (function(inputFile, encoding) {
                         output_file='../_includes/LCAS_Report.html') })
 ---
 
+<style type="text/css">
+   .main-container {max-width: 50%;}
+   .row {display: flex;}
+   .column {flex: 25%;}
+</style>
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
 base_col <- "#78b766"
+library(mapview)
+mapviewOptions(basemaps = c("Esri.WorldTopoMap","OpenStreetMap.Mapnik","Esri.WorldImagery"),
+               basemaps.color.shuffle = FALSE)
 library(geodata)
 ```
 
@@ -27,6 +37,7 @@ Make sure it has been cleaned properly using the cleaning files.
 
 ```{r}
 f <- "../data/india_rice_17_18.csv"
+f <- "../outputs/lcas_full_vars.csv"
 df <- read.csv(f)
 df <- df[df$adm_1=="Bihar" | df$adm_1=="UttarPradesh",]
 
@@ -50,7 +61,7 @@ knitr::kable(dt,digits = 2,col.names = c("State/Province","% of samples"))
 Showing the sample locations
 
 ```{r}
-library(mapview)
+
 library(sf)
 library(htmlwidgets)
 
@@ -59,8 +70,12 @@ sf_aoi <- st_as_sf(aoi)
 sf <- st_crop(sf,sf_aoi)
 #mapview(sf)
 
-m1 <- mapview(sf["harvest_year"],alpha.regions = 0.3,cex=0.1,legend=F)
-mapshot(m1,"../outputs/m1.html",selfcontained = FALSE)
+m1 <- mapview(sf["harvest_year"],alpha.regions = 0.3,cex=0.1,legend=F,zoom=6)
+cntr_crds <- c(mean(sf::st_coordinates(sf)[, 1]),
+               mean(sf::st_coordinates(sf)[, 2]))
+m1@map <- leaflet::setView(m1@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 6)
+
+mapshot(m1,"../outputs/m1.html",selfcontained = FALSE,zoom=6)
 
 ```
 
@@ -68,41 +83,7 @@ mapshot(m1,"../outputs/m1.html",selfcontained = FALSE)
 
 ## Yield and crop variety patterns
 
-The average yield across the dataset is **`r format(mean(df$ton_per_hc,na.rm=T),digits=3)` t ha<sup>-1</sup>** with a standard deviation of **`r format(sd(df$ton_per_hc,na.rm=T),digits=3)` t ha<sup>-1</sup>**.
-
-The yield distribution looks as follows:
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(ggplot2)
-library(ggpubr)
-  ggplot(df)+
-  geom_histogram(aes(x=ton_per_hc),fill=base_col,col=base_col,binwidth = 0.2)+
-  scale_x_continuous(name="Yield in ton per ha")+
-  theme_classic2()
-```  
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-
-#download gadm bihar
-sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
-
-list_points <- st_intersects(sf_aoi_cropped,sf)
-means <- unlist(lapply(list_points,
-       function(x) {
-         mean(sf[x,]$ton_per_hc,na.rm=T)
-       }
-))
-sf_aoi_cropped$mean_yield <- means
-sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
-library(RColorBrewer)
-#mapview(sf["ton_per_hc"],cex=0.5,alpha=0.01,legend=F)+
-  mapview(sf_aoi_omit,zcol="mean_yield",
-          col.regions = brewer.pal(4, "YlGn")
-          )
-
-
-```
+The average yield across the dataset is **`r format(mean(df$yield_lp_t_ha,na.rm=T),digits=3)` t ha<sup>-1</sup>** with a standard deviation of **`r format(sd(df$yield_lp_t_ha,na.rm=T),digits=3)` t ha<sup>-1</sup>**.
 
 The mean yield and standard deviation per state/province in descending order:
 
@@ -110,8 +91,8 @@ The mean yield and standard deviation per state/province in descending order:
 library(knitr)
 library(data.table)
 dt <- data.table(df)
-dt1 <- dt[,.(mean=mean(ton_per_hc,na.rm=T)),by=list(adm_1)]
-dt1$sd <- dt[,.(sd=sd(ton_per_hc,na.rm=T)),by=list(adm_1)]$sd
+dt1 <- dt[,.(mean=mean(yield_lp_t_ha,na.rm=T)),by=list(adm_1)]
+dt1$sd <- dt[,.(sd=sd(yield_lp_t_ha,na.rm=T)),by=list(adm_1)]$sd
 dt1 <- setorder(dt1, cols = -"mean")  
 knitr::kable(dt1,digits = 2,col.names = c("State/Province","Mean yield","Standard Deviation"))
 ```
@@ -123,8 +104,8 @@ The same table per variety looks as follows:
 library(knitr)
 library(data.table)
 dt <- data.table(df)
-dt1 <- dt[,.(mean=mean(ton_per_hc,na.rm=T)),by=list(variety_type)]
-dt1$sd <- dt[,.(sd=sd(ton_per_hc,na.rm=T)),by=list(variety_type)]$sd
+dt1 <- dt[,.(mean=mean(yield_lp_t_ha,na.rm=T)),by=list(variety_type)]
+dt1$sd <- dt[,.(sd=sd(yield_lp_t_ha,na.rm=T)),by=list(variety_type)]$sd
 dt1 <- setorder(dt1, cols = -"mean")  
 knitr::kable(dt1,digits = 2,col.names = c("Variety Type","Mean yield","Standard Deviation"))
 ```
@@ -143,6 +124,58 @@ dt <- dt[1:5,]
 knitr::kable(dt,digits = 2,col.names = c("Variety name","% of samples"))
 ```
 
+
+The yield distribution looks as follows:
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=yield_lp_t_ha),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Yield in ton per ha")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$yield_lp_t_ha,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m2 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = 'Yield'
+          )
+
+m2@map <- leaflet::setView(m2@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m2,"../outputs/m2.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m2.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+
 ## Management practices 
 
 
@@ -157,18 +190,405 @@ full_date_harvest <- format(as.Date(mean_ydays,origin="1980-01-01"),format="%e. 
 
 ```
 
-On average, rice crops have been (trans)planted or directly sown on **`r full_date_sow`** and harvested on **`r full_date_harvest`** with **`r round(mean(df$irrigation_times,na.rm=T),2)`** irrigation events and a total of **`r round(mean(df$total_urea_applied,na.rm=T),2)`** kg urea and **`r round(mean(df$total_npk_applied,na.rm=T),2)`** kg npk applied per plot.
+On average, rice crops have been (trans)planted or directly sown on **`r full_date_sow`** and harvested on **`r full_date_harvest`** with **`r round(mean(df$irrigation_times,na.rm=T),2)`** irrigation events and a total of **`r round(mean(df$n_rate,na.rm=T),2)`** kg urea and **`r round(mean(df$p_rate,na.rm=T),2)`** kg npk applied per plot.
+
+
+## Irrigation 
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=irrigation_times),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Number of irrigations")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$irrigation_times,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m3 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = '# Irrigation'
+          )
+m3@map <- leaflet::setView(m3@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m3,"../outputs/m3.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m3.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
 
 
 
-# Add additional info including (do the report for rice, subset to Bihar+UP):
-- Initial map of locations of all data points
-- Yield
-- N Rates (distributions)
-- P Rates (distributions
-- Irrigation numbers
-- Time of establishment (DOY)
-- Received farm gate price
-- Share of income from Ag
-- Histrogram of each + maps of each (e.g. district average map). Print mean (sd) for each district as a label.
-- Add a yield predcition CART + VarImp plot. showcasing possibilities for ML application.
+## N Rate
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=n_rate),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="N rate")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$n_rate,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m4 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = 'N/ha'
+          )
+m4@map <- leaflet::setView(m4@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m4,"../outputs/m4.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m4.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+## P rate
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=p_rate),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="P rate")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$p_rate,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m5 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = 'P/ha'
+          )
+m5@map <- leaflet::setView(m5@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m5,"../outputs/m5.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m5.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+
+## Farm gate price
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=avg_farm_gate_price),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Farm gate price")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$avg_farm_gate_price,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m6 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = 'INR/quintal'
+          )
+m6@map <- leaflet::setView(m6@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m6,"../outputs/m6.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m6.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+
+## Establishment date
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=transplanting_date_doy),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Number of irrigations")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$transplanting_date_doy,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m7 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = 'DOY'
+          )
+m7@map <- leaflet::setView(m7@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m7,"../outputs/m7.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m7.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+## Agriculture income share
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=df$agri_income_importance),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Number of irrigations")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$agri_income_importance,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m8 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = '%'
+          )
+m8@map <- leaflet::setView(m8@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m8,"../outputs/m8.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m8.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+
+## Agriculture income share
+
+<div class = "row">
+<div class = "column">
+
+        
+```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
+library(ggplot2)
+library(ggpubr)
+  ggplot(df)+
+  geom_histogram(aes(x=df$market_sale_share),fill=base_col,col=base_col,binwidth = 0.2)+
+  scale_x_continuous(name="Market Sales Share")+
+  theme_classic2()
+```  
+
+  </div>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#download gadm bihar
+sf_aoi_cropped <- sf_aoi[unique(as.integer(st_intersects(sf, sf_aoi))),]
+
+list_points <- st_intersects(sf_aoi_cropped,sf)
+means <- unlist(lapply(list_points,
+       function(x) {
+         mean(sf[x,]$market_sale_share,na.rm=T)
+       }
+))
+sf_aoi_cropped$mean_yield <- means
+sf_aoi_omit <- sf_aoi_cropped[!is.na(sf_aoi_cropped$mean_yield),]
+library(RColorBrewer)
+#mapview(sf["yield_lp_t_ha"],cex=0.5,alpha=0.01,legend=F)+
+m9 <-   mapview(sf_aoi_omit,zcol="mean_yield",
+          col.regions = brewer.pal(2, "YlGn"),
+          layer.name = '%'
+          )
+m9@map <- leaflet::setView(m9@map, lng = cntr_crds[1],lat =  cntr_crds[2], zoom = 5)
+
+mapshot(m9,"../outputs/m9.html",selfcontained = FALSE)
+#  <div style="float:right;">
+
+```
+
+<div class = "column">
+
+<iframe src="../outputs/m9.html" height="250px" width="100%" style="border:none;" data-external="1" ></iframe>
+  </div>
+</div>
+
+# Yield drivers 
+
+Constructing random forest yield prediction model and showing the key predictors as well as CART. Note that this is not a robust model, but an automatically generated first brush overview to get a glimpse of variables that are strongly associated with yield outcomes. Random forest models are generally robust in identifying some important variables, but tend to overlook others. That is it is more prone 
+
+```{r echo=TRUE}
+library(ranger)
+df1 <- df[,names(df) %in% c("yield_lp_t_ha",
+                            "irrigation_times",
+                            "n_rate", 
+                            "p_rate" , 
+                            "soil_texture",
+                            "transplanting_date_doy" , 
+                            "variety_type" , 
+                            "population_density" , 
+                            "agri_income_importance" ,
+                            "Year" , 
+                            "market_distance",
+                            "market_sale_share",
+                            "total_crop_cult_area_ha",
+                            "insecticide_applied",
+                            "avg_farm_gate_price",
+                            "manual_weeding_times",
+                            "lodging_perc"
+                            )]
+df1 <- na.omit(df1) 
+fit <- ranger(data = df1,  yield_lp_t_ha ~ .,importance = "permutation")
+library(vip)
+library(randomForestExplainer)
+vip::vip(fit,n=20)+
+  theme_classic2()
+
+
+
+library(rpart)
+library(rpart.plot)
+#df1$yield_class <- ifelse(df1$yield_lp_t_ha <3.5, "low",
+#                          ifelse(df1$yield_lp_t_ha>3.5 & df1$yield_lp_t_ha<5,"medium","high" ))
+fit.tree = rpart(yield_lp_t_ha ~ ., data=df1,  method="anova", cp=0.0035)
+bestcp <- fit.tree$cptable[which.min(fit.tree$cptable[,"xerror"]),"CP"]
+pruned.tree <- prune(fit.tree, cp = bestcp)
+rpart.plot(pruned.tree)
+
+
+```
+
+
+

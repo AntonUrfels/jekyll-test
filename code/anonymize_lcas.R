@@ -5,10 +5,10 @@
 anonymize_lcas <- function(df) {
   
   offset <- runif(min = -10, max = 10, n = 1)
-  df$latitude <- round(df$latitude,2)+round((offset*0.1),2)
+  df$latitude <- round(df$latitude,2)+round((offset*0.0001),2)
 
   offset <- runif(min = -10, max = 10, n = 1)
-  df$longitude <- round(df$longitude,2)+round((offset*0.1),2)
+  df$longitude <- round(df$longitude,2)+round((offset*0.0001),2)
   return(df)
   
 }
