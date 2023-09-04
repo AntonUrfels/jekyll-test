@@ -619,7 +619,7 @@ mapshot(m9,"../outputs/m9.html",selfcontained = FALSE)
 
 # Yield drivers 
 
-Constructing random forest yield prediction model and showing the key predictors as well as CART. Note that this is not a robust model, but an automatically generated first brush overview to get a glimpse of variables that are strongly associated with yield outcomes. Random forest models are generally robust in identifying some important variables, but tend to overlook others. That is it is more prone 
+Constructing random forest yield prediction model and showing the key predictors as well as CART. Note that this is not a robust model, but an automatically generated first brush overview to get a glimpse of variables that are strongly associated with yield outcomes. Random forest models are generally robust in identifying some important variables, but tend to overlook others. 
 
 ```{r echo=TRUE}
 library(ranger)
