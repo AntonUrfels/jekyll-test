@@ -24,6 +24,7 @@ library(mapview)
 mapviewOptions(basemaps = c("Esri.WorldTopoMap","OpenStreetMap.Mapnik","Esri.WorldImagery"),
                basemaps.color.shuffle = FALSE)
 library(geodata)
+library(countrycode)
 ```
 
 <br><br>
@@ -378,6 +379,8 @@ mapshot(m5,"../outputs/m5.html",selfcontained = FALSE)
 
 For the Farm gate price, the basic statistics look as follows:
 
+Unit: **`r countrycode::codelist[which(countrycode::codelist$iso.name.en=="India"),]$iso4217c` / 100 kg**
+
 Mean: **`r round(mean(df$avg_farm_gate_price,na.rm=T),2)`**
 
 Median: **`r round(median(df$avg_farm_gate_price,na.rm=T),2)`**
@@ -391,9 +394,11 @@ CV: **`r round(sd(df$avg_farm_gate_price,na.rm=T) / mean(df$avg_farm_gate_price,
 ```{r echo=FALSE, fig.height=5,out.width = "100%", message=FALSE, warning=FALSE}
 library(ggplot2)
 library(ggpubr)
+curr <- countrycode::codelist[which(countrycode::codelist$iso.name.en=="India"),]$iso4217c
+
   ggplot(df)+
   geom_histogram(aes(x=avg_farm_gate_price),fill=base_col,col=base_col,binwidth = 0.2)+
-  scale_x_continuous(name="Farm gate price")+
+  scale_x_continuous(name=paste0("Farm gate price in\n",curr," / 100 kg"))+
   theme_classic2()+
   theme(text = element_text(size = 30))
 ```  
