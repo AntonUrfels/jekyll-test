@@ -11,9 +11,9 @@ knit: (function(inputFile, encoding) {
 ---
 
 <style type="text/css">
-   .main-container {max-width: 80%;}
+   .main-container {max-width: 100%;}
    .row {display: flex;}
-   .column {flex: 40%;}
+   .column {flex: 50%;}
 </style>
 
 
