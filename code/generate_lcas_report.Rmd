@@ -44,8 +44,6 @@ df <- df[df$adm_1=="Bihar" | df$adm_1=="UttarPradesh",]
 india <- gadm("India",level = 2,"../outputs/India_GADM/")
 aoi <- india[india$NAME_1 == "Bihar" | india$NAME_1 == "Uttar Pradesh",]
 
-
-
 ```
 
 We can then produce some key statistics to provide and overview of the dataset. The dataset contains data from the following countries: **`r unique(df$country)`** from the years **`r unique(df$Year)`** for **`r unique(df$Crop)`**. The average landholding size was **`r format(mean(df$total_cultivated_land/df$local_to_acre/2.471,na.rm=T),digits=3)`** ha and the average size of the largest plot was **`r format(mean(df$cropLarestAreaAcre,na.rm=T)/2.471,digits=3)`** ha. Data has been collected in the following states/provinces: **`r unique(df$adm_1)`**. The dataset contains **`r format(nrow(df),big.mark=",")`** samples. And the following distribution of samples across the sample provinces/states: 
@@ -88,6 +86,7 @@ The average yield across the dataset is **`r format(mean(df$yield_lp_t_ha,na.rm=
 The mean yield and standard deviation per state/province in descending order:
 
 ```{r echo=FALSE}
+
 library(knitr)
 library(data.table)
 dt <- data.table(df)
@@ -95,6 +94,7 @@ dt1 <- dt[,.(mean=mean(yield_lp_t_ha,na.rm=T)),by=list(adm_1)]
 dt1$sd <- dt[,.(sd=sd(yield_lp_t_ha,na.rm=T)),by=list(adm_1)]$sd
 dt1 <- setorder(dt1, cols = -"mean")  
 knitr::kable(dt1,digits = 2,col.names = c("State/Province","Mean yield","Standard Deviation"))
+
 ```
 
 
@@ -136,7 +136,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=yield_lp_t_ha),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="Yield in ton per ha")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -195,6 +196,14 @@ On average, rice crops have been (trans)planted or directly sown on **`r full_da
 
 ## Irrigation 
 
+For the number of irrigation, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$irrigation_times,na.rm=T),2)`**
+
+Median: **`r round(median(df$irrigation_times,na.rm=T),2)`**
+
+CV: **`r round(sd(df$irrigation_times,na.rm=T) / mean(df$irrigation_times,na.rm=T),2)`**
+
 <div class = "row">
 <div class = "column">
 
@@ -205,7 +214,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=irrigation_times),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="Number of irrigations")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -246,6 +256,15 @@ mapshot(m3,"../outputs/m3.html",selfcontained = FALSE)
 
 ## N Rate
 
+For the N rate, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$n_rate,na.rm=T),2)`**
+
+Median: **`r round(median(df$n_rate,na.rm=T),2)`**
+
+CV: **`r round(sd(df$n_rate,na.rm=T) / mean(df$n_rate,na.rm=T),2)`**
+
+
 <div class = "row">
 <div class = "column">
 
@@ -256,7 +275,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=n_rate),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="N rate")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -296,6 +316,14 @@ mapshot(m4,"../outputs/m4.html",selfcontained = FALSE)
 
 ## P rate
 
+For the P rate, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$p_rate,na.rm=T),2)`**
+
+Median: **`r round(median(df$p_rate,na.rm=T),2)`**
+
+CV: **`r round(sd(df$p_rate,na.rm=T) / mean(df$p_rate,na.rm=T),2)`**
+
 <div class = "row">
 <div class = "column">
 
@@ -306,7 +334,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=p_rate),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="P rate")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -347,6 +376,14 @@ mapshot(m5,"../outputs/m5.html",selfcontained = FALSE)
 
 ## Farm gate price
 
+For the Farm gate price, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$avg_farm_gate_price,na.rm=T),2)`**
+
+Median: **`r round(median(df$avg_farm_gate_price,na.rm=T),2)`**
+
+CV: **`r round(sd(df$avg_farm_gate_price,na.rm=T) / mean(df$avg_farm_gate_price,na.rm=T),2)`**
+
 <div class = "row">
 <div class = "column">
 
@@ -357,7 +394,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=avg_farm_gate_price),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="Farm gate price")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -398,6 +436,15 @@ mapshot(m6,"../outputs/m6.html",selfcontained = FALSE)
 
 ## Establishment date
 
+
+For the Establishment date, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$transplanting_date_doy,na.rm=T),2)`**
+
+Median: **`r round(median(df$transplanting_date_doy,na.rm=T),2)`**
+
+CV: **`r round(sd(df$transplanting_date_doy,na.rm=T) / mean(df$transplanting_date_doy,na.rm=T),2)`**
+
 <div class = "row">
 <div class = "column">
 
@@ -407,8 +454,9 @@ library(ggplot2)
 library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=transplanting_date_doy),fill=base_col,col=base_col,binwidth = 0.2)+
-  scale_x_continuous(name="Number of irrigations")+
-  theme_classic2()
+  scale_x_continuous(name="Planting date in DOY")+
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -448,6 +496,14 @@ mapshot(m7,"../outputs/m7.html",selfcontained = FALSE)
 
 ## Agriculture income share
 
+For the agriculture income share, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$agri_income_importance,na.rm=T),2)`**
+
+Median: **`r round(median(df$agri_income_importance,na.rm=T),2)`**
+
+CV: **`r round(sd(df$agri_income_importance,na.rm=T) / mean(df$agri_income_importance,na.rm=T),2)`**
+
 <div class = "row">
 <div class = "column">
 
@@ -457,8 +513,9 @@ library(ggplot2)
 library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=df$agri_income_importance),fill=base_col,col=base_col,binwidth = 0.2)+
-  scale_x_continuous(name="Number of irrigations")+
-  theme_classic2()
+  scale_x_continuous(name="Agriculture Income Share in %")+
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>
@@ -496,7 +553,16 @@ mapshot(m8,"../outputs/m8.html",selfcontained = FALSE)
 </div>
 
 
-## Agriculture income share
+## Market sales share
+
+For the Market sales share, the basic statistics look as follows:
+
+Mean: **`r round(mean(df$market_sale_share,na.rm=T),2)`**
+
+Median: **`r round(median(df$market_sale_share,na.rm=T),2)`**
+
+CV: **`r round(sd(df$market_sale_share,na.rm=T) / mean(df$market_sale_share,na.rm=T),2)`**
+
 
 <div class = "row">
 <div class = "column">
@@ -508,7 +574,8 @@ library(ggpubr)
   ggplot(df)+
   geom_histogram(aes(x=df$market_sale_share),fill=base_col,col=base_col,binwidth = 0.2)+
   scale_x_continuous(name="Market Sales Share")+
-  theme_classic2()
+  theme_classic2()+
+  theme(text = element_text(size = 30))
 ```  
 
   </div>

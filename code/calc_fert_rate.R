@@ -14,11 +14,13 @@ calc_fert_rate <- function(df) {
   
   i <- df$surveyed_plot_ha
   
+  
+ 
   df$n_rate <- (df$total_urea_applied * 0.46) +
-                (df$total_npk_applied * 0.12) + 
+                (df$total_npk_applied * 0.15) + 
                 (df$total_dap_applied * 0.18) +
                 (df$total_tsp_applied * 0) +
-                (df$total_npks_applied * 0.2)
+                (df$total_npks_applied * 0.15)
   
   df$n_rate <- df$n_rate / i
   
@@ -29,7 +31,7 @@ calc_fert_rate <- function(df) {
                 (df$total_ssp_applied * 0.15) +
                  (df$total_npks_applied * 0.2) 
   
-  df$n_rate <- df$p_rate / i
+  df$p_rate <- df$p_rate / i
               
   df$k_rate <- (df$total_urea_applied * 0) +
                 (df$total_npk_applied * 0.16) + 
