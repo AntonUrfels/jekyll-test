@@ -32,6 +32,9 @@ We thank all collaborators that contributed to the LCAS system and the Bill and 
 ![](csisa.png){:width="150px"}
 {: .text-center }
 
+![](eialogo.png){:width="150px"}
+{: .text-center }
+
 <br>
 
 
