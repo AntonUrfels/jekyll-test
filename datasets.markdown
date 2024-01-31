@@ -16,6 +16,8 @@ The LCAS systems has been deployed numerous times across South Asia in India, Ne
 
 - <a href="data/india_rice_17_18.csv" download="lcas_harmonized.csv"> Harmonized dataset of all LCAS surveys >>> Initially only India 17 and 18 rice data avialable </a>
 
+- <a href="data/ValidationStat_overview_100m_21-22_SHC" download="validation_statistics.csv"> Validation Statistics for DSM 2021/22 Bihar using Soil health card </a>
+
 
 ## Inidvidual dataset links
 
