@@ -32,5 +32,7 @@ The LCAS systems has been deployed numerous times across South Asia in India, Ne
 ## Bio-physical datasets
 
 - <a href="data/ValidationStat_overview_100m_21-22_SHC.xlsx" download="validation_statistics.csv"> Validation Statistics for DSM 2021/22 Bihar using Soil health card </a>
-- <a href="https://link.storjshare.io/s/jurycilpcap7hlbsb5nmoxw5ccba/saral%2FBihar_100m_DSM%2Fbihar_soil_ph_ec_oc.zip" > 100 meter DSM Bihar 2021/22 Soil health card data (Phm EC, OC) </a>
+- <a href="https://link.storjshare.io/s/jurycilpcap7hlbsb5nmoxw5ccba/saral%2FBihar_100m_DSM%2Fbihar_soil_ph_ec_oc.zip" > 100 meter DSM Bihar 2021/22 Soil health card data (Ph,EC, OC) </a>
+- <a href="https://link.storjshare.io/s/juyo2hlsfirw3q2qbosqmmhd3waa/saral%2FBihar_100m_DSM%2Fbihar_soil_macro_nutrients.zip" > 100 meter DSM Bihar 2021/22 Soil health card data (macro nutrients) </a>
+- <a href="https://link.storjshare.io/s/jurycilpcap7hlbsb5nmoxw5ccba/saral%2FBihar_100m_DSM%2Fbihar_soil_ph_ec_oc.zip" > 100 meter DSM Bihar 2021/22 Soil health card data (micro nutrients) </a>
 
