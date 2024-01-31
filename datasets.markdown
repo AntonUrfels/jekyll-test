@@ -16,7 +16,7 @@ The LCAS systems has been deployed numerous times across South Asia in India, Ne
 
 - <a href="data/india_rice_17_18.csv" download="lcas_harmonized.csv"> Harmonized dataset of all LCAS surveys >>> Initially only India 17 and 18 rice data avialable </a>
 
-- <a href="data/ValidationStat_overview_100m_21-22_SHC.xlsx" download="validation_statistics.csv"> Validation Statistics for DSM 2021/22 Bihar using Soil health card </a>
+
 
 
 ## Inidvidual dataset links
@@ -27,4 +27,9 @@ The LCAS systems has been deployed numerous times across South Asia in India, Ne
 - [**Ajay et al. (2020).** Landscape diagnostic survey data of wheat production practices and yield of 2018 from eastern India.](https://hdl.handle.net/11529/10548507)
 - [**Paudel et al. (2018).** Lentil production practices survey during wet-winter year in western Nepal.](https://hdl.handle.net/11529/10548086)
 - [**Paudel et al. (2017).** Nepal Rice Crop Cut and Survey Data 2016.](https://hdl.handle.net/11529/10968)
+
+
+## Bio-physical datasets
+
+- <a href="data/ValidationStat_overview_100m_21-22_SHC.xlsx" download="validation_statistics.csv"> Validation Statistics for DSM 2021/22 Bihar using Soil health card </a>
 
