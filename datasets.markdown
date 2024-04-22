@@ -14,7 +14,7 @@ nav_order: 4
 The LCAS systems has been deployed numerous times across South Asia in India, Nepal, and Bangladesh. Most of these have been published on dataverse. Please follow the links below to access the individual surveys. For convenience, we host a harmonized dataset here for direct download.. 
 
 
-- <a href="data/india_rice_17_18.csv](https://github.com/Systems-Agronomy/lcas/raw/gh-pages/data/india_rice_17_18.csv" download="lcas_harmonized.csv"> Harmonized dataset of all LCAS surveys >>> Initially only India 17 and 18 rice data avialable </a>
+- <a href="https://github.com/Systems-Agronomy/lcas/raw/gh-pages/data/india_rice_17_18.csv" download="lcas_harmonized.csv"> Harmonized dataset of all LCAS surveys >>> Initially only India 17 and 18 rice data avialable </a>
 
 
 ## Inidvidual dataset links
