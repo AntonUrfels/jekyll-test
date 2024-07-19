@@ -27,6 +27,8 @@ url: "https://antonurfels.github.io" # the base hostname & protocol for your sit
 twitter_username: CSISAProject 
 github_username: csisarep
 #markdown: GFM
+ga_tracking: G-ZD7RXZY0W8
+#ga_tracking_anonymize_ip: true
 
 # Build settings
 #theme: just-the-docs
